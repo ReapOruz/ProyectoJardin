@@ -1,0 +1,20 @@
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Negocio.dll
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Negocio.pdb
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Datos.dll
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Datos.pdb
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\obj\Debug\Jardin.Negocio.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\obj\Debug\Jardin.Negocio.dll
+C:\Users\danie\OneDrive\Desktop\Jardin.Negocio\obj\Debug\Jardin.Negocio.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Negocio.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Negocio.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Datos.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Datos.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.pdb
