@@ -38,22 +38,69 @@ namespace VistaLogin
             usuarioName = tbNombreUsuario.Text;
             contrasena = tbContrasena.Text;
 
-            BLUsuarios userLogin = new BLUsuarios();
-            usuario = userLogin.Loguear(usuarioName);
+            BLUsuarios usuarioLog = new BLUsuarios();
+            usuario = usuarioLog.Loguear(usuarioName);
 
             String us = usuario.getNombreUsuario();
             String cont = usuario.getContrasena();
+            String estate = usuario.getEstado();
+            String perfil = usuario.getPerfil();
 
-   
-            if (usuarioName.Equals(us) && contrasena.Equals(cont))
+            try
             {
-                MessageBox.Show("Logueo exitoso");
-            }
-            else
-            {
-                MessageBox.Show("El usuario no existe, verifique los datos");
-            }
+                if (!usuarioName.Equals(""))
+                {
 
+                    if (usuarioName.Equals(us) && !contrasena.Equals(cont))
+                    {
+                        MessageBox.Show("Contraseña incorrectas");
+
+                    }
+                    else
+                    {
+                        if (usuarioName.Equals(us) && contrasena.Equals(cont)
+                            && perfil.Equals("1") && estate.Equals("1"))
+                        {
+                            MessageBox.Show("Logueo exitoso para ingresar a perfil administrador");
+
+                        }
+                        else if (usuarioName.Equals(us) && contrasena.Equals(cont)
+                            && perfil.Equals("2") && estate.Equals("1"))
+                        {
+
+                            MessageBox.Show("Logueo exitoso para ingresar a perfil docente");
+
+                        }
+                        else if (usuarioName.Equals(us) && contrasena.Equals(cont)
+                            && perfil.Equals("3") && estate.Equals("1"))
+                        {
+                            MessageBox.Show("Logueo exitoso para ingresar a perfil seceretaria");
+
+                        }
+
+                        else if (estate.Equals("0"))
+                        {
+
+                            MessageBox.Show("El usuario no se encuentra activo, contacte con el administrador");
+
+                        }
+
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Por favor ingrese su usuario");
+
+                }
+
+            }
+            catch
+            {
+
+                MessageBox.Show("El usuario no se encuentra registrado");
+
+            }
 
         }
     }

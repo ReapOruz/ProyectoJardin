@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Jardin"
+    "\\Jardin",
+    "\\Jardin.Negocio",
+    "\\Jardin\\Jardin.Datos",
+    "\\Jardin\\VistaLogin"
   ],
   "SelectedNode": "\\Jardin\\Jardin.sln",
   "PreviewInSolutionExplorer": false

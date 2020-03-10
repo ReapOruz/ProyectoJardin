@@ -42,9 +42,12 @@ namespace Jardin.Datos
                 if (dr != null && dr.HasRows)
                 {
                     dr.Read();
-                    String user = ((String)dr["usuario"]).Trim();
+                    String user = ((String)dr["nombreUsuario"]).Trim();
                     String password = ((String)dr["contrasena"]).Trim();
-                    oUsuario = new Usuarios(user,password);
+                    String perfil = ((String)dr["perfil"]).Trim();
+                    String estado = ((String)dr["estado"]).Trim();
+
+                    oUsuario = new Usuarios(user,password,perfil,estado);
                 }
             }
             return oUsuario;

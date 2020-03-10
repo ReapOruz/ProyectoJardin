@@ -8,7 +8,6 @@ namespace Jardin.Entidades
 {
     public class Usuarios
     {
-
         private String codUsuario;
         private String nombreUsuario;
         private String contrasena;
@@ -40,10 +39,12 @@ namespace Jardin.Entidades
             this.estado = estado;
         }
 
-        public Usuarios(String nombreUsuario, String contrasena)
+        public Usuarios(String nomUsuario, String cont, String perf, String estad)
         {
-            this.nombreUsuario = nombreUsuario;
-            this.contrasena = contrasena;
+            this.nombreUsuario = nomUsuario;
+            this.contrasena = cont;
+            this.perfil = perf;
+            this.estado = estad;
         }
 
         public Usuarios()
@@ -141,6 +142,13 @@ namespace Jardin.Entidades
         {
 
             return contrasena;
+        }
+
+        public String getPerfil()
+        {
+
+            return perfil;
+
         }
 
         public String getNombres()
