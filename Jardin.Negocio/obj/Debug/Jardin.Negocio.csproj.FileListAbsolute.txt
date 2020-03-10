@@ -18,3 +18,13 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\J
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin.Negocio\obj\Debug\Jardin.Negocio.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Negocio.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Negocio.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Datos.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Entidades.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Datos.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Entidades.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csprojAssemblyReference.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.pdb

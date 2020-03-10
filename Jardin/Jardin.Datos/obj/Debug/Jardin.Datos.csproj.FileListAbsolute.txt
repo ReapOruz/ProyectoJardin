@@ -14,3 +14,11 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Datos\obj\De
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csproj.CopyComplete
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Datos.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Datos.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Entidades.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Entidades.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csprojAssemblyReference.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csproj.CopyComplete
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.pdb
