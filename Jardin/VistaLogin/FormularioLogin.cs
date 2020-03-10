@@ -53,7 +53,7 @@ namespace VistaLogin
 
                     if (usuarioName.Equals(us) && !contrasena.Equals(cont))
                     {
-                        MessageBox.Show("Contraseña incorrectas");
+                        MessageBox.Show("Contraseña incorrecta");
 
                     }
                     else
@@ -89,17 +89,13 @@ namespace VistaLogin
                 }
                 else
                 {
-
                     MessageBox.Show("Por favor ingrese su usuario");
-
                 }
 
             }
             catch
             {
-
                 MessageBox.Show("El usuario no se encuentra registrado");
-
             }
 
         }
