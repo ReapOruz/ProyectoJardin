@@ -16,5 +16,6 @@ namespace VistaCrudUsuario
         {
             InitializeComponent();
         }
+
     }
 }
