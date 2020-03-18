@@ -7,3 +7,8 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Entidades\ob
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.pdb

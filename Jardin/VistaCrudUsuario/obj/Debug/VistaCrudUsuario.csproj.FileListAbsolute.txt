@@ -2,8 +2,8 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\VistaCrudUsuario.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\VistaCrudUsuario.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csprojAssemblyReference.cache
-C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.Form1.resources
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.Properties.Resources.resources
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csproj.GenerateResource.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.CrudUsuario.resources

@@ -29,29 +29,72 @@ namespace Jardin.Datos
             set { cadenaConexion = value; }
         }
 
-        public Usuarios LoguearUsuario(String userName){
+        //Realizar el logueo de un usuario existente
+        public Usuarios LoguearUsuario(string userName){
             
             Usuarios oUsuario=new Usuarios();
             using (SqlConnection con = new SqlConnection(CadenaConexion))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("sp_ConsultarUsuarioPorNombreUsuario", con);
+                SqlCommand cmd = new SqlCommand("pa_consultarLoginUsuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nomUsuario", userName);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr != null && dr.HasRows)
                 {
                     dr.Read();
-                    String user = ((String)dr["nombreUsuario"]).Trim();
-                    String password = ((String)dr["contrasena"]).Trim();
-                    String perfil = ((String)dr["perfil"]).Trim();
-                    String estado = ((String)dr["estado"]).Trim();
+                    string user = ((string)dr["login"]).Trim();
+                    string password = ((string)dr["password"]).Trim();
+                    int perfil = Convert.ToInt32(dr["perfil"]);
+                    int estado = Convert.ToInt32(dr["estado"]);
 
                     oUsuario = new Usuarios(user,password,perfil,estado);
                 }
             }
             return oUsuario;
         }
+
+        //Listar usuario exsitentes en la base de datos
+
+        public List<Usuarios> listarUsuarios()
+        {
+            List<Usuarios> listaUsuarios = new List<Usuarios>();
+
+            using (SqlConnection con = new SqlConnection(cadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("ListarUsuarios",con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if(dr != null && dr.HasRows)
+                {
+
+                    Usuarios user = new Usuarios(
+
+
+
+
+
+
+
+                        );
+
+
+                }
+
+
+
+
+
+
+            }
+
+
+                return listaUsuarios;
+
+        }
+
 
 
 

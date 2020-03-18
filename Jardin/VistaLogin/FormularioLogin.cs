@@ -31,10 +31,10 @@ namespace VistaLogin
             BLUsuarios usuarioLog = new BLUsuarios();
             usuario = usuarioLog.Loguear(usuarioName);
 
-            String us = usuario.getNombreUsuario();
-            String cont = usuario.getContrasena();
-            String estate = usuario.getEstado();
-            String perfil = usuario.getPerfil();
+            string us = usuario.getNombreUsuario();
+            string cont = usuario.getContrasena();
+            int estate = usuario.getEstado();
+            int perfil = usuario.getPerfil();
 
             try
             {
@@ -49,20 +49,20 @@ namespace VistaLogin
                     else
                     {
                         if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil.Equals("1") && estate.Equals("1"))
+                            && perfil == 1 && estate==1)
                         {
                             MessageBox.Show("Logueo exitoso para ingresar a perfil administrador");
 
                         }
                         else if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil.Equals("2") && estate.Equals("1"))
+                            && perfil==2 && estate==1)
                         {
 
                             MessageBox.Show("Logueo exitoso para ingresar a perfil docente");
 
                         }
                         else if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil.Equals("3") && estate.Equals("1"))
+                            && perfil==3 && estate==1)
                         {
                             MessageBox.Show("Logueo exitoso para ingresar a perfil seceretaria");
 

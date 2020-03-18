@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Jardin.Negocio\Jardin.Negocio.csproj">
+      <Project>{350264ed-468a-4bbc-8de9-b3047ffc2062}</Project>
+      <Name>Jardin.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jardin.Entidades\Jardin.Entidades.csproj">
+      <Project>{35bd6069-1d71-4bf7-8807-65d0245137ac}</Project>
+      <Name>Jardin.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

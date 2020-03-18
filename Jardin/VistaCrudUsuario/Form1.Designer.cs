@@ -1,6 +1,6 @@
 ﻿namespace VistaCrudUsuario
 {
-    partial class Form1
+    partial class CrudUsuario
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -35,9 +35,26 @@
             this.ConsultarUsuario = new System.Windows.Forms.Button();
             this.modificarUsuario = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GuardarCambios = new System.Windows.Forms.Button();
             this.volver = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.GuardarCambios = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tableUsuarios = new System.Windows.Forms.DataGridView();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.cbPerfiles = new System.Windows.Forms.ComboBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,23 +63,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
-            this.cbPerfiles = new System.Windows.Forms.ComboBox();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableUsuarios = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -117,6 +117,7 @@
             this.btnAgregarUsuario.TabIndex = 0;
             this.btnAgregarUsuario.Text = "Agregar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // eliminarUsuario
             // 
@@ -163,18 +164,6 @@
             this.panel1.Size = new System.Drawing.Size(294, 75);
             this.panel1.TabIndex = 4;
             // 
-            // GuardarCambios
-            // 
-            this.GuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.GuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarCambios.ForeColor = System.Drawing.Color.White;
-            this.GuardarCambios.Location = new System.Drawing.Point(831, 226);
-            this.GuardarCambios.Name = "GuardarCambios";
-            this.GuardarCambios.Size = new System.Drawing.Size(88, 34);
-            this.GuardarCambios.TabIndex = 5;
-            this.GuardarCambios.Text = "Guardar";
-            this.GuardarCambios.UseVisualStyleBackColor = false;
-            // 
             // volver
             // 
             this.volver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -190,7 +179,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtContrasena);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.GuardarCambios);
@@ -219,6 +208,160 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(952, 540);
             this.panel3.TabIndex = 0;
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(161, 126);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(315, 20);
+            this.txtContrasena.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(43, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 15);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Contraseña";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(41, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(191, 25);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Datos de usuario";
+            // 
+            // GuardarCambios
+            // 
+            this.GuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarCambios.ForeColor = System.Drawing.Color.White;
+            this.GuardarCambios.Location = new System.Drawing.Point(831, 226);
+            this.GuardarCambios.Name = "GuardarCambios";
+            this.GuardarCambios.Size = new System.Drawing.Size(88, 34);
+            this.GuardarCambios.TabIndex = 5;
+            this.GuardarCambios.Text = "Guardar";
+            this.GuardarCambios.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tableUsuarios);
+            this.panel4.Location = new System.Drawing.Point(21, 266);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(907, 262);
+            this.panel4.TabIndex = 22;
+            // 
+            // tableUsuarios
+            // 
+            this.tableUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.tableUsuarios.Name = "tableUsuarios";
+            this.tableUsuarios.Size = new System.Drawing.Size(901, 255);
+            this.tableUsuarios.TabIndex = 0;
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbEstado.Location = new System.Drawing.Point(575, 183);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(344, 21);
+            this.cbEstado.TabIndex = 21;
+            // 
+            // cbPerfiles
+            // 
+            this.cbPerfiles.FormattingEnabled = true;
+            this.cbPerfiles.Items.AddRange(new object[] {
+            "Administrador",
+            "Docente",
+            "Secretaria"});
+            this.cbPerfiles.Location = new System.Drawing.Point(161, 98);
+            this.cbPerfiles.Name = "cbPerfiles";
+            this.cbPerfiles.Size = new System.Drawing.Size(315, 21);
+            this.cbPerfiles.TabIndex = 20;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(575, 155);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(344, 20);
+            this.txtObservacion.TabIndex = 19;
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(575, 126);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(344, 20);
+            this.txtMail.TabIndex = 18;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(575, 98);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(344, 20);
+            this.txtTelefono.TabIndex = 17;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(575, 69);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(344, 20);
+            this.txtDireccion.TabIndex = 16;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(161, 213);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(315, 20);
+            this.txtApellidos.TabIndex = 15;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(161, 184);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(315, 20);
+            this.txtNombres.TabIndex = 14;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Location = new System.Drawing.Point(161, 155);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(315, 20);
+            this.txtDocumento.TabIndex = 13;
+            // 
+            // txtNombreUsuario
+            // 
+            this.txtNombreUsuario.Location = new System.Drawing.Point(161, 69);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(315, 20);
+            this.txtNombreUsuario.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(490, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Estado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(490, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Observación";
             // 
             // label10
             // 
@@ -300,156 +443,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Perfil";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(490, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Observación";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(490, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Estado";
-            // 
-            // txtNombreUsuario
-            // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(161, 69);
-            this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(315, 20);
-            this.txtNombreUsuario.TabIndex = 12;
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Location = new System.Drawing.Point(161, 155);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(315, 20);
-            this.txtDocumento.TabIndex = 13;
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Location = new System.Drawing.Point(161, 184);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(315, 20);
-            this.txtNombres.TabIndex = 14;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(161, 213);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(315, 20);
-            this.txtApellidos.TabIndex = 15;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(575, 69);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(344, 20);
-            this.txtDireccion.TabIndex = 16;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(575, 98);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(344, 20);
-            this.txtTelefono.TabIndex = 17;
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(575, 126);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(344, 20);
-            this.txtMail.TabIndex = 18;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(575, 155);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(344, 20);
-            this.txtObservacion.TabIndex = 19;
-            // 
-            // cbPerfiles
-            // 
-            this.cbPerfiles.FormattingEnabled = true;
-            this.cbPerfiles.Items.AddRange(new object[] {
-            "Administrador",
-            "Docente",
-            "Secretaria"});
-            this.cbPerfiles.Location = new System.Drawing.Point(161, 98);
-            this.cbPerfiles.Name = "cbPerfiles";
-            this.cbPerfiles.Size = new System.Drawing.Size(315, 21);
-            this.cbPerfiles.TabIndex = 20;
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cbEstado.Location = new System.Drawing.Point(575, 183);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(344, 21);
-            this.cbEstado.TabIndex = 21;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.tableUsuarios);
-            this.panel4.Location = new System.Drawing.Point(21, 266);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(907, 262);
-            this.panel4.TabIndex = 22;
-            // 
-            // tableUsuarios
-            // 
-            this.tableUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableUsuarios.Location = new System.Drawing.Point(3, 3);
-            this.tableUsuarios.Name = "tableUsuarios";
-            this.tableUsuarios.Size = new System.Drawing.Size(901, 255);
-            this.tableUsuarios.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(41, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(191, 25);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Datos de usuario";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(43, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 15);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Contraseña";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(161, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 20);
-            this.textBox1.TabIndex = 25;
-            // 
-            // Form1
+            // CrudUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 543);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "CrudUsuario";
             this.Text = "Gestión Usuarios";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -498,7 +500,7 @@
         private System.Windows.Forms.ComboBox cbPerfiles;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView tableUsuarios;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
     }

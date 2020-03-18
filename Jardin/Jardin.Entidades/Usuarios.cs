@@ -8,27 +8,25 @@ namespace Jardin.Entidades
 {
     public class Usuarios
     {
-        private String codUsuario;
-        private String nombreUsuario;
-        private String contrasena;
-        private String perfil;
-        private String documento;
-        private String nombres;
-        private String apellidos;
-        private String direccion;
-        private String telefono;
-        private String correo;
-        private String observacion;
-        private String estado;
+        private int id;
+        private string nombreUsuario;
+        private string contrasena;
+        private string documento;
+        private string nombres;
+        private string apellidos;
+        private string direccion;
+        private string telefono;
+        private string correo;
+        private string observacion;
+        private int perfil;
+        private int estado;
 
-        public Usuarios(String codUsuario, String nombreUsuario, String contrasena, String perfil, String documento, String nombres,
-            String apellidos, String direccion, String telefono, String correo, String observacion, String estado)
+
+        //constructor para el la gestion de usuarios
+        public Usuarios(int id, string nombreUsuario, string contrasena, int perfil, string documento, string nombres,
+            string apellidos, string direccion, string telefono, string correo, string observacion, int estado)
         {
-
-            this.codUsuario = codUsuario;
-            this.nombreUsuario = nombreUsuario;
-            this.contrasena = contrasena;
-            this.perfil = perfil;
+            this.id = id;
             this.documento = documento;
             this.nombres = nombres;
             this.apellidos = apellidos;
@@ -36,10 +34,15 @@ namespace Jardin.Entidades
             this.telefono = telefono;
             this.correo = correo;
             this.observacion = observacion;
+            this.nombreUsuario = nombreUsuario;
+            this.contrasena = contrasena;
             this.estado = estado;
+            this.perfil = perfil;
         }
 
-        public Usuarios(String nomUsuario, String cont, String perf, String estad)
+
+        //contructor de para el objeto login
+        public Usuarios(string nomUsuario, string cont, int perf, int estad)
         {
             this.nombreUsuario = nomUsuario;
             this.contrasena = cont;
@@ -55,70 +58,70 @@ namespace Jardin.Entidades
 
         //metodos setters
 
-        public void setcodUsuario(String codUsuario)
+        public void setcodUsuario(int id)
         {
 
-            this.codUsuario = codUsuario;
+            this.id = id;
         }
 
-        public void setNombreUsuario(String nombreUsuario)
+        public void setNombreUsuario(string nombreUsuario)
         {
 
             this.nombreUsuario = nombreUsuario;
         }
 
-        public void setContrasena(String contrasena)
+        public void setContrasena(string contrasena)
         {
 
             this.contrasena = contrasena;
 
         }
 
-        public void setPerfil(String perfil)
+        public void setPerfil(int perfil)
         {
 
             this.perfil = perfil;
 
         }
 
-        public void setNombres(String nombres)
+        public void setNombres(string nombres)
         {
 
             this.nombres = nombres;
         }
 
-        public void setApeliidos(String apellidos)
+        public void setApeliidos(string apellidos)
         {
 
             this.apellidos = apellidos;
         }
 
-        public void setDireccion(String direccion)
+        public void setDireccion(string direccion)
         {
 
             this.direccion = direccion;
         }
 
-        public void setTelefono(String telefono)
+        public void setTelefono(string telefono)
         {
 
             this.direccion = telefono;
         }
 
-        public void setCorreo(String correo)
+        public void setCorreo(string correo)
         {
 
             this.correo = correo;
         }
 
-        public void setObservacion(String observacion)
+        public void setObservacion(string observacion)
         {
 
             this.observacion = observacion;
 
         }
 
-        public void setEstado(String estado)
+        public void setEstado(int estado)
         {
 
             this.estado = estado;
@@ -126,71 +129,71 @@ namespace Jardin.Entidades
 
         //metodos getters
 
-        public String getCodUsuario()
+        public int getCodUsuario()
         {
 
-            return this.codUsuario;
+            return this.id;
         }
 
-        public String getNombreUsuario()
+        public string getNombreUsuario()
         {
 
             return this.nombreUsuario;
         }
 
-        public String getContrasena()
+        public string getContrasena()
         {
 
             return contrasena;
         }
 
-        public String getPerfil()
+        public int getPerfil()
         {
 
             return perfil;
 
         }
 
-        public String getNombres()
+        public string getNombres()
         {
 
             return this.nombres;
 
         }
 
-        public String getApellidos()
+        public string getApellidos()
         {
 
             return this.apellidos;
         }
 
-        public String getDireccion()
+        public string getDireccion()
         {
 
             return this.direccion;
 
         }
 
-        public String getTelefono()
+        public string getTelefono()
         {
 
             return this.telefono;
         }
 
-        public String getCorreo()
+        public string getCorreo()
         {
 
             return this.correo;
         }
 
-        public String getObservacion()
+        public string getObservacion()
         {
 
             return this.observacion;
 
         }
 
-        public String getEstado()
+        public int getEstado()
         {
 
             return this.estado;
