@@ -8,9 +8,7 @@ namespace Jardin.Entidades
 {
     public class Usuarios
     {
-        private int id;
-        private string nombreUsuario;
-        private string contrasena;
+        private int id; 
         private string documento;
         private string nombres;
         private string apellidos;
@@ -18,13 +16,16 @@ namespace Jardin.Entidades
         private string telefono;
         private string correo;
         private string observacion;
+        private string nombreUsuario;
+        private string contrasena;
         private int perfil;
         private int estado;
 
 
         //constructor para el la gestion de usuarios
-        public Usuarios(int id, string nombreUsuario, string contrasena, int perfil, string documento, string nombres,
-            string apellidos, string direccion, string telefono, string correo, string observacion, int estado)
+        public Usuarios(int id, string documento, string nombres, string apellidos, 
+            string direccion, string telefono, string correo, string observacion, 
+            string nombreUsuario, string contrasena, int estado, int perfil)
         {
             this.id = id;
             this.documento = documento;

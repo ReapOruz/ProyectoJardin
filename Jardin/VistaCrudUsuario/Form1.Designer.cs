@@ -63,6 +63,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -206,7 +218,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(-1, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(952, 540);
+            this.panel3.Size = new System.Drawing.Size(939, 540);
             this.panel3.TabIndex = 0;
             // 
             // txtContrasena
@@ -258,9 +270,24 @@
             // 
             // tableUsuarios
             // 
+            this.tableUsuarios.AllowUserToDeleteRows = false;
             this.tableUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id,
+            this.documento,
+            this.col_nombres,
+            this.col_apellidos,
+            this.col_direccion,
+            this.col_telefono,
+            this.col_mail,
+            this.col_observacion,
+            this.col_userLogin,
+            this.col_password,
+            this.col_perfil,
+            this.col_estado});
             this.tableUsuarios.Location = new System.Drawing.Point(3, 3);
             this.tableUsuarios.Name = "tableUsuarios";
+            this.tableUsuarios.ReadOnly = true;
             this.tableUsuarios.Size = new System.Drawing.Size(901, 255);
             this.tableUsuarios.TabIndex = 0;
             // 
@@ -443,6 +470,88 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Perfil";
             // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // documento
+            // 
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            this.documento.Width = 110;
+            // 
+            // col_nombres
+            // 
+            this.col_nombres.HeaderText = "Nombres";
+            this.col_nombres.Name = "col_nombres";
+            this.col_nombres.ReadOnly = true;
+            this.col_nombres.Width = 150;
+            // 
+            // col_apellidos
+            // 
+            this.col_apellidos.HeaderText = "Apellidos";
+            this.col_apellidos.Name = "col_apellidos";
+            this.col_apellidos.ReadOnly = true;
+            this.col_apellidos.Width = 150;
+            // 
+            // col_direccion
+            // 
+            this.col_direccion.HeaderText = "Dirección";
+            this.col_direccion.Name = "col_direccion";
+            this.col_direccion.ReadOnly = true;
+            this.col_direccion.Width = 150;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefóno";
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            // 
+            // col_mail
+            // 
+            this.col_mail.HeaderText = "Email";
+            this.col_mail.Name = "col_mail";
+            this.col_mail.ReadOnly = true;
+            this.col_mail.Width = 150;
+            // 
+            // col_observacion
+            // 
+            this.col_observacion.HeaderText = "Observaciones";
+            this.col_observacion.Name = "col_observacion";
+            this.col_observacion.ReadOnly = true;
+            this.col_observacion.Width = 150;
+            // 
+            // col_userLogin
+            // 
+            this.col_userLogin.HeaderText = "Usuario Sistema";
+            this.col_userLogin.Name = "col_userLogin";
+            this.col_userLogin.ReadOnly = true;
+            // 
+            // col_password
+            // 
+            this.col_password.HeaderText = "Contraseña";
+            this.col_password.Name = "col_password";
+            this.col_password.ReadOnly = true;
+            this.col_password.Visible = false;
+            // 
+            // col_perfil
+            // 
+            this.col_perfil.HeaderText = "Perfil";
+            this.col_perfil.Name = "col_perfil";
+            this.col_perfil.ReadOnly = true;
+            this.col_perfil.Visible = false;
+            // 
+            // col_estado
+            // 
+            this.col_estado.HeaderText = "Estado";
+            this.col_estado.Name = "col_estado";
+            this.col_estado.ReadOnly = true;
+            this.col_estado.Visible = false;
+            // 
             // CrudUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +612,18 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_observacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_userLogin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_estado;
     }
 }
 

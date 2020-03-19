@@ -18,6 +18,12 @@ namespace Jardin.Negocio
             return nuevoDAOUsuario.LoguearUsuario(nombreUsuario); ;
         }
 
+        public List<Usuarios> listarUsuarios()
+        {
+            DAOUsuarios daoUser = new DAOUsuarios();
+            return daoUser.listarUsuarios();
+        }
+
 
     }
 }

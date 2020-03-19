@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Jardin.Entidades;
+using Jardin.Negocio;
 
 namespace VistaCrudUsuario
 {
@@ -14,9 +16,20 @@ namespace VistaCrudUsuario
     {
         string accionUsuario = "";
 
+        BLUsuarios blListarUsuarios = new BLUsuarios();
+        List<Usuarios> listaUsers = null;
+        Usuarios user;
+        bool nuevo = false;
+   
+
+
         public CrudUsuario()
         {
             InitializeComponent();
+
+            CargarDatos();
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,9 +46,33 @@ namespace VistaCrudUsuario
             this.cbEstado.Enabled = false;
             this.txtObservacion.Enabled = false;
 
-
-
         }
+
+        private void CargarDatos()
+        {
+            if (listaUsers == null)
+            {
+                listaUsers = blListarUsuarios.listarUsuarios();
+            }
+            if (listaUsers.Count > 0)
+            {
+                this.tableUsuarios.Rows.Clear();
+                for (int i = 0; i < listaUsers.Count; i++)
+                {
+                    tableUsuarios.Rows.Add(listaUsers[i].Id,
+                        listaUsers[i].DocIdentidad,
+                        listaUsers[i].Nombres,
+                        listaUsers[i].Apellidos,
+                        listaUsers[i].Direccion,
+                        listaUsers[i].Telefonos,
+                        listaUsers[i].Correo,
+                        listaUsers[i].Observaciones);
+                }
+            }
+        }
+
+
+
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
