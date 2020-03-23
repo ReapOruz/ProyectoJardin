@@ -18,18 +18,13 @@ namespace VistaCrudUsuario
 
         BLUsuarios blListarUsuarios = new BLUsuarios();
         List<Usuarios> listaUsers = null;
-        Usuarios user;
-        bool nuevo = false;
-   
 
-
+ 
         public CrudUsuario()
         {
             InitializeComponent();
-
             CargarDatos();
-
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,32 +45,45 @@ namespace VistaCrudUsuario
 
         private void CargarDatos()
         {
+
             if (listaUsers == null)
-            {
-                listaUsers = blListarUsuarios.listarUsuarios();
+             {
+                 listaUsers = blListarUsuarios.listarUsuarios();
             }
-            if (listaUsers.Count > 0)
-            {
-                this.tableUsuarios.Rows.Clear();
-                for (int i = 0; i < listaUsers.Count; i++)
-                {
-                    tableUsuarios.Rows.Add(listaUsers[i].Id,
-                        listaUsers[i].DocIdentidad,
-                        listaUsers[i].Nombres,
-                        listaUsers[i].Apellidos,
-                        listaUsers[i].Direccion,
-                        listaUsers[i].Telefonos,
-                        listaUsers[i].Correo,
-                        listaUsers[i].Observaciones);
-                }
-            }
+             if (listaUsers.Count > 0)
+             {
+                 this.tableUsuarios.Rows.Clear();
+                 for (int i = 0; i < listaUsers.Count; i++)
+                 {
+              
+                   this.tableUsuarios.Rows.Add(listaUsers[i].getId(),
+                                               listaUsers[i].getDocumento(),
+                                               listaUsers[i].getNombres(),
+                                               listaUsers[i].getApellidos(),
+                                               listaUsers[i].getDireccion(),
+                                               listaUsers[i].getTelefono(),
+                                               listaUsers[i].getCorreo(),
+                                               listaUsers[i].getObservacion(),
+                                               listaUsers[i].getNombreUsuario(),
+                                               listaUsers[i].getContrasena(),
+                                               listaUsers[i].getPerfil(),
+                                               listaUsers[i].getEstado());
+
+                 }
+             }
+
         }
-
-
-
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void GuardarCambios_Click(object sender, EventArgs e)
+        {
+
+            
+
 
         }
     }

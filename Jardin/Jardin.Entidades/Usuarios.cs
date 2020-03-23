@@ -130,11 +130,18 @@ namespace Jardin.Entidades
 
         //metodos getters
 
-        public int getCodUsuario()
+        public int getId()
         {
 
             return this.id;
         }
+
+        public string getDocumento()
+        {
+
+            return this.documento;
+        }
+        
 
         public string getNombreUsuario()
         {

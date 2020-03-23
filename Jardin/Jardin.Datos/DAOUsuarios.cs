@@ -54,43 +54,49 @@ namespace Jardin.Datos
             return oUsuario;
         }
 
-        //Listar usuario exsitentes en la base de datos
+        //Listar usuarios existentes
 
         public List<Usuarios> listarUsuarios()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
 
-            using (SqlConnection con = new SqlConnection(cadenaConexion))
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("ListarUsuarios",con);
+                SqlCommand cmd = new SqlCommand("pa_ListarUsuarios",con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if(dr != null && dr.HasRows)
                 {
 
-                    int id = Convert.ToInt32(dr["Id"]);
-                    string doc = (string)dr["Documento"];
-                    string nom = (string)dr["Nombres"];
-                    string apell = (string)dr["Apellidos"];
-                    string dir = (string)dr["Direccion"];
-                    string tel = (string)dr["Telefono"];
-                    string mail = (string)dr["Mail"];
-                    string obser = (string)dr["Observacion"];
-                    string uslog = (string)dr["UsuarioLogin"];
-                    string pass = (string)dr["Contrasena"];
-                    int state = Convert.ToInt32(dr["Estado"]);
-                    int perf = Convert.ToInt32(dr["Perfil"]);
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_usuario"]);
+                        string doc = ((string)dr["documento"]).Trim();
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        string dir = ((string)dr["direccion"]).Trim();
+                        string tel = ((string)dr["telefono"]).Trim();
+                        string mail = ((string)dr["correo"]).Trim();
+                        string obser = ((string)dr["observacion"]).Trim();
+                        string uslog = ((string)dr["login"]).Trim();
+                        string pass = ((string)dr["password"]).Trim();
+                        int state = Convert.ToInt32(dr["estado"]);
+                        int perf = Convert.ToInt32(dr["perfil"]);
 
-                    Usuarios user = new Usuarios(id,doc,nom,apell,dir,tel,mail,obser,uslog,pass,state,perf);
+                        Usuarios user = new Usuarios(id, doc, nom, apell, dir,
+                                   tel, mail, obser, uslog, pass, state, perf);
 
-                    listaUsuarios.Add(user);
+                        listaUsuarios.Add(user);
+
+                    }
 
                 }
 
             }
-                return listaUsuarios;
+
+            return listaUsuarios;
         }
 
     }

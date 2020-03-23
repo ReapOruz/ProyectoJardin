@@ -43,6 +43,18 @@
             this.GuardarCambios = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableUsuarios = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.cbPerfiles = new System.Windows.Forms.ComboBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -63,18 +75,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -259,6 +259,7 @@
             this.GuardarCambios.TabIndex = 5;
             this.GuardarCambios.Text = "Guardar";
             this.GuardarCambios.UseVisualStyleBackColor = false;
+            this.GuardarCambios.Click += new System.EventHandler(this.GuardarCambios_Click);
             // 
             // panel4
             // 
@@ -290,6 +291,88 @@
             this.tableUsuarios.ReadOnly = true;
             this.tableUsuarios.Size = new System.Drawing.Size(901, 255);
             this.tableUsuarios.TabIndex = 0;
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // documento
+            // 
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            this.documento.Width = 110;
+            // 
+            // col_nombres
+            // 
+            this.col_nombres.HeaderText = "Nombres";
+            this.col_nombres.Name = "col_nombres";
+            this.col_nombres.ReadOnly = true;
+            this.col_nombres.Width = 150;
+            // 
+            // col_apellidos
+            // 
+            this.col_apellidos.HeaderText = "Apellidos";
+            this.col_apellidos.Name = "col_apellidos";
+            this.col_apellidos.ReadOnly = true;
+            this.col_apellidos.Width = 150;
+            // 
+            // col_direccion
+            // 
+            this.col_direccion.HeaderText = "Dirección";
+            this.col_direccion.Name = "col_direccion";
+            this.col_direccion.ReadOnly = true;
+            this.col_direccion.Width = 150;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefóno";
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            // 
+            // col_mail
+            // 
+            this.col_mail.HeaderText = "Email";
+            this.col_mail.Name = "col_mail";
+            this.col_mail.ReadOnly = true;
+            this.col_mail.Width = 150;
+            // 
+            // col_observacion
+            // 
+            this.col_observacion.HeaderText = "Observaciones";
+            this.col_observacion.Name = "col_observacion";
+            this.col_observacion.ReadOnly = true;
+            this.col_observacion.Width = 150;
+            // 
+            // col_userLogin
+            // 
+            this.col_userLogin.HeaderText = "Usuario Sistema";
+            this.col_userLogin.Name = "col_userLogin";
+            this.col_userLogin.ReadOnly = true;
+            // 
+            // col_password
+            // 
+            this.col_password.HeaderText = "Contraseña";
+            this.col_password.Name = "col_password";
+            this.col_password.ReadOnly = true;
+            this.col_password.Visible = false;
+            // 
+            // col_perfil
+            // 
+            this.col_perfil.HeaderText = "Perfil";
+            this.col_perfil.Name = "col_perfil";
+            this.col_perfil.ReadOnly = true;
+            this.col_perfil.Visible = false;
+            // 
+            // col_estado
+            // 
+            this.col_estado.HeaderText = "Estado";
+            this.col_estado.Name = "col_estado";
+            this.col_estado.ReadOnly = true;
+            this.col_estado.Visible = false;
             // 
             // cbEstado
             // 
@@ -469,88 +552,6 @@
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Perfil";
-            // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "Id";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Visible = false;
-            // 
-            // documento
-            // 
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            this.documento.ReadOnly = true;
-            this.documento.Width = 110;
-            // 
-            // col_nombres
-            // 
-            this.col_nombres.HeaderText = "Nombres";
-            this.col_nombres.Name = "col_nombres";
-            this.col_nombres.ReadOnly = true;
-            this.col_nombres.Width = 150;
-            // 
-            // col_apellidos
-            // 
-            this.col_apellidos.HeaderText = "Apellidos";
-            this.col_apellidos.Name = "col_apellidos";
-            this.col_apellidos.ReadOnly = true;
-            this.col_apellidos.Width = 150;
-            // 
-            // col_direccion
-            // 
-            this.col_direccion.HeaderText = "Dirección";
-            this.col_direccion.Name = "col_direccion";
-            this.col_direccion.ReadOnly = true;
-            this.col_direccion.Width = 150;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "Telefóno";
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            // 
-            // col_mail
-            // 
-            this.col_mail.HeaderText = "Email";
-            this.col_mail.Name = "col_mail";
-            this.col_mail.ReadOnly = true;
-            this.col_mail.Width = 150;
-            // 
-            // col_observacion
-            // 
-            this.col_observacion.HeaderText = "Observaciones";
-            this.col_observacion.Name = "col_observacion";
-            this.col_observacion.ReadOnly = true;
-            this.col_observacion.Width = 150;
-            // 
-            // col_userLogin
-            // 
-            this.col_userLogin.HeaderText = "Usuario Sistema";
-            this.col_userLogin.Name = "col_userLogin";
-            this.col_userLogin.ReadOnly = true;
-            // 
-            // col_password
-            // 
-            this.col_password.HeaderText = "Contraseña";
-            this.col_password.Name = "col_password";
-            this.col_password.ReadOnly = true;
-            this.col_password.Visible = false;
-            // 
-            // col_perfil
-            // 
-            this.col_perfil.HeaderText = "Perfil";
-            this.col_perfil.Name = "col_perfil";
-            this.col_perfil.ReadOnly = true;
-            this.col_perfil.Visible = false;
-            // 
-            // col_estado
-            // 
-            this.col_estado.HeaderText = "Estado";
-            this.col_estado.Name = "col_estado";
-            this.col_estado.ReadOnly = true;
-            this.col_estado.Visible = false;
             // 
             // CrudUsuario
             // 
