@@ -50,7 +50,11 @@ namespace Jardin.Datos
 
                     oUsuario = new Usuarios(user,password,perfil,estado);
                 }
+
+                con.Close();
             }
+
+         
             return oUsuario;
         }
 
@@ -59,6 +63,7 @@ namespace Jardin.Datos
         public List<Usuarios> listarUsuarios()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
+            Usuarios user;
 
             using (SqlConnection con = new SqlConnection(CadenaConexion))
             {
@@ -85,8 +90,8 @@ namespace Jardin.Datos
                         int state = Convert.ToInt32(dr["estado"]);
                         int perf = Convert.ToInt32(dr["perfil"]);
 
-                        Usuarios user = new Usuarios(id, doc, nom, apell, dir,
-                                   tel, mail, obser, uslog, pass, state, perf);
+                        user = new Usuarios(id, doc, nom, apell, dir,
+                                   tel, mail, obser, uslog, pass, perf, state);
 
                         listaUsuarios.Add(user);
 
@@ -94,9 +99,88 @@ namespace Jardin.Datos
 
                 }
 
+                con.Close();
             }
 
             return listaUsuarios;
+        }
+
+        public List<Usuarios> consultarUsuario(string documento)
+        {
+            Usuarios user;
+            List<Usuarios> listaUsuarios = new List<Usuarios>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_consultarUsuario", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@docUsuario", documento);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+
+                        int id = Convert.ToInt32(dr["id_usuario"]);
+                        string doc = ((string)dr["documento"]).Trim();
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        string dir = ((string)dr["direccion"]).Trim();
+                        string tel = ((string)dr["telefono"]).Trim();
+                        string mail = ((string)dr["correo"]).Trim();
+                        string obser = ((string)dr["observacion"]).Trim();
+                        string uslog = ((string)dr["login"]).Trim();
+                        string pass = ((string)dr["password"]).Trim();
+                        int state = Convert.ToInt32(dr["estado"]);
+                        int perf = Convert.ToInt32(dr["perfil"]);
+
+                        user = new Usuarios(id, doc, nom, apell, dir,
+                                   tel, mail, obser, uslog, pass, perf, state);
+
+
+                        listaUsuarios.Add(user);
+
+                    }
+                         
+                }
+
+                con.Close();
+            }
+
+            return listaUsuarios;
+
+        }
+
+
+        public int insertarUsuario(Usuarios user)
+        {
+            int n = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+               
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("pa_insertarUsuario", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@documento", user.getDocumento());
+                    cmd.Parameters.AddWithValue("@nombres", user.getNombres());
+                    cmd.Parameters.AddWithValue("@apellidos", user.getApellidos());
+                    cmd.Parameters.AddWithValue("@direccion", user.getDireccion());
+                    cmd.Parameters.AddWithValue("@telefono", user.getTelefono());
+                    cmd.Parameters.AddWithValue("@mail", user.getCorreo());
+                    cmd.Parameters.AddWithValue("@observacion", user.getObservacion());
+                    cmd.Parameters.AddWithValue("@loginUser", user.getNombreUsuario());
+                    cmd.Parameters.AddWithValue("@password", user.getContrasena());
+                    cmd.Parameters.AddWithValue("@estado", user.getEstado());
+                    cmd.Parameters.AddWithValue("@perfil", user.getPerfil());
+
+                    n = cmd.ExecuteNonQuery();
+       
+                    con.Close();
+                
+            }
+
+            return n;
         }
 
     }

@@ -12,7 +12,7 @@ namespace Jardin.Negocio
     public class BLUsuarios
     {
 
-        public Usuarios Loguear(String nombreUsuario)
+        public Usuarios Loguear(string nombreUsuario)
         {
             DAOUsuarios nuevoDAOUsuario = new DAOUsuarios();
             return nuevoDAOUsuario.LoguearUsuario(nombreUsuario); ;
@@ -22,6 +22,20 @@ namespace Jardin.Negocio
         {
             DAOUsuarios daoUser = new DAOUsuarios();
             return daoUser.listarUsuarios();
+        }
+
+        public List<Usuarios> consultarUsuario(string documento)
+        {
+
+            DAOUsuarios daoUser = new DAOUsuarios();
+            return daoUser.consultarUsuario(documento);
+
+        }
+
+        public int insertarUsuario(Usuarios user)
+        {
+            DAOUsuarios daoUser = new DAOUsuarios();
+            return daoUser.insertarUsuario(user);
         }
 
 

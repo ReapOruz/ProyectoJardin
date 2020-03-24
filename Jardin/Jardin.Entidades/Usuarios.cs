@@ -25,7 +25,7 @@ namespace Jardin.Entidades
         //constructor para el la gestion de usuarios
         public Usuarios(int id, string documento, string nombres, string apellidos, 
             string direccion, string telefono, string correo, string observacion, 
-            string nombreUsuario, string contrasena, int estado, int perfil)
+            string nombreUsuario, string contrasena, int perfil, int estado)
         {
             this.id = id;
             this.documento = documento;
@@ -37,8 +37,26 @@ namespace Jardin.Entidades
             this.observacion = observacion;
             this.nombreUsuario = nombreUsuario;
             this.contrasena = contrasena;
-            this.estado = estado;
             this.perfil = perfil;
+            this.estado = estado;
+        }
+        public Usuarios(string documento, string nombres, string apellidos,
+                        string direccion, string telefono, string correo, string observacion,
+                        string nombreUsuario, string contrasena,int perfil,int estado)
+        {
+
+            this.documento = documento;
+            this.nombres = nombres;
+            this.apellidos = apellidos;
+            this.direccion = direccion;
+            this.telefono = telefono;
+            this.correo = correo;
+            this.observacion = observacion;
+            this.nombreUsuario = nombreUsuario;
+            this.contrasena = contrasena;
+            this.perfil = perfil;
+            this.estado = estado;
+
         }
 
 
