@@ -12,3 +12,9 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csprojAssemblyReference.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\bin\Debug\Jardin.Entidades.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csprojAssemblyReference.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.pdb

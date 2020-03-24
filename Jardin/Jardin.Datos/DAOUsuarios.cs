@@ -183,5 +183,38 @@ namespace Jardin.Datos
             return n;
         }
 
+        public int actualizarUsuario(Usuarios user)
+        {
+            int n = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_actualizarUsuario", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_usuario", user.getId());
+                cmd.Parameters.AddWithValue("@documento", user.getDocumento());
+                cmd.Parameters.AddWithValue("@nombres", user.getNombres());
+                cmd.Parameters.AddWithValue("@apellidos", user.getApellidos());
+                cmd.Parameters.AddWithValue("@direccion", user.getDireccion());
+                cmd.Parameters.AddWithValue("@telefono", user.getTelefono());
+                cmd.Parameters.AddWithValue("@mail", user.getCorreo());
+                cmd.Parameters.AddWithValue("@observacion", user.getObservacion());
+                cmd.Parameters.AddWithValue("@loginUser", user.getNombreUsuario());
+                cmd.Parameters.AddWithValue("@password", user.getContrasena());
+                cmd.Parameters.AddWithValue("@estado", user.getEstado());
+                cmd.Parameters.AddWithValue("@perfil", user.getPerfil());
+
+                n = cmd.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+
+            return n;
+        }
+
+
     }
 }

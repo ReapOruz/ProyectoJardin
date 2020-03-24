@@ -14,3 +14,20 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Entidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Datos.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csproj.CopyComplete
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\VistaCrudUsuario.exe.config
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\VistaCrudUsuario.exe
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\VistaCrudUsuario.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Entidades.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Negocio.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Datos.dll
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Negocio.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Entidades.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\bin\Debug\Jardin.Datos.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csprojAssemblyReference.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.CrudUsuario.resources
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.Properties.Resources.resources
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csproj.GenerateResource.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csproj.CoreCompileInputs.cache
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.csproj.CopyComplete
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.exe
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin\VistaCrudUsuario\obj\Debug\VistaCrudUsuario.pdb

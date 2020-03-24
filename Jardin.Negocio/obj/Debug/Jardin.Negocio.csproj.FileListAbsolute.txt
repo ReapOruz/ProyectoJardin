@@ -38,3 +38,4 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.pdb
+C:\Users\despinog\OneDrive - everis\Escritorio\ProyectoUniversidad\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CoreCompileInputs.cache

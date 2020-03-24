@@ -38,6 +38,12 @@ namespace Jardin.Negocio
             return daoUser.insertarUsuario(user);
         }
 
+        public int actualizarUsuario(Usuarios user)
+        {
+            DAOUsuarios daoUser = new DAOUsuarios();
+            return daoUser.actualizarUsuario(user);
+        }
+
 
     }
 }

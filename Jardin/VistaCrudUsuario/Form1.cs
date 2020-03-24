@@ -104,8 +104,16 @@ namespace VistaCrudUsuario
 
                     break;
 
-                /*case "Modificar":*/
+                case "Modificar":
 
+                    int fila = tableUsuarios.CurrentRow.Index;
+                    int id = int.Parse(tableUsuarios.Rows[fila].Cells[0].Value.ToString());
+
+                    user = new Usuarios(id,doc, nom, ap, dir, tel, mail, obs, us, con, per, est);
+
+                    n = blUser.actualizarUsuario(user);
+
+                    break;
             }
 
             if (n > 0)
@@ -119,10 +127,6 @@ namespace VistaCrudUsuario
                 deshabilitarTablaUsuarios();
              
             }
-
-
-            
-
         }
 
         private void tableUsuarios_fullRow()
@@ -410,5 +414,12 @@ namespace VistaCrudUsuario
             
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
     }
 }
