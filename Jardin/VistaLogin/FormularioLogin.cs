@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Jardin.Entidades;
 using Jardin.Negocio;
+using MenuOpciones;
+
+
 
 namespace VistaLogin
 {
@@ -16,6 +19,11 @@ namespace VistaLogin
     {
         private String usuarioName = "";
         private String contrasena = "";
+        private const int ACTIVO = 2;
+        private const int INACTIVO = 1;
+        private const int PERFIL_ADMINISTRADOR = 1;
+        private const int PERFIL_DOCENTE = 2;
+        private const int PERFIL_SECRETARIA = 3;
         Usuarios usuario;
 
         public VistaLogin()
@@ -41,34 +49,40 @@ namespace VistaLogin
                 if (!usuarioName.Equals(""))
                 {
 
-                    if (usuarioName.Equals(us) && !contrasena.Equals(cont))
+                    if (!usuarioName.Equals(us) || !contrasena.Equals(cont))
                     {
-                        MessageBox.Show("Contraseña incorrecta");
+                        MessageBox.Show("Usuario o Contraseña incorrectos");
 
                     }
                     else
                     {
                         if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil == 1 && estate==1)
+                            && perfil == PERFIL_ADMINISTRADOR && estate==ACTIVO)
                         {
-                            MessageBox.Show("Logueo exitoso para ingresar a perfil administrador");
+
+                            FormAdministrador menuAdmin = new FormAdministrador();
+                            this.Hide();
+                            menuAdmin.ShowDialog();
+                            this.Close();
 
                         }
                         else if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil==2 && estate==1)
+                            && perfil==PERFIL_DOCENTE && estate== ACTIVO)
                         {
 
                             MessageBox.Show("Logueo exitoso para ingresar a perfil docente");
 
                         }
                         else if (usuarioName.Equals(us) && contrasena.Equals(cont)
-                            && perfil==3 && estate==1)
+                            && perfil==PERFIL_SECRETARIA && estate== ACTIVO)
                         {
                             MessageBox.Show("Logueo exitoso para ingresar a perfil seceretaria");
 
+
+
                         }
 
-                        else if (estate.Equals("0"))
+                        else if (estate == INACTIVO)
                         {
 
                             MessageBox.Show("El usuario no se encuentra activo, contacte con el administrador");
@@ -85,9 +99,10 @@ namespace VistaLogin
             }
             catch
             {
-                MessageBox.Show("El usuario no se encuentra registrado");
+                
             }
 
         }
+
     }
 }

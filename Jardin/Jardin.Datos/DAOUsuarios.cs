@@ -105,6 +105,7 @@ namespace Jardin.Datos
             return listaUsuarios;
         }
 
+        //consulta a un unico usuario por docuemento
         public List<Usuarios> consultarUsuario(string documento)
         {
             Usuarios user;
@@ -214,7 +215,6 @@ namespace Jardin.Datos
 
             return n;
         }
-
 
     }
 }

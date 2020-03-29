@@ -62,3 +62,28 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.csproj.CopyComplete
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion_real\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.VistaLogin.resources
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.Properties.Resources.resources
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.csproj.GenerateResource.cache
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaLogin.exe.config
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaLogin.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaLogin.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Datos.dll
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Negocio.dll
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuOpciones.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuSecretaria.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Negocio.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Datos.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuOpciones.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuOpciones.exe.config
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuSecretaria.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\MenuSecretaria.exe.config
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.csproj.CopyComplete
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\obj\Debug\VistaLogin.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaCrudUsuario.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaCrudUsuario.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaLogin\bin\Debug\VistaCrudUsuario.exe.config

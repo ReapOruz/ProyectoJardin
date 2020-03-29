@@ -88,6 +88,14 @@
       <Project>{35bd6069-1d71-4bf7-8807-65d0245137ac}</Project>
       <Name>Jardin.Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MenuOpciones\Menu.Administrador.csproj">
+      <Project>{f0ef5e0b-caf8-489f-8634-23582e4d4221}</Project>
+      <Name>Menu.Administrador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MenuSecretaria\Menu.Secretaria.csproj">
+      <Project>{3cb15b18-a2dd-4a4f-a1b0-06aac7d014a3}</Project>
+      <Name>Menu.Secretaria</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

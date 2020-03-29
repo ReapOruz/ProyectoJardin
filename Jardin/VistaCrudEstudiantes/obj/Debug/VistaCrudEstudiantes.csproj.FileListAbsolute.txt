@@ -1,0 +1,9 @@
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\bin\Debug\VistaCrudEstudiantes.exe.config
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\bin\Debug\VistaCrudEstudiantes.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\bin\Debug\VistaCrudEstudiantes.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.Properties.Resources.resources
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.csproj.GenerateResource.cache
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.exe
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.pdb
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\VistaCrudEstudiantes\obj\Debug\VistaCrudEstudiantes.FormCrudEstudiantes.resources

@@ -16,7 +16,7 @@ namespace VistaCrudUsuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CrudUsuario());
+            Application.Run(new CrudUsuarios());
         }
     }
 }
