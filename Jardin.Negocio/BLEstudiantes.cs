@@ -32,5 +32,26 @@ namespace Jardin.Negocio
             return estudiante.actualizarEstudiantes(student);
         }
 
+        public List<Estudiantes> listarGruposEstudiantes()
+        {
+            DAOestudiantes estudiante = new DAOestudiantes();
+            return estudiante.listarGruposEstudiantes();
+        }
+
+        public int asignarGrupo(Estudiantes estudent)
+        {
+            DAOestudiantes estudiante = new DAOestudiantes();
+            return estudiante.asignarGrupo(estudent);
+
+        }
+
+        public int contarEstudiantesGrupo(int grupo)
+        {
+            DAOestudiantes estudiante = new DAOestudiantes();
+            return estudiante.totalEstudiantesGrupo(grupo);
+
+
+        }
+
     }
 }

@@ -19,10 +19,27 @@ namespace Jardin.Entidades
         private string correo;
         private string observacion;
         private string ocupacionAcudiente;
+        private string grupo;
+        private int idGrupo;
 
         public Estudiantes() { 
         
        
+        }
+
+        public Estudiantes(int id, int grupo)
+        {
+            this.id = id;
+            this.IdGrupo = grupo;
+        }
+
+        public Estudiantes(int id, string nombre, string apellido,string grupo)
+        {
+            this.id = id;
+            this.nombres = nombre;
+            this.apellidos = apellido;
+            this.Grupo = grupo;
+
         }
 
         public Estudiantes(int id,string nombre,string apellido,string fechaNac,string acudiente, string direccion, 
@@ -64,5 +81,7 @@ namespace Jardin.Entidades
         public string Correo { get => correo; set => correo = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public string OcupacionAcudiente { get => ocupacionAcudiente; set => ocupacionAcudiente = value; }
+        public string Grupo { get => grupo; set => grupo = value; }
+        public int IdGrupo { get => idGrupo; set => idGrupo = value; }
     }
 }

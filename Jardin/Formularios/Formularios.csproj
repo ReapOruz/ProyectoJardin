@@ -58,6 +58,12 @@
     <Compile Include="CrudUsuario\CrudUsuario.Designer.cs">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GruposEstudiantes\GruposEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GruposEstudiantes\GruposEstudiantes.Designer.cs">
+      <DependentUpon>GruposEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuSecretaria\MainSecretaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuario\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GruposEstudiantes\GruposEstudiantes.resx">
+      <DependentUpon>GruposEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuSecretaria\MainSecretaria.resx">
       <DependentUpon>MainSecretaria.cs</DependentUpon>

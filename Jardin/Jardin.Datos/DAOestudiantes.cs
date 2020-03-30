@@ -139,5 +139,87 @@ namespace Jardin.Datos
             return n;
         }
 
+        public List<Estudiantes> listarGruposEstudiantes()
+        {
+            List<Estudiantes> listaEstuduiantes = new List<Estudiantes>();
+            Estudiantes estudent;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_ListarGruposEstudiantes", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_alumno"]);
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        string grupo = ((string)dr["nombre_grupo"]).Trim();
+
+                        estudent = new Estudiantes(id, nom, apell,grupo);
+
+                        listaEstuduiantes.Add(estudent);
+
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaEstuduiantes;
+        }
+
+
+        public int asignarGrupo(Estudiantes student)
+        {
+            int n = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_asignarGrupoEstudiante", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", student.Id);
+                cmd.Parameters.AddWithValue("@grupo", student.IdGrupo);
+                n = cmd.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+
+            return n;
+        }
+
+        public int totalEstudiantesGrupo(int grupo)
+        {
+            int totalGrupo = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_contarEstuiantesGrupo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@grupo", grupo);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    totalGrupo = Convert.ToInt32(dr["totalGrupo"]);
+ 
+                }
+
+                con.Close();
+            }
+
+            return totalGrupo;
+        }
+
     }
+
 }

@@ -25,5 +25,17 @@ namespace Formularios
 
             crudEst.Show();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+            GruposEstudiantes grupos = new GruposEstudiantes();
+
+            this.Dispose();
+
+            grupos.Show();
+
+
+        }
     }
 }

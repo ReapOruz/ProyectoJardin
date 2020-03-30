@@ -18,3 +18,4 @@ C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.pdb
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MainSecretaria.resources
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.CrudEstudiantes.resources
+C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.GruposEstudiantes.resources
