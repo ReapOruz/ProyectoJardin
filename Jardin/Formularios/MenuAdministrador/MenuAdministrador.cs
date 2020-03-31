@@ -33,5 +33,15 @@ namespace Formularios
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            GestionGrupos gesGrupo = new GestionGrupos();
+            this.Dispose();
+            gesGrupo.Show();
+
+
+        }
     }
 }

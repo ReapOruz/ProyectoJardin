@@ -97,7 +97,7 @@ namespace Formularios
                 {
                     int fila = this.tableGrupos.CurrentRow.Index;
                     int id = int.Parse(tableGrupos.Rows[fila].Cells[0].Value.ToString());
-                    int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 2;
+                    int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 1;
                     grupoNombre = this.cbListaGrupos.SelectedItem.ToString();
 
                     Estudiantes estudent = new Estudiantes(id, grupo);
@@ -152,7 +152,7 @@ namespace Formularios
 
             bool lleno = false;
 
-            int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 2;
+            int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 1;
             cantidadEstuiantesGrupo = blestudiante.contarEstudiantesGrupo(grupo);
 
 

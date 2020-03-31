@@ -67,6 +67,124 @@ namespace Jardin.Datos
             return listaGrupos;
         }
 
+        public List<Grupos> listarGruposPorGrado(int id_grado)
+        {
+            List<Grupos> listaGrupos = new List<Grupos>();
+            Grupos grup;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_ListarGruposPorGrado", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idGrado", id_grado);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_grupo"]);
+                        string nom = ((string)dr["nombre_grupo"]).Trim();
+
+                        grup = new Grupos(id, nom);
+
+                        listaGrupos.Add(grup);
+
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaGrupos;
+        }
+
+
+        public int crearGrupo(Grupos grupo)
+        {
+            int n = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_insertarGrupo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@nombreGrupo", grupo.Nombre);
+                cmd.Parameters.AddWithValue("@idGrado", grupo.Id_grado);
+                cmd.Parameters.AddWithValue("@cantidadAlumnos", grupo.CantidadAlumnos);
+
+                n = cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            return n;
+        }
+
+        public List<Grupos> consultarGrupoPorNombre(string nombreGrupo)
+        {
+            List<Grupos> listaGrupos = new List<Grupos>();
+            Grupos grup;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_consultaGrupoPorNombre", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreGrupo", nombreGrupo);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+
+                    while (dr.Read())
+                    {
+                        string nom = ((string)dr["nombre_grupo"]).Trim();
+                        int cantidadAlumnos = Convert.ToInt32(dr["cantidad_alumnos"]);
+                        int idGrado = Convert.ToInt32(dr["id_grado"]);
+
+                        grup = new Grupos(nom,idGrado,cantidadAlumnos);
+
+                        listaGrupos.Add(grup);
+
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaGrupos;
+        }
+
+        
+
+        public int modificarGrupo(Grupos grupo)
+        {
+            int n = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_modificarGrupo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreGrupo", grupo.Nombre);
+                cmd.Parameters.AddWithValue("@nombreAnterior", grupo.NombreAnterior);
+                cmd.Parameters.AddWithValue("@idGrado", grupo.Id_grado);
+                cmd.Parameters.AddWithValue("@cantidadAlumnos", grupo.CantidadAlumnos);
+
+                n = cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            return n;
+        }
+
 
     }
 }

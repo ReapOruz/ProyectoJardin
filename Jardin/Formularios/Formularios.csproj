@@ -58,6 +58,12 @@
     <Compile Include="CrudUsuario\CrudUsuario.Designer.cs">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionGrupos\GestionGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionGrupos\GestionGrupos.Designer.cs">
+      <DependentUpon>GestionGrupos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GruposEstudiantes\GruposEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuario\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionGrupos\GestionGrupos.resx">
+      <DependentUpon>GestionGrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GruposEstudiantes\GruposEstudiantes.resx">
       <DependentUpon>GruposEstudiantes.cs</DependentUpon>
@@ -132,6 +141,10 @@
     <ProjectReference Include="..\Jardin.Entidades\Jardin.Entidades.csproj">
       <Project>{35bd6069-1d71-4bf7-8807-65d0245137ac}</Project>
       <Name>Jardin.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jardin.Utilidades\Jardin.Utilidades.csproj">
+      <Project>{a9e36e43-19fb-479c-ab40-fefc40a394f2}</Project>
+      <Name>Jardin.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
