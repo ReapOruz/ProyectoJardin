@@ -38,11 +38,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableGrupos = new System.Windows.Forms.DataGridView();
             this.id_alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo_Actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbTotalEstudiantesGrupo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,8 +60,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lbTotalEstudiantesGrupo);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnVolver);
             this.panel2.Controls.Add(this.btnAgregarAgrupo);
             this.panel2.Controls.Add(this.label2);
@@ -79,9 +76,9 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(26, 421);
+            this.btnVolver.Location = new System.Drawing.Point(46, 430);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(185, 48);
+            this.btnVolver.Size = new System.Drawing.Size(120, 36);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -104,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 70);
+            this.label2.Location = new System.Drawing.Point(213, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 18);
             this.label2.TabIndex = 3;
@@ -113,7 +110,7 @@
             // cbListaGrupos
             // 
             this.cbListaGrupos.FormattingEnabled = true;
-            this.cbListaGrupos.Location = new System.Drawing.Point(233, 98);
+            this.cbListaGrupos.Location = new System.Drawing.Point(216, 98);
             this.cbListaGrupos.Name = "cbListaGrupos";
             this.cbListaGrupos.Size = new System.Drawing.Size(341, 21);
             this.cbListaGrupos.TabIndex = 2;
@@ -132,9 +129,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.tableGrupos);
-            this.panel3.Location = new System.Drawing.Point(233, 145);
+            this.panel3.Location = new System.Drawing.Point(216, 142);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(634, 327);
+            this.panel3.Size = new System.Drawing.Size(648, 327);
             this.panel3.TabIndex = 0;
             // 
             // tableGrupos
@@ -146,13 +143,14 @@
             this.tableGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_alumno,
+            this.doc,
             this.Nombres,
             this.Apellidos,
             this.Grupo_Actual});
             this.tableGrupos.Location = new System.Drawing.Point(3, 3);
             this.tableGrupos.Name = "tableGrupos";
             this.tableGrupos.ReadOnly = true;
-            this.tableGrupos.Size = new System.Drawing.Size(628, 321);
+            this.tableGrupos.Size = new System.Drawing.Size(644, 321);
             this.tableGrupos.TabIndex = 0;
             // 
             // id_alumno
@@ -162,47 +160,33 @@
             this.id_alumno.ReadOnly = true;
             this.id_alumno.Visible = false;
             // 
+            // doc
+            // 
+            this.doc.HeaderText = "Documento";
+            this.doc.Name = "doc";
+            this.doc.ReadOnly = true;
+            this.doc.Width = 150;
+            // 
             // Nombres
             // 
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 200;
+            this.Nombres.Width = 150;
             // 
             // Apellidos
             // 
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 200;
+            this.Apellidos.Width = 150;
             // 
             // Grupo_Actual
             // 
             this.Grupo_Actual.HeaderText = "Grupo Actual";
             this.Grupo_Actual.Name = "Grupo_Actual";
             this.Grupo_Actual.ReadOnly = true;
-            this.Grupo_Actual.Width = 200;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Total Estudiantes por grupo";
-            // 
-            // lbTotalEstudiantesGrupo
-            // 
-            this.lbTotalEstudiantesGrupo.AutoSize = true;
-            this.lbTotalEstudiantesGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalEstudiantesGrupo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lbTotalEstudiantesGrupo.Location = new System.Drawing.Point(102, 190);
-            this.lbTotalEstudiantesGrupo.Name = "lbTotalEstudiantesGrupo";
-            this.lbTotalEstudiantesGrupo.Size = new System.Drawing.Size(16, 16);
-            this.lbTotalEstudiantesGrupo.TabIndex = 7;
-            this.lbTotalEstudiantesGrupo.Text = "0";
+            this.Grupo_Actual.Width = 150;
             // 
             // GruposEstudiantes
             // 
@@ -233,10 +217,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbListaGrupos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_alumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grupo_Actual;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTotalEstudiantesGrupo;
     }
 }

@@ -37,6 +37,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.volver = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDocuementoEstudiante = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtFechaNacEstudiante = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtOcupacionAcudiente = new System.Windows.Forms.TextBox();
@@ -45,16 +47,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableEstudiantes = new System.Windows.Forms.DataGridView();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OcupacionAcudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -69,6 +61,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OcupacionAcudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -173,6 +176,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtDocuementoEstudiante);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txtFechaNacEstudiante);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtOcupacionAcudiente);
@@ -199,9 +204,26 @@
             this.panel3.Size = new System.Drawing.Size(950, 543);
             this.panel3.TabIndex = 1;
             // 
+            // txtDocuementoEstudiante
+            // 
+            this.txtDocuementoEstudiante.Location = new System.Drawing.Point(191, 137);
+            this.txtDocuementoEstudiante.Name = "txtDocuementoEstudiante";
+            this.txtDocuementoEstudiante.Size = new System.Drawing.Size(285, 20);
+            this.txtDocuementoEstudiante.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 15);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Documento";
+            // 
             // txtFechaNacEstudiante
             // 
-            this.txtFechaNacEstudiante.Location = new System.Drawing.Point(191, 164);
+            this.txtFechaNacEstudiante.Location = new System.Drawing.Point(191, 166);
             this.txtFechaNacEstudiante.Name = "txtFechaNacEstudiante";
             this.txtFechaNacEstudiante.Size = new System.Drawing.Size(224, 20);
             this.txtFechaNacEstudiante.TabIndex = 29;
@@ -210,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 164);
+            this.label2.Location = new System.Drawing.Point(43, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 15);
             this.label2.TabIndex = 27;
@@ -218,7 +240,7 @@
             // 
             // txtOcupacionAcudiente
             // 
-            this.txtOcupacionAcudiente.Location = new System.Drawing.Point(191, 121);
+            this.txtOcupacionAcudiente.Location = new System.Drawing.Point(191, 111);
             this.txtOcupacionAcudiente.Name = "txtOcupacionAcudiente";
             this.txtOcupacionAcudiente.Size = new System.Drawing.Size(285, 20);
             this.txtOcupacionAcudiente.TabIndex = 25;
@@ -227,7 +249,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(43, 124);
+            this.label12.Location = new System.Drawing.Point(43, 114);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(142, 15);
             this.label12.TabIndex = 24;
@@ -248,7 +270,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(388, 217);
+            this.btnGuardar.Location = new System.Drawing.Point(399, 226);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 34);
             this.btnGuardar.TabIndex = 5;
@@ -272,6 +294,7 @@
             this.tableEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
+            this.doc,
             this.col_nombres,
             this.col_apellidos,
             this.FechaNacimiento,
@@ -287,72 +310,6 @@
             this.tableEstudiantes.Size = new System.Drawing.Size(901, 255);
             this.tableEstudiantes.TabIndex = 0;
             this.tableEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableEstudiantes_CellContentClick);
-            // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "Id";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Visible = false;
-            // 
-            // col_nombres
-            // 
-            this.col_nombres.HeaderText = "Nombres";
-            this.col_nombres.Name = "col_nombres";
-            this.col_nombres.ReadOnly = true;
-            this.col_nombres.Width = 150;
-            // 
-            // col_apellidos
-            // 
-            this.col_apellidos.HeaderText = "Apellidos";
-            this.col_apellidos.Name = "col_apellidos";
-            this.col_apellidos.ReadOnly = true;
-            this.col_apellidos.Width = 150;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            // 
-            // acudiente
-            // 
-            this.acudiente.HeaderText = "Acudiente";
-            this.acudiente.Name = "acudiente";
-            this.acudiente.ReadOnly = true;
-            // 
-            // col_direccion
-            // 
-            this.col_direccion.HeaderText = "Dirección";
-            this.col_direccion.Name = "col_direccion";
-            this.col_direccion.ReadOnly = true;
-            this.col_direccion.Width = 150;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "Telefóno";
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            // 
-            // col_mail
-            // 
-            this.col_mail.HeaderText = "Email";
-            this.col_mail.Name = "col_mail";
-            this.col_mail.ReadOnly = true;
-            this.col_mail.Width = 150;
-            // 
-            // col_observacion
-            // 
-            this.col_observacion.HeaderText = "Observaciones";
-            this.col_observacion.Name = "col_observacion";
-            this.col_observacion.ReadOnly = true;
-            this.col_observacion.Width = 150;
-            // 
-            // OcupacionAcudiente
-            // 
-            this.OcupacionAcudiente.HeaderText = "Ocupacion Acudiente";
-            this.OcupacionAcudiente.Name = "OcupacionAcudiente";
-            this.OcupacionAcudiente.ReadOnly = true;
             // 
             // txtObservacion
             // 
@@ -473,6 +430,78 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Nombres";
             // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // doc
+            // 
+            this.doc.HeaderText = "Documento";
+            this.doc.Name = "doc";
+            this.doc.ReadOnly = true;
+            // 
+            // col_nombres
+            // 
+            this.col_nombres.HeaderText = "Nombres";
+            this.col_nombres.Name = "col_nombres";
+            this.col_nombres.ReadOnly = true;
+            this.col_nombres.Width = 150;
+            // 
+            // col_apellidos
+            // 
+            this.col_apellidos.HeaderText = "Apellidos";
+            this.col_apellidos.Name = "col_apellidos";
+            this.col_apellidos.ReadOnly = true;
+            this.col_apellidos.Width = 150;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            // 
+            // acudiente
+            // 
+            this.acudiente.HeaderText = "Acudiente";
+            this.acudiente.Name = "acudiente";
+            this.acudiente.ReadOnly = true;
+            // 
+            // col_direccion
+            // 
+            this.col_direccion.HeaderText = "Dirección";
+            this.col_direccion.Name = "col_direccion";
+            this.col_direccion.ReadOnly = true;
+            this.col_direccion.Width = 150;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefóno";
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            // 
+            // col_mail
+            // 
+            this.col_mail.HeaderText = "Email";
+            this.col_mail.Name = "col_mail";
+            this.col_mail.ReadOnly = true;
+            this.col_mail.Width = 150;
+            // 
+            // col_observacion
+            // 
+            this.col_observacion.HeaderText = "Observaciones";
+            this.col_observacion.Name = "col_observacion";
+            this.col_observacion.ReadOnly = true;
+            this.col_observacion.Width = 150;
+            // 
+            // OcupacionAcudiente
+            // 
+            this.OcupacionAcudiente.HeaderText = "Ocupacion Acudiente";
+            this.OcupacionAcudiente.Name = "OcupacionAcudiente";
+            this.OcupacionAcudiente.ReadOnly = true;
+            // 
             // CrudEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,7 +554,11 @@
         private System.Windows.Forms.Button btnAgregarEstudiante;
         private System.Windows.Forms.Button ConsultarEstudiante;
         private System.Windows.Forms.Button modificarEstudiante;
+        private System.Windows.Forms.DateTimePicker txtFechaNacEstudiante;
+        private System.Windows.Forms.TextBox txtDocuementoEstudiante;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doc;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
@@ -535,6 +568,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_mail;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn OcupacionAcudiente;
-        private System.Windows.Forms.DateTimePicker txtFechaNacEstudiante;
     }
 }

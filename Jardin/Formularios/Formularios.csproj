@@ -58,6 +58,12 @@
     <Compile Include="CrudUsuario\CrudUsuario.Designer.cs">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPagos\FormularioPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPagos\FormularioPagos.Designer.cs">
+      <DependentUpon>FormularioPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionGrupos\GestionGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuario\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPagos\FormularioPagos.resx">
+      <DependentUpon>FormularioPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionGrupos\GestionGrupos.resx">
       <DependentUpon>GestionGrupos.cs</DependentUpon>

@@ -37,5 +37,16 @@ namespace Formularios
 
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+            FormularioPagos pagos = new FormularioPagos();
+            this.Dispose();
+
+            pagos.Show();
+
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Formularios
 {
     public partial class CrudEstudiantes : Form
     {
-       
+
         BLEstudiantes blStudent = new BLEstudiantes();
         int actividad;
         private const int ACTIVIDAD_CREAR = 1;
@@ -42,6 +42,7 @@ namespace Formularios
         private void limpiarCampos()
         {
             this.txtNombres.Text = CAMPO_VACIO;
+            this.txtDocuementoEstudiante.Text = CAMPO_VACIO;
             this.txtApellidos.Text = CAMPO_VACIO;
             this.txtFechaNacEstudiante.Text = CAMPO_VACIO;
             this.txtNombreAcudiente.Text = CAMPO_VACIO;
@@ -49,7 +50,7 @@ namespace Formularios
             this.txtTelefono.Text = CAMPO_VACIO;
             this.txtMail.Text = CAMPO_VACIO;
             this.txtObservacion.Text = CAMPO_VACIO;
-            this.txtOcupacionAcudiente.Text= CAMPO_VACIO;
+            this.txtOcupacionAcudiente.Text = CAMPO_VACIO;
 
         }
 
@@ -82,7 +83,8 @@ namespace Formularios
         {
             bool vacio = false;
 
-            if (this.txtNombres.Text.Equals(CAMPO_VACIO)
+            if (this.txtDocuementoEstudiante.Text.Equals(CAMPO_VACIO)
+                || this.txtNombres.Text.Equals(CAMPO_VACIO)
                 || this.txtApellidos.Text.Equals(CAMPO_VACIO)
                 || this.txtNombreAcudiente.Text.Equals(CAMPO_VACIO)
                 || this.txtDireccion.Text.Equals(CAMPO_VACIO)
@@ -103,6 +105,7 @@ namespace Formularios
 
         private void bloquearCampos()
         {
+            this.txtDocuementoEstudiante.Enabled = false;
             this.txtNombres.Enabled = false;
             this.txtApellidos.Enabled = false;
             this.txtFechaNacEstudiante.Enabled = false;
@@ -117,6 +120,7 @@ namespace Formularios
 
         private void desbloquearCampos()
         {
+            this.txtDocuementoEstudiante.Enabled = true;
             this.txtNombres.Enabled = true;
             this.txtApellidos.Enabled = true;
             this.txtFechaNacEstudiante.Enabled = true;
@@ -177,6 +181,7 @@ namespace Formularios
                 Estudiantes student;
                 int registrosAfectados = -1;
 
+                string documento = this.txtDocuementoEstudiante.Text;
                 string nombre = this.txtNombres.Text;
                 string apellidos = this.txtApellidos.Text;
                 string fechaNacimiento = fecha.ToString("dd/MM/yyyy");
@@ -191,7 +196,7 @@ namespace Formularios
                 if (actividad == ACTIVIDAD_CREAR)
                 {
 
-                    student = new Estudiantes(nombre, apellidos, fechaNacimiento, acudiente, direccion,
+                    student = new Estudiantes(documento, nombre, apellidos, fechaNacimiento, acudiente, direccion,
                               telefono, correo, observacion, ocupAcudiente);
 
                     registrosAfectados = blStudent.insertarEstudiante(student);
@@ -207,7 +212,7 @@ namespace Formularios
                     int fila = tableEstudiantes.CurrentRow.Index;
                     int id = int.Parse(tableEstudiantes.Rows[fila].Cells[0].Value.ToString());
 
-                    student = new Estudiantes(id, nombre, apellidos, fechaNacimiento, acudiente, direccion,
+                    student = new Estudiantes(id, documento, nombre, apellidos, fechaNacimiento, acudiente, direccion,
                                               telefono, correo, observacion, ocupAcudiente);
 
                     registrosAfectados = blStudent.actualizarEstudiante(student);
@@ -250,6 +255,7 @@ namespace Formularios
                 {
 
                     this.tableEstudiantes.Rows.Add(listaEstudiantes[i].Id,
+                                                listaEstudiantes[i].Documento,
                                                 listaEstudiantes[i].Nombres,
                                                 listaEstudiantes[i].Apellidos,
                                                 listaEstudiantes[i].FechaNacimiento,
@@ -282,17 +288,19 @@ namespace Formularios
 
             if (e.RowIndex >= 0)
             {
-                this.txtNombres.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString());
-                this.txtApellidos.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString());
-                this.txtFechaNacEstudiante.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString());
-                this.txtNombreAcudiente.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString());
-                this.txtDireccion.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[5].Value.ToString());
-                this.txtTelefono.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[6].Value.ToString());
-                this.txtMail.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[7].Value.ToString());
-                this.txtObservacion.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[8].Value.ToString());
-                this.txtOcupacionAcudiente.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[9].Value.ToString());
+                this.txtDocuementoEstudiante.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString());
+                this.txtNombres.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString());
+                this.txtApellidos.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString());
+                this.txtFechaNacEstudiante.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString());
+                this.txtNombreAcudiente.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[5].Value.ToString());
+                this.txtDireccion.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[6].Value.ToString());
+                this.txtTelefono.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[7].Value.ToString());
+                this.txtMail.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[8].Value.ToString());
+                this.txtObservacion.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[9].Value.ToString());
+                this.txtOcupacionAcudiente.Text = (this.tableEstudiantes.Rows[e.RowIndex].Cells[10].Value.ToString());
 
             }
         }
+
     }
 }

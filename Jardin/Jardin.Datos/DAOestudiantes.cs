@@ -42,7 +42,8 @@ namespace Jardin.Datos
                 con.Open();
                 SqlCommand cmd = new SqlCommand("pa_insertarEstudiante", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-             
+
+                cmd.Parameters.AddWithValue("@documento", estudiante.Documento);
                 cmd.Parameters.AddWithValue("@nombres", estudiante.Nombres);
                 cmd.Parameters.AddWithValue("@apellidos", estudiante.Apellidos);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", estudiante.FechaNacimiento);
@@ -81,6 +82,7 @@ namespace Jardin.Datos
                     while (dr.Read())
                     {
                         int id = Convert.ToInt32(dr["id_alumno"]);
+                        string documento = ((string)dr["documento"]).Trim();
                         string nom = ((string)dr["nombres"]).Trim();
                         string apell = ((string)dr["apellidos"]).Trim();
                         string fechaNaci = (dr["fecha_nacimiento"]).ToString().Trim();
@@ -92,7 +94,7 @@ namespace Jardin.Datos
                         string ocupaAcud = ((string)dr["ocupacion_acudiente"]).Trim();
 
 
-                        estudent = new Estudiantes(id,nom,apell,fechaNaci,acudi, dir,
+                        estudent = new Estudiantes(id,documento,nom,apell,fechaNaci,acudi, dir,
                                    tel, mail, obser,ocupaAcud);
 
                         listaEstuduiantes.Add(estudent);
@@ -120,6 +122,7 @@ namespace Jardin.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@id", student.Id);
+                cmd.Parameters.AddWithValue("@documento", student.Documento);
                 cmd.Parameters.AddWithValue("@nombres", student.Nombres);
                 cmd.Parameters.AddWithValue("@apellidos", student.Apellidos);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", student.FechaNacimiento);
@@ -157,11 +160,12 @@ namespace Jardin.Datos
                     while (dr.Read())
                     {
                         int id = Convert.ToInt32(dr["id_alumno"]);
+                        string doc = ((string)dr["documento"]).Trim();
                         string nom = ((string)dr["nombres"]).Trim();
                         string apell = ((string)dr["apellidos"]).Trim();
                         string grupo = ((string)dr["nombre_grupo"]).Trim();
 
-                        estudent = new Estudiantes(id, nom, apell,grupo);
+                        estudent = new Estudiantes(id,doc,nom,apell,grupo);
 
                         listaEstuduiantes.Add(estudent);
 
@@ -219,6 +223,48 @@ namespace Jardin.Datos
 
             return totalGrupo;
         }
+
+        public List<String> consultarPorDocumento(string documento)
+        {
+            List<String> listaEstudiantePago = new List<String>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_consultarEstudiantePago", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@documento", documento);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string doc = ((string)dr["documento"]).Trim();
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        string conceptoPagoID = (Convert.ToInt32(dr["id_concepto_pago"])).ToString();
+                        string saldoPendiente = (Convert.ToInt32(dr["saldo_pendiente"])).ToString();
+
+                        listaEstudiantePago.Add(doc);
+                        listaEstudiantePago.Add(nom);
+                        listaEstudiantePago.Add(apell);
+                        listaEstudiantePago.Add(conceptoPagoID);
+                        listaEstudiantePago.Add(saldoPendiente);
+                    }
+
+                }
+
+                con.Close();
+
+            }
+
+            return listaEstudiantePago;
+
+        }
+
+
 
     }
 

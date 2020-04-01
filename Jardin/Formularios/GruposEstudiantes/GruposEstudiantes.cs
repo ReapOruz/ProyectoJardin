@@ -17,7 +17,7 @@ namespace Formularios
 
         BLEstudiantes blestudiante = new BLEstudiantes();
         BLGrupos blGrupo = new BLGrupos();
-        private const int CANTIDAD_ESTUDIANTES_GRUPO = 2;
+        private const int CANTIDAD_ESTUDIANTES_GRUPO = 3;
         int cantidadEstuiantesGrupo = 0;
 
         public GruposEstudiantes()
@@ -26,7 +26,7 @@ namespace Formularios
             tableUsuarios_fullRow();
             cargarDatosGruposEstudiantes();
             listarGrupos();
-            lbTotalEstudiantesGrupo.Text = ""+CANTIDAD_ESTUDIANTES_GRUPO;
+
         }
 
         private void tableUsuarios_fullRow()
@@ -51,6 +51,7 @@ namespace Formularios
                 {
 
                     this.tableGrupos.Rows.Add(listaGrupoEstudiantes[i].Id,
+                                                listaGrupoEstudiantes[i].Documento,
                                                 listaGrupoEstudiantes[i].Nombres,
                                                 listaGrupoEstudiantes[i].Apellidos,
                                                 listaGrupoEstudiantes[i].Grupo
@@ -166,6 +167,7 @@ namespace Formularios
             return lleno;
 
         }
+
 
     }
 }

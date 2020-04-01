@@ -52,6 +52,14 @@ namespace Jardin.Negocio
 
 
         }
+        public List<String> consultarPorDocumento(string documento)
+        {
+            DAOestudiantes estudiante = new DAOestudiantes();
+            return estudiante.consultarPorDocumento(documento);
+
+        }
+
+        
 
     }
 }

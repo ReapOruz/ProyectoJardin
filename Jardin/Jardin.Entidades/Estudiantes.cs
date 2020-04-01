@@ -10,6 +10,7 @@ namespace Jardin.Entidades
     {
 
         private int id;
+        private string documento;
         private string nombres;
         private string apellidos;
         private string fechaNacimiento;
@@ -27,25 +28,28 @@ namespace Jardin.Entidades
        
         }
 
+
         public Estudiantes(int id, int grupo)
         {
             this.id = id;
             this.IdGrupo = grupo;
         }
 
-        public Estudiantes(int id, string nombre, string apellido,string grupo)
+        public Estudiantes(int id, string doc, string nombre, string apellido,string grupo)
         {
             this.id = id;
+            this.documento = doc;
             this.nombres = nombre;
             this.apellidos = apellido;
             this.Grupo = grupo;
 
         }
 
-        public Estudiantes(int id,string nombre,string apellido,string fechaNac,string acudiente, string direccion, 
+        public Estudiantes(int id,string doc,string nombre,string apellido,string fechaNac,string acudiente, string direccion, 
                            string telefono, string correo, string observacion,string ocupaAcudiente)
         {
             this.id = id;
+            this.Documento = doc;
             this.nombres = nombre;
             this.apellidos = apellido;
             this.fechaNacimiento = fechaNac;
@@ -57,9 +61,10 @@ namespace Jardin.Entidades
             this.ocupacionAcudiente = ocupaAcudiente;
         }
 
-        public Estudiantes(string nombre, string apellido, string fechaNac, string acudiente, string direccion,
+        public Estudiantes(string doc,string nombre, string apellido, string fechaNac, string acudiente, string direccion,
                            string telefono, string correo, string observacion, string ocupaAcudiente)
         {
+            this.Documento = doc;
             this.nombres = nombre;
             this.apellidos = apellido;
             this.fechaNacimiento = fechaNac;
@@ -83,5 +88,6 @@ namespace Jardin.Entidades
         public string OcupacionAcudiente { get => ocupacionAcudiente; set => ocupacionAcudiente = value; }
         public string Grupo { get => grupo; set => grupo = value; }
         public int IdGrupo { get => idGrupo; set => idGrupo = value; }
+        public string Documento { get => documento; set => documento = value; }
     }
 }
