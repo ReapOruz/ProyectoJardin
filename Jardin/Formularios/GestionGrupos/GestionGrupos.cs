@@ -19,7 +19,6 @@ namespace Formularios
         private const int OPCION_CREAR = 1;
         private const int OPCION_MODIFICAR = 2;
         private int actividad = 0;
-        private const int TOTAL_GRUPOS = 3;
         int cantidadGrupos = 0;
         string nombreAnterior;
 
@@ -272,7 +271,7 @@ namespace Formularios
         private void btnGuardarCambiosGrupo_Click(object sender, EventArgs e)
         {
 
-            try
+           try
             {
                 bool vacio = camposVacios();
 
@@ -340,7 +339,7 @@ namespace Formularios
 
                 }
 
-            }
+           }
             catch
             {
 
@@ -357,10 +356,14 @@ namespace Formularios
 
             bool lleno = false;
             Grados grado = new Grados();
+
                 
             cantidadGrupos = grado.contarGruposPorGrado(id_grado);
 
-            if (cantidadGrupos == TOTAL_GRUPOS)
+            int totalGrupos = grado.traerCantidadGrupos(id_grado);
+
+
+            if (cantidadGrupos == totalGrupos)
             {
 
                 lleno = true;

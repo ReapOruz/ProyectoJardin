@@ -87,6 +87,54 @@ namespace Jardin.Utilidades
             return totalGrupo;
         }
 
+        public int traerCantidadGrupos(int id_grado)
+        {
+            int cantidadGrupos = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("traercantidadGrupos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_grado", id_grado);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cantidadGrupos = Convert.ToInt32(dr["cantidad_grupos"]);
+
+                }
+
+                con.Close();
+            }
+
+            return cantidadGrupos;
+        }
+
+
+        public int traerCantidadAlumnosEnGrupo(int id_grupo)
+        {
+            int cantidadAlumnos = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_traerCantidadAlumnosEnGrupo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_grupo", id_grupo);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cantidadAlumnos = Convert.ToInt32(dr["cantidad_alumnos"]);
+
+                }
+
+                con.Close();
+            }
+
+            return cantidadAlumnos;
+        }
 
     }
 

@@ -21,16 +21,13 @@ namespace Formularios
         private const int ACTIVIDAD_MODIFICAR = 2;
         private const string CAMPO_VACIO = "";
 
-
         public CrudEstudiantes()
         {
             InitializeComponent();
             CargarDatos();
-            bloquearTablaEstudiantes();
             bloquearCampos();
             bloquearBotonGuardar();
             tableUsuarios_fullRow();
-
         }
 
         private void tableUsuarios_fullRow()

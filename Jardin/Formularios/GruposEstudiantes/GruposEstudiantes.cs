@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Jardin.Entidades;
 using Jardin.Negocio;
+using Jardin.Utilidades;
 
 namespace Formularios
 {
@@ -17,8 +18,8 @@ namespace Formularios
 
         BLEstudiantes blestudiante = new BLEstudiantes();
         BLGrupos blGrupo = new BLGrupos();
-        private const int CANTIDAD_ESTUDIANTES_GRUPO = 3;
         int cantidadEstuiantesGrupo = 0;
+
 
         public GruposEstudiantes()
         {
@@ -153,11 +154,14 @@ namespace Formularios
 
             bool lleno = false;
 
+            Grados grado = new Grados();
+
             int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 1;
             cantidadEstuiantesGrupo = blestudiante.contarEstudiantesGrupo(grupo);
 
+            int totalAlumnos = grado.traerCantidadAlumnosEnGrupo(grupo);
 
-            if (cantidadEstuiantesGrupo == CANTIDAD_ESTUDIANTES_GRUPO)
+            if (cantidadEstuiantesGrupo == totalAlumnos)
             {
 
                 lleno = true;
@@ -167,7 +171,6 @@ namespace Formularios
             return lleno;
 
         }
-
 
     }
 }
