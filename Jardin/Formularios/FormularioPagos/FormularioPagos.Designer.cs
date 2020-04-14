@@ -37,12 +37,6 @@
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombresCompletos = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTotalPagar = new System.Windows.Forms.TextBox();
-            this.txtSaldoPendientePension = new System.Windows.Forms.TextBox();
-            this.txtSaldoPendienteMatricula = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -52,17 +46,28 @@
             this.cbConceptoPago = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbMes = new System.Windows.Forms.ComboBox();
+            this.tablePagosAprobados = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAnioCancelar = new System.Windows.Forms.TextBox();
+            this.ConceptoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorCancelado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldoPendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 49);
+            this.label1.Location = new System.Drawing.Point(35, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 0;
@@ -71,15 +76,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 110);
+            this.label2.Location = new System.Drawing.Point(36, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 13);
+            this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Buscar por docuemento";
+            this.label2.Text = "Buscar por documento";
             // 
             // txtDocumentoBusqueda
             // 
-            this.txtDocumentoBusqueda.Location = new System.Drawing.Point(76, 144);
+            this.txtDocumentoBusqueda.Location = new System.Drawing.Point(39, 107);
             this.txtDocumentoBusqueda.Name = "txtDocumentoBusqueda";
             this.txtDocumentoBusqueda.Size = new System.Drawing.Size(229, 20);
             this.txtDocumentoBusqueda.TabIndex = 2;
@@ -89,7 +94,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(334, 137);
+            this.btnBuscar.Location = new System.Drawing.Point(297, 100);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(107, 32);
             this.btnBuscar.TabIndex = 3;
@@ -100,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 220);
+            this.label3.Location = new System.Drawing.Point(527, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 13);
             this.label3.TabIndex = 4;
@@ -109,7 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 258);
+            this.label4.Location = new System.Drawing.Point(527, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 5;
@@ -117,7 +122,7 @@
             // 
             // txtDocumento
             // 
-            this.txtDocumento.Location = new System.Drawing.Point(152, 251);
+            this.txtDocumento.Location = new System.Drawing.Point(606, 81);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(229, 20);
             this.txtDocumento.TabIndex = 6;
@@ -126,7 +131,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(73, 301);
+            this.label5.Location = new System.Drawing.Point(527, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 7;
@@ -134,58 +139,10 @@
             // 
             // txtNombresCompletos
             // 
-            this.txtNombresCompletos.Location = new System.Drawing.Point(76, 328);
+            this.txtNombresCompletos.Location = new System.Drawing.Point(530, 151);
             this.txtNombresCompletos.Name = "txtNombresCompletos";
             this.txtNombresCompletos.Size = new System.Drawing.Size(305, 20);
             this.txtNombresCompletos.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(592, 220);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Saldo Pendiente Matricula   $";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(592, 258);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Saldo Pendiente Pensión     $";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(592, 335);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Total a Pagar                       $";
-            // 
-            // txtTotalPagar
-            // 
-            this.txtTotalPagar.Location = new System.Drawing.Point(744, 335);
-            this.txtTotalPagar.Name = "txtTotalPagar";
-            this.txtTotalPagar.Size = new System.Drawing.Size(229, 20);
-            this.txtTotalPagar.TabIndex = 13;
-            // 
-            // txtSaldoPendientePension
-            // 
-            this.txtSaldoPendientePension.Location = new System.Drawing.Point(744, 255);
-            this.txtSaldoPendientePension.Name = "txtSaldoPendientePension";
-            this.txtSaldoPendientePension.Size = new System.Drawing.Size(229, 20);
-            this.txtSaldoPendientePension.TabIndex = 15;
-            // 
-            // txtSaldoPendienteMatricula
-            // 
-            this.txtSaldoPendienteMatricula.Location = new System.Drawing.Point(744, 213);
-            this.txtSaldoPendienteMatricula.Name = "txtSaldoPendienteMatricula";
-            this.txtSaldoPendienteMatricula.Size = new System.Drawing.Size(229, 20);
-            this.txtSaldoPendienteMatricula.TabIndex = 16;
             // 
             // panel1
             // 
@@ -199,6 +156,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtAnioCancelar);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.tablePagosAprobados);
+            this.panel2.Controls.Add(this.cbMes);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnVolver);
             this.panel2.Controls.Add(this.btnPagar);
             this.panel2.Controls.Add(this.txtValorPagar);
@@ -206,22 +168,15 @@
             this.panel2.Controls.Add(this.cbConceptoPago);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtNombresCompletos);
-            this.panel2.Controls.Add(this.txtSaldoPendienteMatricula);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtSaldoPendientePension);
             this.panel2.Controls.Add(this.txtDocumentoBusqueda);
             this.panel2.Controls.Add(this.txtDocumento);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtTotalPagar);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 4);
             this.panel2.Name = "panel2";
@@ -246,7 +201,7 @@
             this.btnPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Location = new System.Drawing.Point(845, 462);
+            this.btnPagar.Location = new System.Drawing.Point(857, 508);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(107, 32);
             this.btnPagar.TabIndex = 24;
@@ -256,7 +211,7 @@
             // 
             // txtValorPagar
             // 
-            this.txtValorPagar.Location = new System.Drawing.Point(584, 469);
+            this.txtValorPagar.Location = new System.Drawing.Point(540, 465);
             this.txtValorPagar.Name = "txtValorPagar";
             this.txtValorPagar.Size = new System.Drawing.Size(229, 20);
             this.txtValorPagar.TabIndex = 23;
@@ -264,7 +219,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(490, 472);
+            this.label14.Location = new System.Drawing.Point(446, 468);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 13);
             this.label14.TabIndex = 22;
@@ -273,10 +228,11 @@
             // cbConceptoPago
             // 
             this.cbConceptoPago.FormattingEnabled = true;
-            this.cbConceptoPago.Location = new System.Drawing.Point(169, 465);
+            this.cbConceptoPago.Location = new System.Drawing.Point(188, 465);
             this.cbConceptoPago.Name = "cbConceptoPago";
             this.cbConceptoPago.Size = new System.Drawing.Size(212, 21);
             this.cbConceptoPago.TabIndex = 21;
+            this.cbConceptoPago.SelectedIndexChanged += new System.EventHandler(this.cbConceptoPago_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -298,17 +254,6 @@
             this.label12.TabIndex = 19;
             this.label12.Text = "Realizar pago";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(591, 162);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 20);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Saldos";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -319,6 +264,111 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "_________________________________________________________________________________" +
     "_______________________________________________________________________________";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(446, 518);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Mes a cancelar";
+            // 
+            // cbMes
+            // 
+            this.cbMes.Enabled = false;
+            this.cbMes.FormattingEnabled = true;
+            this.cbMes.Items.AddRange(new object[] {
+            "FEBRERO",
+            "MARZO",
+            "ABRIL",
+            "MAYO",
+            "JUNIO",
+            "JULIO",
+            "AGOSTO",
+            "SEPTIEMBRE",
+            "OCTUBRE",
+            "NOVIEMBRE"});
+            this.cbMes.Location = new System.Drawing.Point(540, 515);
+            this.cbMes.Name = "cbMes";
+            this.cbMes.Size = new System.Drawing.Size(212, 21);
+            this.cbMes.TabIndex = 27;
+            // 
+            // tablePagosAprobados
+            // 
+            this.tablePagosAprobados.AllowUserToAddRows = false;
+            this.tablePagosAprobados.AllowUserToDeleteRows = false;
+            this.tablePagosAprobados.AllowUserToOrderColumns = true;
+            this.tablePagosAprobados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablePagosAprobados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ConceptoPago,
+            this.anio,
+            this.mes,
+            this.ValorCancelado,
+            this.saldoPendiente,
+            this.estadoPago});
+            this.tablePagosAprobados.Location = new System.Drawing.Point(39, 195);
+            this.tablePagosAprobados.Name = "tablePagosAprobados";
+            this.tablePagosAprobados.ReadOnly = true;
+            this.tablePagosAprobados.Size = new System.Drawing.Size(894, 192);
+            this.tablePagosAprobados.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(84, 518);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Año a cancelar";
+            // 
+            // txtAnioCancelar
+            // 
+            this.txtAnioCancelar.Location = new System.Drawing.Point(188, 515);
+            this.txtAnioCancelar.Name = "txtAnioCancelar";
+            this.txtAnioCancelar.Size = new System.Drawing.Size(95, 20);
+            this.txtAnioCancelar.TabIndex = 30;
+            // 
+            // ConceptoPago
+            // 
+            this.ConceptoPago.HeaderText = "Concepto Pago";
+            this.ConceptoPago.Name = "ConceptoPago";
+            this.ConceptoPago.ReadOnly = true;
+            this.ConceptoPago.Width = 150;
+            // 
+            // anio
+            // 
+            this.anio.HeaderText = "Año";
+            this.anio.Name = "anio";
+            this.anio.ReadOnly = true;
+            this.anio.Width = 150;
+            // 
+            // mes
+            // 
+            this.mes.HeaderText = "Mes";
+            this.mes.Name = "mes";
+            this.mes.ReadOnly = true;
+            this.mes.Width = 150;
+            // 
+            // ValorCancelado
+            // 
+            this.ValorCancelado.HeaderText = "Valor Cancelado";
+            this.ValorCancelado.Name = "ValorCancelado";
+            this.ValorCancelado.ReadOnly = true;
+            this.ValorCancelado.Width = 150;
+            // 
+            // saldoPendiente
+            // 
+            this.saldoPendiente.HeaderText = "Saldo Pendiente";
+            this.saldoPendiente.Name = "saldoPendiente";
+            this.saldoPendiente.ReadOnly = true;
+            // 
+            // estadoPago
+            // 
+            this.estadoPago.HeaderText = "Estado";
+            this.estadoPago.Name = "estadoPago";
+            this.estadoPago.ReadOnly = true;
+            this.estadoPago.Width = 150;
             // 
             // FormularioPagos
             // 
@@ -331,6 +381,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,12 +397,6 @@
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombresCompletos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTotalPagar;
-        private System.Windows.Forms.TextBox txtSaldoPendientePension;
-        private System.Windows.Forms.TextBox txtSaldoPendienteMatricula;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtValorPagar;
@@ -359,9 +404,19 @@
         private System.Windows.Forms.ComboBox cbConceptoPago;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ComboBox cbMes;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView tablePagosAprobados;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAnioCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ConceptoPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorCancelado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saldoPendiente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoPago;
     }
 }

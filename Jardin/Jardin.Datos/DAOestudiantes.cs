@@ -244,14 +244,11 @@ namespace Jardin.Datos
                         string doc = ((string)dr["documento"]).Trim();
                         string nom = ((string)dr["nombres"]).Trim();
                         string apell = ((string)dr["apellidos"]).Trim();
-                        string conceptoPagoID = (Convert.ToInt32(dr["id_concepto_pago"])).ToString();
-                        string saldoPendiente = (Convert.ToInt32(dr["saldo_pendiente"])).ToString();
 
                         listaEstudiantePago.Add(doc);
                         listaEstudiantePago.Add(nom);
                         listaEstudiantePago.Add(apell);
-                        listaEstudiantePago.Add(conceptoPagoID);
-                        listaEstudiantePago.Add(saldoPendiente);
+
                     }
 
                 }

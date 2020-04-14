@@ -55,44 +55,16 @@ namespace Formularios
 
         private void cargarDatosPago(string documentoBusqueda)
         {
+            this.tablePagosAprobados.Rows.Clear();
 
-           
-            BLEstudiantes blStudent = new BLEstudiantes();
-            List<String> listEstudiantes;
+            BLEstudiantes blEstudiante = new BLEstudiantes();
 
-            listEstudiantes = blStudent.consultarPorDocumento(documentoBusqueda);
+            List<String> datosEstudiante = blEstudiante.consultarPorDocumento(documentoBusqueda);
 
-            string doc = listEstudiantes[0];
-            string nbre = listEstudiantes[1];
-            string apd = listEstudiantes[2];
-            int concepPago = int.Parse(listEstudiantes[3]);
-            string saldPending = listEstudiantes[4];
-            int concepPago2 = int.Parse(listEstudiantes[8]);
-            string saldPending2 = listEstudiantes[9];
+            this.txtDocumento.Text = datosEstudiante[0];
+            this.txtNombresCompletos.Text= datosEstudiante[1] + " " + datosEstudiante[2];
 
-            int totalPagar = 0;
-
-            this.txtDocumento.Text = doc;
-            this.txtNombresCompletos.Text = (nbre + " " + apd);
-
-
-            if (concepPago == 1)
-            {
-                this.txtSaldoPendienteMatricula.Text = saldPending;
-
-            }
-
-            if (concepPago2 == 2)
-            {
-
-                this.txtSaldoPendientePension.Text = saldPending2;
-
-            }
-
-
-            totalPagar = (int.Parse(this.txtSaldoPendienteMatricula.Text) + int.Parse(this.txtSaldoPendientePension.Text));
-            this.txtTotalPagar.Text = totalPagar.ToString();
-
+            listarPagosAprobadosEstudiante(documentoBusqueda);
 
         }
 
@@ -104,15 +76,17 @@ namespace Formularios
                 int resultado = -1;
                 int conceptoPago = this.cbConceptoPago.SelectedIndex + 1;
                 int pago = int.Parse(this.txtValorPagar.Text);
-                string estudiante = this.txtDocumento.Text;
-                ConceptosPago pagoAbono = new ConceptosPago();
+                string anioPago = this.txtAnioCancelar.Text;
+                string mesPago = this.cbMes.SelectedItem.ToString();
+                string docEstudiante = this.txtDocumento.Text;
+                Pagos pagoAbono = new Pagos();
 
                     var desicion = MessageBox.Show("¿Desea realizar el pago para el concepto seleccionado?", "Confirmar Pago", MessageBoxButtons.OKCancel);
 
                     if (desicion == DialogResult.OK)
                     {
 
-                        resultado = pagoAbono.actualizarPagosEstudiante(conceptoPago, pago, estudiante);
+                        resultado = pagoAbono.insertarPagosEstudiante(conceptoPago, pago, docEstudiante, anioPago,mesPago);
 
                         if (resultado > 0)
                         {
@@ -121,7 +95,7 @@ namespace Formularios
 
                             limpiarCampospago();
 
-                            cargarDatosPago(estudiante);
+                            cargarDatosPago(docEstudiante);
                         }
 
                     }
@@ -147,9 +121,6 @@ namespace Formularios
         {
             this.txtDocumento.Enabled = false;
             this.txtNombresCompletos.Enabled = false;
-            this.txtSaldoPendienteMatricula.Enabled = false;
-            this.txtSaldoPendientePension.Enabled = false;
-            this.txtTotalPagar.Enabled = false;
             this.txtValorPagar.Enabled = false;
             this.btnPagar.Enabled = false;
             this.btnPagar.Visible = false;
@@ -195,7 +166,7 @@ namespace Formularios
 
             List<String> listaConceptos;
 
-            ConceptosPago concepto = new ConceptosPago();
+            Pagos concepto = new Pagos();
 
             listaConceptos = concepto.listarConceptosPago();
 
@@ -249,5 +220,41 @@ namespace Formularios
 
         }
 
+        private void cbConceptoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (this.cbConceptoPago.SelectedIndex == 0)
+            {
+                this.cbMes.Enabled = false;
+                this.cbMes.Text = "";
+
+            }else if(this.cbConceptoPago.SelectedIndex == 1)
+            {
+                this.cbMes.Enabled = true;
+            }
+
+        }
+
+        private void listarPagosAprobadosEstudiante(string documentoEstudiante)
+        {
+
+            Pagos listaPagosAprobados = new Pagos();
+            List<Pagos> pagosAprobados;
+
+            pagosAprobados = listaPagosAprobados.listarPagosAprobados(documentoEstudiante);
+
+            for (int i=0;i< pagosAprobados.Count; i++)
+            {
+
+                this.tablePagosAprobados.Rows.Add(pagosAprobados[i].ConceptoPago,
+                                                  pagosAprobados[i].AnioPago,
+                                                  pagosAprobados[i].MesPago,
+                                                  pagosAprobados[i].ValorCancelado,
+                                                  pagosAprobados[i].Saldopendiente,
+                                                  pagosAprobados[i].Estado
+                                                 );
+            }
+
+        }
     }
 }
