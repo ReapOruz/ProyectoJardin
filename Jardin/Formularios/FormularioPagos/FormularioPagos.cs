@@ -50,7 +50,7 @@ namespace Formularios
                 MessageBox.Show("Debe ingresar el criterio de busqueda");
 
             }
-            
+
         }
 
         private void cargarDatosPago(string documentoBusqueda)
@@ -62,7 +62,7 @@ namespace Formularios
             List<String> datosEstudiante = blEstudiante.consultarPorDocumento(documentoBusqueda);
 
             this.txtDocumento.Text = datosEstudiante[0];
-            this.txtNombresCompletos.Text= datosEstudiante[1] + " " + datosEstudiante[2];
+            this.txtNombresCompletos.Text = datosEstudiante[1] + " " + datosEstudiante[2];
 
             listarPagosAprobadosEstudiante(documentoBusqueda);
 
@@ -70,23 +70,59 @@ namespace Formularios
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int resultado = -1;
                 int conceptoPago = this.cbConceptoPago.SelectedIndex + 1;
                 int pago = int.Parse(this.txtValorPagar.Text);
-                string anioPago = this.txtAnioCancelar.Text;
-                string mesPago = this.cbMes.SelectedItem.ToString();
+                string anioPago = this.txtAnioCancelar.SelectedItem.ToString();
+                var mesPago = this.cbMes.SelectedItem;
                 string docEstudiante = this.txtDocumento.Text;
+                int totalPagadoPorEstudiante = 0;
+                int valorPagarConcepto = 0;
                 Pagos pagoAbono = new Pagos();
 
-                    var desicion = MessageBox.Show("¿Desea realizar el pago para el concepto seleccionado?", "Confirmar Pago", MessageBoxButtons.OKCancel);
+                var desicion = MessageBox.Show("¿Desea realizar el pago para el concepto seleccionado?", "Confirmar Pago", MessageBoxButtons.OKCancel);
+
+                if (pago <= 0)
+                {
+                    MessageBox.Show("Por favor verifique que el valor a pagar sea mayor a $0");
+                    
+                }
+
+                else
+                {
 
                     if (desicion == DialogResult.OK)
                     {
 
-                        resultado = pagoAbono.insertarPagosEstudiante(conceptoPago, pago, docEstudiante, anioPago,mesPago);
+                        if (mesPago == null)
+                        {
+                            mesPago = "No aplica";
+                        }
+                        else
+                        {
+                            mesPago = this.cbMes.SelectedItem.ToString();
+                        }
+
+                        totalPagadoPorEstudiante = pagoAbono.obtenerTotalPagadoPorConcepto(docEstudiante, conceptoPago, anioPago, mesPago.ToString());
+                        valorPagarConcepto = pagoAbono.obtenerValorConcepto(conceptoPago);
+
+                        if ((totalPagadoPorEstudiante + pago) <= valorPagarConcepto)
+                        {
+
+
+                            resultado = pagoAbono.insertarPagosEstudiante(conceptoPago, pago, docEstudiante, anioPago, mesPago.ToString());
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("No se puede realizar el pago debido a que excede el monto total a pagar para el concepcto" + "\r\n" +
+                                "El valor total del concepto es: " + valorPagarConcepto + "\r\n" +
+                                "Por favor verifique el valor a pagar");
+
+                        }
 
                         if (resultado > 0)
                         {
@@ -96,8 +132,8 @@ namespace Formularios
                             limpiarCampospago();
 
                             cargarDatosPago(docEstudiante);
-                        }
 
+                        }
                     }
                     else
                     {
@@ -105,18 +141,16 @@ namespace Formularios
 
                     }
 
-                
-            }catch
-            {
-
-                MessageBox.Show("Ingrese un monto valido");
-
+                }
 
             }
-
-           
+            catch
+            {
+                MessageBox.Show("Ingrese un monto valido");
+            }
         }
 
+   
         private void bloquearCampos()
         {
             this.txtDocumento.Enabled = false;
@@ -125,6 +159,7 @@ namespace Formularios
             this.btnPagar.Enabled = false;
             this.btnPagar.Visible = false;
             this.cbConceptoPago.Enabled = false;
+            this.txtAnioCancelar.Enabled = false;
 
         }
 
@@ -142,6 +177,7 @@ namespace Formularios
             this.btnPagar.Enabled = true;
             this.btnPagar.Visible = true;
             this.cbConceptoPago.Enabled = true;
+            this.txtAnioCancelar.Enabled = true;
         }
 
         private void txtDocumento_TextChanged(object sender, EventArgs e)
@@ -214,10 +250,10 @@ namespace Formularios
 
         private void limpiarCampospago()
         {
-
-            this.cbConceptoPago.SelectedIndex = 0;
+            this.cbConceptoPago.Text="";
             this.txtValorPagar.Text = "";
-
+            this.txtAnioCancelar.Text = "";
+            this.cbMes.Text = "";
         }
 
         private void cbConceptoPago_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,6 +291,66 @@ namespace Formularios
                                                  );
             }
 
+        }
+
+        private void listarPagosAprobadosPorAnio(string documentoEstudiante,string anio)
+        {
+
+            this.tablePagosAprobados.Rows.Clear();
+
+            Pagos listaPagosAprobados = new Pagos();
+            List<Pagos> pagosAprobados;
+
+            pagosAprobados = listaPagosAprobados.listarPagosAprobadosPorAnio(documentoEstudiante, anio);
+
+            for (int i = 0; i < pagosAprobados.Count; i++)
+            {
+
+                this.tablePagosAprobados.Rows.Add(pagosAprobados[i].ConceptoPago,
+                                                  pagosAprobados[i].AnioPago,
+                                                  pagosAprobados[i].MesPago,
+                                                  pagosAprobados[i].ValorCancelado,
+                                                  pagosAprobados[i].Saldopendiente,
+                                                  pagosAprobados[i].Estado
+                                                 );
+            }
+
+        }
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string anio = this.txtFiltroAnio.Text;
+                string documento = this.txtDocumento.Text;
+
+                if (!this.txtFiltroAnio.Text.Equals(""))
+                {
+                    listarPagosAprobadosPorAnio(documento, anio);
+                }
+                else
+                {
+                    MessageBox.Show("Dece ingresar algún criterio de busqueda");
+                }
+
+            }
+            catch
+            {
+
+                MessageBox.Show("No se encontraron resultados de acuerdo al criterio de busqueda");
+
+            }
+
+        }
+
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            this.tablePagosAprobados.Rows.Clear();
+            
+            string doc = this.txtDocumento.Text;
+            this.txtFiltroAnio.Text = "";
+
+            listarPagosAprobadosEstudiante(doc);
         }
     }
 }

@@ -22,12 +22,10 @@ namespace Jardin.Utilidades
         public Pagos()
         {
 
-
-
         }
 
 
-        public Pagos(string conceptoPago, string mesPago, string anioPago, int valorCancelado, int saldopendiente, string estado)
+        public Pagos(string conceptoPago, string anioPago, string mesPago, int valorCancelado, int saldopendiente, string estado)
         {
 
             this.conceptoPago = conceptoPago;
@@ -155,6 +153,108 @@ namespace Jardin.Utilidades
             }
 
             return listaPagosAprobados;
+        }
+
+
+        public List<Pagos> listarPagosAprobadosPorAnio(string documento, string anio)
+        {
+            List<Pagos> listaPagosAprobados = new List<Pagos>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarPagosAprobadosPorAnio", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@documentoEstudiante", documento);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string concepPago = ((string)dr["concepto"]).Trim();
+                        string mesPag = ((string)dr["mesPago"]).Trim();
+                        string anioPag = ((string)dr["anioPago"]).Trim();
+                        int valCancelado = Convert.ToInt32(dr["abono"]);
+                        int saldopendien = Convert.ToInt32(dr["saldo_pendiente"]);
+                        string stado = ((string)dr["descripcion_pago"]).Trim();
+
+                        Pagos pag = new Pagos(concepPago, anioPag, mesPag, valCancelado, saldopendien, stado);
+
+
+                        listaPagosAprobados.Add(pag);
+
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaPagosAprobados;
+        }
+
+
+        public int obtenerTotalPagadoPorConcepto(string documento, int concepto, string anio, string mes)
+        {
+            int totalPagado = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerPagoTotalConcepto", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@documentoEstudiante", documento);
+                cmd.Parameters.AddWithValue("@concepto", concepto);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.Parameters.AddWithValue("@mes", mes);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        totalPagado = Convert.ToInt32(dr["totalPago"]);
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return totalPagado;
+
+        }
+
+        public int obtenerValorConcepto(int concepto)
+        {
+            int valorConcepto = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerValorConcepto", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@concepto", concepto);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        valorConcepto = Convert.ToInt32(dr["valorConcepto"]);
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return valorConcepto;
+
         }
 
     }
