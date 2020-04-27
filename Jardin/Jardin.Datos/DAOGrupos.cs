@@ -117,6 +117,8 @@ namespace Jardin.Datos
                 cmd.Parameters.AddWithValue("@nombreGrupo", grupo.Nombre);
                 cmd.Parameters.AddWithValue("@idGrado", grupo.Id_grado);
                 cmd.Parameters.AddWithValue("@cantidadAlumnos", grupo.CantidadAlumnos);
+                cmd.Parameters.AddWithValue("@docente", grupo.Id_docente);
+                cmd.Parameters.AddWithValue("@salon", grupo.Id_salon);
 
                 n = cmd.ExecuteNonQuery();
 
@@ -147,8 +149,11 @@ namespace Jardin.Datos
                         string nom = ((string)dr["nombre_grupo"]).Trim();
                         int cantidadAlumnos = Convert.ToInt32(dr["cantidad_alumnos"]);
                         int idGrado = Convert.ToInt32(dr["id_grado"]);
+                        int docente = Convert.ToInt32(dr["id_docente"]);
+                        int salon = Convert.ToInt32(dr["id_salon"]);
 
-                        grup = new Grupos(nom,idGrado,cantidadAlumnos);
+
+                        grup = new Grupos(nom,idGrado,cantidadAlumnos,docente,salon);
 
                         listaGrupos.Add(grup);
 
@@ -176,6 +181,8 @@ namespace Jardin.Datos
                 cmd.Parameters.AddWithValue("@nombreAnterior", grupo.NombreAnterior);
                 cmd.Parameters.AddWithValue("@idGrado", grupo.Id_grado);
                 cmd.Parameters.AddWithValue("@cantidadAlumnos", grupo.CantidadAlumnos);
+                cmd.Parameters.AddWithValue("@docente", grupo.Id_docente);
+                cmd.Parameters.AddWithValue("@salon", grupo.Id_salon);
 
                 n = cmd.ExecuteNonQuery();
 

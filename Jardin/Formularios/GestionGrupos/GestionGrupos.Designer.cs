@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbSalones = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbDocentes = new System.Windows.Forms.ComboBox();
             this.btnBuscarGrupo = new System.Windows.Forms.Button();
             this.txtConsultaNombreGrupo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,6 +62,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,6 +71,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnNuevo);
+            this.panel1.Controls.Add(this.cbSalones);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.cbDocentes);
             this.panel1.Controls.Add(this.btnBuscarGrupo);
             this.panel1.Controls.Add(this.txtConsultaNombreGrupo);
             this.panel1.Controls.Add(this.label7);
@@ -85,12 +95,46 @@
             this.panel1.Size = new System.Drawing.Size(490, 565);
             this.panel1.TabIndex = 0;
             // 
+            // cbSalones
+            // 
+            this.cbSalones.FormattingEnabled = true;
+            this.cbSalones.Location = new System.Drawing.Point(154, 285);
+            this.cbSalones.Name = "cbSalones";
+            this.cbSalones.Size = new System.Drawing.Size(230, 21);
+            this.cbSalones.TabIndex = 18;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(100, 288);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(34, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Salón";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(100, 249);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 13);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Docente";
+            // 
+            // cbDocentes
+            // 
+            this.cbDocentes.FormattingEnabled = true;
+            this.cbDocentes.Location = new System.Drawing.Point(154, 246);
+            this.cbDocentes.Name = "cbDocentes";
+            this.cbDocentes.Size = new System.Drawing.Size(230, 21);
+            this.cbDocentes.TabIndex = 15;
+            // 
             // btnBuscarGrupo
             // 
             this.btnBuscarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarGrupo.Location = new System.Drawing.Point(347, 388);
+            this.btnBuscarGrupo.Location = new System.Drawing.Point(347, 492);
             this.btnBuscarGrupo.Name = "btnBuscarGrupo";
             this.btnBuscarGrupo.Size = new System.Drawing.Size(75, 31);
             this.btnBuscarGrupo.TabIndex = 14;
@@ -100,7 +144,7 @@
             // 
             // txtConsultaNombreGrupo
             // 
-            this.txtConsultaNombreGrupo.Location = new System.Drawing.Point(71, 391);
+            this.txtConsultaNombreGrupo.Location = new System.Drawing.Point(71, 495);
             this.txtConsultaNombreGrupo.Name = "txtConsultaNombreGrupo";
             this.txtConsultaNombreGrupo.Size = new System.Drawing.Size(235, 20);
             this.txtConsultaNombreGrupo.TabIndex = 12;
@@ -108,7 +152,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 362);
+            this.label7.Location = new System.Drawing.Point(68, 466);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 11;
@@ -118,7 +162,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(70, 319);
+            this.label6.Location = new System.Drawing.Point(70, 423);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 20);
             this.label6.TabIndex = 10;
@@ -129,7 +173,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(68, 283);
+            this.label5.Location = new System.Drawing.Point(68, 387);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(357, 13);
             this.label5.TabIndex = 9;
@@ -140,7 +184,7 @@
             this.btnGuardarCambiosGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGuardarCambiosGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambiosGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCambiosGrupo.Location = new System.Drawing.Point(347, 236);
+            this.btnGuardarCambiosGrupo.Location = new System.Drawing.Point(314, 339);
             this.btnGuardarCambiosGrupo.Name = "btnGuardarCambiosGrupo";
             this.btnGuardarCambiosGrupo.Size = new System.Drawing.Size(75, 31);
             this.btnGuardarCambiosGrupo.TabIndex = 8;
@@ -153,7 +197,7 @@
             this.btnModificarGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnModificarGrupo.Location = new System.Drawing.Point(347, 188);
+            this.btnModificarGrupo.Location = new System.Drawing.Point(200, 339);
             this.btnModificarGrupo.Name = "btnModificarGrupo";
             this.btnModificarGrupo.Size = new System.Drawing.Size(75, 31);
             this.btnModificarGrupo.TabIndex = 7;
@@ -164,15 +208,15 @@
             // cbGradosCrear
             // 
             this.cbGradosCrear.FormattingEnabled = true;
-            this.cbGradosCrear.Location = new System.Drawing.Point(113, 238);
+            this.cbGradosCrear.Location = new System.Drawing.Point(154, 205);
             this.cbGradosCrear.Name = "cbGradosCrear";
-            this.cbGradosCrear.Size = new System.Drawing.Size(193, 21);
+            this.cbGradosCrear.Size = new System.Drawing.Size(230, 21);
             this.cbGradosCrear.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(71, 241);
+            this.label4.Location = new System.Drawing.Point(100, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 5;
@@ -180,31 +224,31 @@
             // 
             // txtCantidadAlumnos
             // 
-            this.txtCantidadAlumnos.Location = new System.Drawing.Point(71, 188);
+            this.txtCantidadAlumnos.Location = new System.Drawing.Point(213, 156);
             this.txtCantidadAlumnos.Name = "txtCantidadAlumnos";
-            this.txtCantidadAlumnos.Size = new System.Drawing.Size(235, 20);
+            this.txtCantidadAlumnos.Size = new System.Drawing.Size(171, 20);
             this.txtCantidadAlumnos.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 160);
+            this.label3.Location = new System.Drawing.Point(100, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 13);
+            this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Cantidad de alumnos permitidos";
+            this.label3.Text = "Cantidad de alumnos";
             // 
             // txtNombreGrupo
             // 
-            this.txtNombreGrupo.Location = new System.Drawing.Point(71, 117);
+            this.txtNombreGrupo.Location = new System.Drawing.Point(100, 120);
             this.txtNombreGrupo.Name = "txtNombreGrupo";
-            this.txtNombreGrupo.Size = new System.Drawing.Size(235, 20);
+            this.txtNombreGrupo.Size = new System.Drawing.Size(284, 20);
             this.txtNombreGrupo.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 88);
+            this.label2.Location = new System.Drawing.Point(100, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 1;
@@ -375,6 +419,19 @@
             this.panel3.Size = new System.Drawing.Size(507, 565);
             this.panel3.TabIndex = 1;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(88, 339);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 31);
+            this.btnNuevo.TabIndex = 19;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // GestionGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,5 +481,10 @@
         private System.Windows.Forms.Button btnBuscarGrupo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbSalones;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cbDocentes;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

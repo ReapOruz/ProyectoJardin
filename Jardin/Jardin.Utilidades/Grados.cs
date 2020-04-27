@@ -136,6 +136,82 @@ namespace Jardin.Utilidades
             return cantidadAlumnos;
         }
 
+        public List<String> listarSalones()
+        {
+
+            List<String> listaSalones = new List<string>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarsalones", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string salon = ((string)dr["descripcion"]).Trim();
+
+                    listaSalones.Add(salon);
+
+                }
+
+                con.Close();
+            }
+
+            return listaSalones;
+
+
+        }
+
+        public bool validarDocenteEnGrupo(int idDocente)
+        {
+            bool existe = false;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_buscarDocenteEngrupo", con);
+                cmd.Parameters.AddWithValue("@id_docente", idDocente);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if(dr.HasRows)
+                {
+                    existe = true;
+                }
+               
+                con.Close();
+            }
+
+            return existe;
+
+        }
+
+        public bool validarSalonEnGrupo(int idSalon)
+        {
+            bool existe = false;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_buscarSalonEngrupo", con);
+                cmd.Parameters.AddWithValue("@id_salon", idSalon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    existe = true;
+                }
+
+                con.Close();
+            }
+
+            return existe;
+
+        }
+
     }
 
 }

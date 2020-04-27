@@ -216,5 +216,37 @@ namespace Jardin.Datos
             return n;
         }
 
+        public List<String> listarDocentes()
+        {
+            List<String> listDocentes = new List<String>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_consultarDocentes", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_usuario"]);
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+
+                        string docenteCompleto = id + "-" + nom + " " + apell;
+
+                        listDocentes.Add(docenteCompleto);
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listDocentes;
+        }
+
     }
 }

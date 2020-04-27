@@ -76,6 +76,12 @@
     <Compile Include="GruposEstudiantes\GruposEstudiantes.Designer.cs">
       <DependentUpon>GruposEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHorario\Horario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHorario\Horario.Designer.cs">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuSecretaria\MainSecretaria.cs">
       <SubType>Form</SubType>
     </Compile>

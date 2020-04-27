@@ -14,6 +14,7 @@ namespace Jardin.Entidades
         private int id_grado;
         private int cantidadAlumnos;
         private int id_docente;
+        private int id_salon;
 
         public Grupos()
         {
@@ -28,22 +29,27 @@ namespace Jardin.Entidades
 
         }
 
-        public Grupos(string nombre, int grado, int alumnos)
+        public Grupos(string nombre, int grado, int alumnos, int docente, int salon)
         {
 
             this.Nombre = nombre;
             this.Id_grado = grado;
             this.CantidadAlumnos = alumnos;
+            this.id_docente = docente;
+            this.Id_salon = salon;
+
 
         }
 
-        public Grupos(string nombre, string nomAnterior, int grado, int alumnos)
+        public Grupos(string nombre, string nomAnterior, int grado, int alumnos, int docente, int salon)
         {
 
             this.Nombre = nombre;
             this.NombreAnterior = nomAnterior;
             this.Id_grado = grado;
             this.CantidadAlumnos = alumnos;
+            this.id_docente = docente;
+            this.Id_salon = salon;
 
         }
 
@@ -73,5 +79,6 @@ namespace Jardin.Entidades
         public int CantidadAlumnos { get => cantidadAlumnos; set => cantidadAlumnos = value; }
         public int Id_docente { get => id_docente; set => id_docente = value; }
         public string NombreAnterior { get => nombreAnterior; set => nombreAnterior = value; }
+        public int Id_salon { get => id_salon; set => id_salon = value; }
     }
 }

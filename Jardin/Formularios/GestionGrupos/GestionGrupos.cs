@@ -21,18 +21,27 @@ namespace Formularios
         private int actividad = 0;
         int cantidadGrupos = 0;
         string nombreAnterior;
+        int salonMod;
+        int docenteMod;
 
         public GestionGrupos()
         {
             InitializeComponent();
             listarGrados();
             listarAreas();
+            listarDocentes();
+            listarSalones();
+            bloquearCamposCrearGrupo();
             bloquearBotonModificar();
+            bloquearBotonGuardarCambios();
+          
         }
-
 
         private void listarGrados()
         {
+            this.cbGradosCrear.Items.Clear();
+            this.cbGradosGeneral.Items.Clear();
+
             List<String> listaGrado = null;
             Grados grado = new Grados();
 
@@ -41,8 +50,6 @@ namespace Formularios
                 listaGrado = grado.listarGrados();
             }
             if (listaGrado.Count > 0)
-
-
             {
                 for (int i = 0; i < listaGrado.Count; i++)
                 {
@@ -51,6 +58,45 @@ namespace Formularios
                     this.cbGradosGeneral.Items.Add(listaGrado[i]);
 
                 }
+
+            }
+
+        }
+
+        private void listarDocentes()
+        {
+
+            this.cbDocentes.Items.Clear();
+
+            List<String> listaDocentes;
+
+            BLUsuarios blDocentes = new BLUsuarios();
+
+            listaDocentes = blDocentes.listarDocentes();
+
+
+            for (int i = 0; i< listaDocentes.Count; i++)
+            {
+
+                this.cbDocentes.Items.Add(listaDocentes[i]);
+
+            }
+
+        }
+
+        private void listarSalones()
+        {
+            this.cbSalones.Items.Clear();
+
+            List<String> listaSalones;
+            Grados salon = new Grados();
+
+            listaSalones = salon.listarSalones();
+
+
+            for (int i = 0; i < listaSalones.Count; i++)
+            {
+                this.cbSalones.Items.Add(listaSalones[i]);
 
             }
 
@@ -134,30 +180,45 @@ namespace Formularios
             this.txtNombreGrupo.Enabled = false;
             this.txtCantidadAlumnos.Enabled = false;
             this.cbGradosCrear.Enabled = false;
-
+            this.cbDocentes.Enabled = false;
+            this.cbSalones.Enabled = false;
+            this.btnGuardarCambiosGrupo.Enabled = false;
+            this.btnGuardarCambiosGrupo.Visible = false;
         }
+
+        
         private void desbloquearCamposCrearGrupo()
         {
 
             this.txtNombreGrupo.Enabled = true;
             this.txtCantidadAlumnos.Enabled = true;
             this.cbGradosCrear.Enabled = true;
+            this.cbDocentes.Enabled = true;
+            this.cbSalones.Enabled = true;
         }
 
         private void bloquearBotonModificar()
         {
-
             this.btnModificarGrupo.Enabled = false;
             this.btnModificarGrupo.Visible = false;
-
         }
 
         private void desbloquearBotonModificar()
         {
-
             this.btnModificarGrupo.Enabled = true;
             this.btnModificarGrupo.Visible = true;
+        }
 
+        private void bloquearBotonGuardarCambios()
+        {
+            this.btnGuardarCambiosGrupo.Enabled = false;
+            this.btnGuardarCambiosGrupo.Visible = false;
+        }
+
+        private void desbloquearBotonGuardarCambios()
+        {
+            this.btnGuardarCambiosGrupo.Enabled = true;
+            this.btnGuardarCambiosGrupo.Visible = true;
         }
 
 
@@ -165,16 +226,21 @@ namespace Formularios
         {
             nombreAnterior = this.txtNombreGrupo.Text;
             actividad = 2;
+            salonMod = int.Parse(this.cbSalones.SelectedIndex.ToString()) + 1;
+            docenteMod = int.Parse(this.cbDocentes.SelectedItem.ToString().Substring(0, 4));
             desbloquearCamposCrearGrupo();
+            desbloquearBotonGuardarCambios();
 
         }
 
 
         private void limpiarCampos()
         {
-            this.txtCantidadAlumnos.Text = "";
-            this.txtNombreGrupo.Text = "";
+            this.txtCantidadAlumnos.Clear();
+            this.txtNombreGrupo.Clear();
             this.cbGradosCrear.Text = "";
+            this.cbDocentes.Text = "";
+            this.cbSalones.Text = "";
 
         }
 
@@ -185,6 +251,8 @@ namespace Formularios
             if(this.txtNombreGrupo.Text.Equals("")
                 || this.txtCantidadAlumnos.Text.Equals("")
                 || this.cbGradosCrear.SelectedIndex.Equals(null)
+                || this.cbDocentes.SelectedIndex.Equals(null)
+                || this.cbSalones.SelectedIndex.Equals(null)
                 )
             {
 
@@ -241,12 +309,17 @@ namespace Formularios
                     BLGrupos bLGrupos = new BLGrupos();
                     listaGrupo = bLGrupos.consultarGrupoPorNombre(consultaNombre);
 
+                    int idDocente = listaGrupo[0].Id_docente;
+                    int indexIdDocente = this.cbDocentes.FindString(idDocente.ToString());
                     this.txtNombreGrupo.Text = listaGrupo[0].Nombre;
                     this.txtCantidadAlumnos.Text = (listaGrupo[0].CantidadAlumnos).ToString();
                     this.cbGradosCrear.SelectedIndex = (listaGrupo[0].Id_grado) - 1;
+                    this.cbDocentes.SelectedIndex = indexIdDocente;
+                    this.cbSalones.SelectedIndex = (listaGrupo[0].Id_salon) - 1;
 
                     bloquearCamposCrearGrupo();
                     desbloquearBotonModificar();
+                    bloquearBotonGuardarCambios();
 
                 }
                 else
@@ -264,7 +337,7 @@ namespace Formularios
 
             }
 
-                 
+
 
         }
 
@@ -282,6 +355,8 @@ namespace Formularios
                     string nombreGrupo = this.txtNombreGrupo.Text;
                     int cantidadAlumnos = int.Parse(this.txtCantidadAlumnos.Text);
                     int grado = int.Parse(this.cbGradosCrear.SelectedIndex.ToString()) + 1;
+                    int salon = int.Parse(this.cbSalones.SelectedIndex.ToString()) + 1;
+                    int docente = int.Parse(this.cbDocentes.SelectedItem.ToString().Substring(0, 4));
                     int resultadoQuery = -1;
                     Grupos grupo;
 
@@ -292,9 +367,26 @@ namespace Formularios
                         if (totalGrupos == false)
                         {
                             
-                            grupo = new Grupos(nombreGrupo, grado, cantidadAlumnos);
+                            if(validarDocenteEnGrupo(docente) == false){
 
-                            resultadoQuery = blgrupo.crearGrupo(grupo);
+                                if (validarSalonEnGrupo(salon) == false)
+                                {
+
+                                    grupo = new Grupos(nombreGrupo, grado, cantidadAlumnos, docente, salon);
+
+                                    resultadoQuery = blgrupo.crearGrupo(grupo);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El salon seleccionado ya se encuentra registrado en otro grupo");
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("El docente seleccionado ya se encuentra registrado en otro grupo");
+                            }
+ 
                         }
                         else
                         {
@@ -309,11 +401,40 @@ namespace Formularios
 
                         if (totalGrupos == false)
                         {
+                            if (docente == docenteMod && salon == salonMod)
+                            {
 
-                            grupo = new Grupos(nombreGrupo, nombreAnterior, grado, cantidadAlumnos);
+                                grupo = new Grupos(nombreGrupo, nombreAnterior, grado, cantidadAlumnos, docente, salon);
 
-                            resultadoQuery = blgrupo.modificarGrupo(grupo);
+                                resultadoQuery = blgrupo.modificarGrupo(grupo);
 
+                            }
+
+                            else
+                            {
+                                if (validarDocenteEnGrupo(docente) == false)
+                                {
+
+                                    if (validarSalonEnGrupo(salon) == false)
+                                    {
+
+                                        grupo = new Grupos(nombreGrupo, nombreAnterior, grado, cantidadAlumnos, docente, salon);
+
+                                        resultadoQuery = blgrupo.modificarGrupo(grupo);
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("El salon seleccionado ya se encuentra registrado en otro grupo");
+                                    }
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El docente seleccionado ya se encuentra registrado en otro grupo");
+                                }
+
+                            }
                         }
                         else
                         {
@@ -327,8 +448,12 @@ namespace Formularios
                     if (resultadoQuery >= 1)
                     {
 
-                        MessageBox.Show("Se ha ingresado el nuevo grupo correctamente");
+                        MessageBox.Show("Se han guardado los datos correctamente");
                         limpiarCampos();
+                        bloquearBotonModificar();
+                        listarGrados();
+                        listarDocentes();
+                        listarSalones();
 
                     }
 
@@ -374,6 +499,46 @@ namespace Formularios
 
         }
 
-    
+
+        private bool validarDocenteEnGrupo(int idDocente)
+        {
+            bool existe = false;
+            Grados docenteGrupo = new Grados();
+
+            if(docenteGrupo.validarDocenteEnGrupo(idDocente) == true)
+            {
+                existe = true;
+            }
+
+            return existe;
+
+        }
+
+        private bool validarSalonEnGrupo(int idSalon)
+        {
+            bool existe = false;
+            Grados salonGrupo = new Grados();
+
+            if (salonGrupo.validarSalonEnGrupo(idSalon) == true)
+            {
+                existe = true;
+            }
+
+            return existe;
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+            limpiarCampos();
+            listarGrados();
+            listarDocentes();
+            listarSalones();
+            desbloquearCamposCrearGrupo();
+            desbloquearBotonGuardarCambios();
+            bloquearBotonModificar();
+
+        }
     }
 }

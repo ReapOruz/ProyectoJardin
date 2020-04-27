@@ -44,6 +44,11 @@ namespace Jardin.Negocio
             return daoUser.actualizarUsuario(user);
         }
 
+        public List<String> listarDocentes()
+        {
+            DAOUsuarios daoUser = new DAOUsuarios();
+            return daoUser.listarDocentes();
+        }
 
     }
 }

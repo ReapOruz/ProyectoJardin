@@ -109,34 +109,20 @@ namespace Formularios
                   
                     if (registrosAfectados > 0)
                     {
-
                         MessageBox.Show("Se ha asignado al grupo \""+ grupoNombre +"\" correctamente. El grupo ahora cuenta con \""+ blestudiante.contarEstudiantesGrupo(grupo) + "\" estudiantes inscritos.");
-                        
-
+                       
                         cargarDatosGruposEstudiantes();
-
                     }
-
                 }
                 catch
                 {
-
                     MessageBox.Show("Debe selelcionar un grupo de la lista");
-
                 }
-
             }
             else
             {
-
-                
                 MessageBox.Show("El grupo " + grupoNombre + " se encuentra lleno");
-
-
             }
-
-           
-   
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -172,5 +158,57 @@ namespace Formularios
 
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txtBuscarDocumento.Text.Equals(""))
+                {
+                    MessageBox.Show("Debe ingresar un número de documento");
+                }
+                else
+                {
+                    string documento = this.txtBuscarDocumento.Text.Trim();
+                    consultarEstudiante(documento);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No se encontró el numero de identidad ingresado");
+            }
+
+        }
+
+
+        private void consultarEstudiante(string documento)
+        {
+
+            List<Estudiantes> listaGrupoEstudiantes = null;
+
+            if (listaGrupoEstudiantes == null)
+            {
+                listaGrupoEstudiantes = blestudiante.buscarEstudianteGrupo(documento);
+            }
+            if (listaGrupoEstudiantes.Count > 0)
+            {
+                this.tableGrupos.Rows.Clear();
+                for (int i = 0; i < listaGrupoEstudiantes.Count; i++)
+                {
+
+                    this.tableGrupos.Rows.Add(listaGrupoEstudiantes[i].Id,
+                                                listaGrupoEstudiantes[i].Documento,
+                                                listaGrupoEstudiantes[i].Nombres,
+                                                listaGrupoEstudiantes[i].Apellidos,
+                                                listaGrupoEstudiantes[i].Grupo
+                                                );
+
+                }
+            }
+        }
+
+        private void btnLimpiarTabla_Click(object sender, EventArgs e)
+        {
+            cargarDatosGruposEstudiantes();
+        }
     }
 }

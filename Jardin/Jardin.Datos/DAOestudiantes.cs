@@ -261,6 +261,44 @@ namespace Jardin.Datos
 
         }
 
+        public List<Estudiantes> buscarEstudianteGrupo(string documento)
+        {
+            List<Estudiantes> listaEstuduiantes = new List<Estudiantes>();
+            Estudiantes estudent;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_consultarEstudianteGrupo", con);
+                cmd.Parameters.AddWithValue("@documento", documento);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_alumno"]);
+                        string doc = ((string)dr["documento"]).Trim();
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        string grupo = ((string)dr["nombre_grupo"]).Trim();
+
+                        estudent = new Estudiantes(id, doc, nom, apell, grupo);
+
+                        listaEstuduiantes.Add(estudent);
+
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaEstuduiantes;
+        }
+
 
 
     }
