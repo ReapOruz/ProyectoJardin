@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DAOestudiantes.cs" />
     <Compile Include="DAOGrupos.cs" />
+    <Compile Include="DAOHorario.cs" />
     <Compile Include="DAOUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -76,11 +76,11 @@
     <Compile Include="GruposEstudiantes\GruposEstudiantes.Designer.cs">
       <DependentUpon>GruposEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHorario\Horario.cs">
+    <Compile Include="FormHorario\FormHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHorario\Horario.Designer.cs">
-      <DependentUpon>Horario.cs</DependentUpon>
+    <Compile Include="FormHorario\FormHorario.Designer.cs">
+      <DependentUpon>FormHorario.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuSecretaria\MainSecretaria.cs">
       <SubType>Form</SubType>
@@ -107,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrudUsuario\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHorario\FormHorario.resx">
+      <DependentUpon>FormHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPagos\FormularioPagos.resx">
       <DependentUpon>FormularioPagos.cs</DependentUpon>

@@ -63,6 +63,53 @@ namespace Jardin.Utilidades
             return listaMaterias;
         }
 
+        public List<String> listarMaterias()
+        {
+            List<String> listaMaterias = new List<String>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_ListarMaterias", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string materia = ((string)dr["nombre_materia"]).Trim();
+                        listaMaterias.Add(materia);
+                    }
+                }
+                con.Close();
+            }
+            return listaMaterias;
+        }
+
+        public List<String> listarDias()
+        {
+            List<String> listaDias = new List<String>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_ListarDias", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string dia = ((string)dr["descripcion"]).Trim();
+                        listaDias.Add(dia);
+                    }
+                }
+                con.Close();
+            }
+            return listaDias;
+        }
 
     }
 }

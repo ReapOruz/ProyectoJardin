@@ -212,6 +212,60 @@ namespace Jardin.Utilidades
 
         }
 
+        public List<String> listarBloques()
+        {
+
+            List<String> listaBloques = new List<string>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarBloques", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string bloque = ((string)dr["descripcion_bloque"]).Trim();
+
+                    listaBloques.Add(bloque);
+
+                }
+
+                con.Close();
+            }
+
+            return listaBloques;
+
+        }
+
+        public List<String> listarGrupos()
+        {
+
+            List<String> listaGrupos = new List<string>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_ListarGrupos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string grupo = ((string)dr["nombre_grupo"]).Trim();
+
+                    listaGrupos.Add(grupo);
+
+                }
+
+                con.Close();
+            }
+
+            return listaGrupos;
+
+        }
+
     }
 
 }

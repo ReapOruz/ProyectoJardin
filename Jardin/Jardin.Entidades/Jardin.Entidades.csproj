@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estudiantes.cs" />
+    <Compile Include="HorarioEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Grupos.cs" />
