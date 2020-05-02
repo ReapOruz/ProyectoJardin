@@ -69,10 +69,10 @@ namespace Jardin.Datos
                 {
                     while (dr.Read())
                     {
-                        string nombreBloque = (dr["descripcion_bloque"]).ToString();
-                        string nombreMateria = (dr["nombre_materia"]).ToString();
-                        string nombreGrupo = (dr["nombre_grupo"]).ToString();
-                        string nombreDia = (dr["descripcion"]).ToString();
+                        string nombreBloque = (dr["descripcion_bloque"]).ToString().Trim();
+                        string nombreMateria = (dr["nombre_materia"]).ToString().Trim();
+                        string nombreGrupo = (dr["nombre_grupo"]).ToString().Trim();
+                        string nombreDia = (dr["descripcion"]).ToString().Trim();
                         horario = new HorarioEntidad(nombreBloque,nombreMateria,nombreGrupo,nombreDia);
                         listaHorario.Add(horario);
                     }
