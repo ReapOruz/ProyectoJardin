@@ -20,7 +20,12 @@ namespace Jardin.Negocio
         public List<HorarioEntidad> pintarHorario(int idGrupo)
         {
             return daoHorario.pintarHorario(idGrupo);
-        } 
+        }
+
+        public int obtenerUltimoBloqueId(int idGrupo)
+        {
+            return daoHorario.obtenerUltimoBloquePorGrupo(idGrupo);
+        }
 
     }
 }

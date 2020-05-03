@@ -81,5 +81,32 @@ namespace Jardin.Datos
             }
             return listaHorario;
         }
+
+        public int obtenerUltimoBloquePorGrupo(int grupo)
+        {
+            int ultimoBloqueId = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerUltimoIdBloque", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idGrupo", grupo);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null)
+                {
+                    while (dr.Read())
+                    {
+                        ultimoBloqueId = Convert.ToInt32(dr["ultimoBloque"]);
+                    }
+                }
+
+                con.Close();
+            }
+
+            return ultimoBloqueId;
+        }
+
     }
 }
