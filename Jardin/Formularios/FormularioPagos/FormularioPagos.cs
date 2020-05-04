@@ -89,13 +89,10 @@ namespace Formularios
                     MessageBox.Show("Por favor verifique que el valor a pagar sea mayor a $0");
                     
                 }
-
                 else
                 {
-
                     if (desicion == DialogResult.OK)
                     {
-
                         if (mesPago == null)
                         {
                             mesPago = "No aplica";
@@ -110,18 +107,13 @@ namespace Formularios
 
                         if ((totalPagadoPorEstudiante + pago) <= valorPagarConcepto)
                         {
-
-
                             resultado = pagoAbono.insertarPagosEstudiante(conceptoPago, pago, docEstudiante, anioPago, mesPago.ToString());
-
                         }
                         else
                         {
-
                             MessageBox.Show("No se puede realizar el pago debido a que excede el monto total a pagar para el concepcto" + "\r\n" +
                                 "El valor total del concepto es: " + valorPagarConcepto + "\r\n" +
                                 "Por favor verifique el valor a pagar");
-
                         }
 
                         if (resultado > 0)
