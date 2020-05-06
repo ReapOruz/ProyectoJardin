@@ -140,7 +140,7 @@ namespace Formularios
 
             bool lleno = false;
 
-            Grados grado = new Grados();
+            Utilities grado = new Utilities();
 
             int grupo = int.Parse(this.cbListaGrupos.SelectedIndex.ToString()) + 1;
             cantidadEstuiantesGrupo = blestudiante.contarEstudiantesGrupo(grupo);

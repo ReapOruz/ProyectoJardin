@@ -1,1 +1,3 @@
 C:\Users\danie\OneDrive\Desktop\Proyecto Programacion\Jardin\obj\Debug\Jardin.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\obj\Debug\Jardin.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\obj\Debug\Jardin.csproj.CoreCompileInputs.cache

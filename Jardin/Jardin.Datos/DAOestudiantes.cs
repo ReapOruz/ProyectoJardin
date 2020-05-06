@@ -144,7 +144,7 @@ namespace Jardin.Datos
 
         public List<Estudiantes> listarGruposEstudiantes()
         {
-            List<Estudiantes> listaEstuduiantes = new List<Estudiantes>();
+            List<Estudiantes> listaEstudiantes = new List<Estudiantes>();
             Estudiantes estudent;
 
             using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -167,7 +167,7 @@ namespace Jardin.Datos
 
                         estudent = new Estudiantes(id,doc,nom,apell,grupo);
 
-                        listaEstuduiantes.Add(estudent);
+                        listaEstudiantes.Add(estudent);
 
                     }
 
@@ -176,7 +176,7 @@ namespace Jardin.Datos
                 con.Close();
             }
 
-            return listaEstuduiantes;
+            return listaEstudiantes;
         }
 
 
@@ -300,6 +300,37 @@ namespace Jardin.Datos
         }
 
 
+        public List<Estudiantes> listarEstudiantesPorGrupo(int grupo)
+        {
+            List<Estudiantes> listaEstudiantes = new List<Estudiantes>();
+            Estudiantes estudent;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarEstudiantesPorGrupo", con);
+                cmd.Parameters.AddWithValue("@idGrupo", grupo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        int id = Convert.ToInt32(dr["id_alumno"]);
+                        string nom = ((string)dr["nombres"]).Trim();
+                        string apell = ((string)dr["apellidos"]).Trim();
+                        estudent = new Estudiantes(id, nom, apell);
+                        listaEstudiantes.Add(estudent);
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaEstudiantes;
+        }
 
     }
 

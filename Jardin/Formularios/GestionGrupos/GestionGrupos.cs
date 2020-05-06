@@ -43,7 +43,7 @@ namespace Formularios
             this.cbGradosGeneral.Items.Clear();
 
             List<String> listaGrado = null;
-            Grados grado = new Grados();
+            Utilities grado = new Utilities();
 
             if (listaGrado == null)
             {
@@ -89,7 +89,7 @@ namespace Formularios
             this.cbSalones.Items.Clear();
 
             List<String> listaSalones;
-            Grados salon = new Grados();
+            Utilities salon = new Utilities();
 
             listaSalones = salon.listarSalones();
 
@@ -480,7 +480,7 @@ namespace Formularios
         {
 
             bool lleno = false;
-            Grados grado = new Grados();
+            Utilities grado = new Utilities();
 
                 
             cantidadGrupos = grado.contarGruposPorGrado(id_grado);
@@ -503,7 +503,7 @@ namespace Formularios
         private bool validarDocenteEnGrupo(int idDocente)
         {
             bool existe = false;
-            Grados docenteGrupo = new Grados();
+            Utilities docenteGrupo = new Utilities();
 
             if(docenteGrupo.validarDocenteEnGrupo(idDocente) == true)
             {
@@ -517,7 +517,7 @@ namespace Formularios
         private bool validarSalonEnGrupo(int idSalon)
         {
             bool existe = false;
-            Grados salonGrupo = new Grados();
+            Utilities salonGrupo = new Utilities();
 
             if (salonGrupo.validarSalonEnGrupo(idSalon) == true)
             {

@@ -44,6 +44,7 @@
     <Compile Include="BLEstudiantes.cs" />
     <Compile Include="BLGrupos.cs" />
     <Compile Include="BLHorario.cs" />
+    <Compile Include="BLNotas.cs" />
     <Compile Include="BLUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

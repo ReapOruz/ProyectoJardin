@@ -8,7 +8,6 @@ namespace Jardin.Entidades
 {
     public class Estudiantes
     {
-
         private int id;
         private string documento;
         private string nombres;
@@ -27,7 +26,6 @@ namespace Jardin.Entidades
         
        
         }
-
 
         public Estudiantes(int id, int grupo)
         {
@@ -74,6 +72,13 @@ namespace Jardin.Entidades
             this.correo = correo;
             this.observacion = observacion;
             this.ocupacionAcudiente = ocupaAcudiente;
+        }
+
+        public Estudiantes(int id, string nombres, string apellidos)
+        {
+            this.id = id;
+            this.nombres = nombres;
+            this.apellidos = apellidos;
         }
 
         public int Id { get => id; set => id = value; }

@@ -19,29 +19,23 @@ namespace Formularios
 
         private void opcAdminUusarios_Click(object sender, EventArgs e)
         {
-
             CrudUsuario crudUser = new CrudUsuario();
-
             this.Dispose();
-
             crudUser.Show();
-
-
-        }
-
-        private void lbModulo_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
             GestionGrupos gesGrupo = new GestionGrupos();
             this.Dispose();
             gesGrupo.Show();
+        }
 
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Horario ventanaHorario = new Horario();
+            this.Dispose();
+            ventanaHorario.Show();
         }
     }
 }

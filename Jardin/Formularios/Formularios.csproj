@@ -76,11 +76,11 @@
     <Compile Include="GruposEstudiantes\GruposEstudiantes.Designer.cs">
       <DependentUpon>GruposEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHorario\FormHorario.cs">
+    <Compile Include="FormHorario\HorarioVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHorario\FormHorario.Designer.cs">
-      <DependentUpon>FormHorario.cs</DependentUpon>
+    <Compile Include="FormHorario\HorarioVista.Designer.cs">
+      <DependentUpon>HorarioVista.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuSecretaria\MainSecretaria.cs">
       <SubType>Form</SubType>
@@ -100,6 +100,12 @@
     <Compile Include="Login\FormularioLogin.Designer.cs">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotasFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotasFormulario.Designer.cs">
+      <DependentUpon>NotasFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CrudEstudiantes\CrudEstudiantes.resx">
@@ -108,8 +114,8 @@
     <EmbeddedResource Include="CrudUsuario\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHorario\FormHorario.resx">
-      <DependentUpon>FormHorario.cs</DependentUpon>
+    <EmbeddedResource Include="FormHorario\HorarioVista.resx">
+      <DependentUpon>HorarioVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPagos\FormularioPagos.resx">
       <DependentUpon>FormularioPagos.cs</DependentUpon>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FormularioLogin.resx">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotasFormulario.resx">
+      <DependentUpon>NotasFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +174,8 @@
       <Name>Jardin.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Notas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

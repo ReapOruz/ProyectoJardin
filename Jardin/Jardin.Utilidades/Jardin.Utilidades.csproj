@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Areas.cs" />
     <Compile Include="Pagos.cs" />
-    <Compile Include="Grados.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="Materias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
