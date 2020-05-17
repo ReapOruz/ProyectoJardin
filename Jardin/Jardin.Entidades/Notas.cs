@@ -11,6 +11,7 @@ namespace Jardin.Entidades
         int alumno;
         string periodo;
         int materia;
+        string nombreMateria;
         double nota;
         string valoracion;
 
@@ -23,10 +24,25 @@ namespace Jardin.Entidades
             this.Nota = nota;
             this.Valoracion = valoracion;
         }
-        public int Alumno { get => alumno; set => alumno = value; }
-        public string Periodo { get => periodo; set => periodo = value; }
+
+        public Notas(int materia, string nombreMateria, double nota, string valoracion)
+        {
+ 
+            this.materia = materia;
+            this.nombreMateria = nombreMateria;
+            this.nota = nota;
+            this.valoracion = valoracion;
+        }
+
+        public int Alumno { get => Alumno1; set => Alumno1 = value; }
+        public string Periodo { get => Periodo1; set => Periodo1 = value; }
         public int Materia { get => materia; set => materia = value; }
-        public double Nota { get => nota; set => nota = value; }
-        public string Valoracion { get => valoracion; set => valoracion = value; }
+        public double Nota { get => Nota1; set => Nota1 = value; }
+        public string Valoracion { get => Valoracion1; set => Valoracion1 = value; }
+        public int Alumno1 { get => alumno; set => alumno = value; }
+        public string Periodo1 { get => periodo; set => periodo = value; }
+        public string NombreMateria { get => nombreMateria; set => nombreMateria = value; }
+        public double Nota1 { get => nota; set => nota = value; }
+        public string Valoracion1 { get => valoracion; set => valoracion = value; }
     }
 }

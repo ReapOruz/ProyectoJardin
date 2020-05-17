@@ -214,9 +214,7 @@ namespace Jardin.Utilidades
 
         public List<String> listarBloques()
         {
-
             List<String> listaBloques = new List<string>();
-
             using (SqlConnection con = new SqlConnection(CadenaConexion))
             {
                 con.Open();
@@ -241,9 +239,7 @@ namespace Jardin.Utilidades
 
         public List<String> listarGrupos()
         {
-
             List<String> listaGrupos = new List<string>();
-
             using (SqlConnection con = new SqlConnection(CadenaConexion))
             {
                 con.Open();
@@ -254,21 +250,16 @@ namespace Jardin.Utilidades
                 while (dr.Read())
                 {
                     string grupo = ((string)dr["nombre_grupo"]).Trim();
-
                     listaGrupos.Add(grupo);
-
                 }
 
                 con.Close();
             }
-
             return listaGrupos;
-
         }
 
         public List<String> listarPeriodosActivos()
         {
-
             List<String> listPeriodo = new List<string>();
 
             using (SqlConnection con = new SqlConnection(CadenaConexion))

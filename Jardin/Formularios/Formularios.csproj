@@ -100,10 +100,10 @@
     <Compile Include="Login\FormularioLogin.Designer.cs">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotasFormulario.cs">
+    <Compile Include="Notas\NotasFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotasFormulario.Designer.cs">
+    <Compile Include="Notas\NotasFormulario.Designer.cs">
       <DependentUpon>NotasFormulario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -135,7 +135,7 @@
     <EmbeddedResource Include="Login\FormularioLogin.resx">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotasFormulario.resx">
+    <EmbeddedResource Include="Notas\NotasFormulario.resx">
       <DependentUpon>NotasFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -174,8 +174,6 @@
       <Name>Jardin.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Notas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

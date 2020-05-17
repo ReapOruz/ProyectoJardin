@@ -20,23 +20,16 @@ namespace Formularios
         private const string QUINTOBLOQUE = "11-12 am";
         private const string SEXTOBLOQUE = "12-1 pm";
         private const string SEPTIMOBLOQUE = "1-2 pm";
-        private const string DESCANSO = "DESCANSO";
-        private const string BIOLOGIA = "Biología 2";
-        private const string SOCIALES = "Sociales 2";
-        private const string ARTES = "Artes Plásticas 2";
-        private const string MUSICA = "Música 1";
-        private const string ETICA = "Ética 2";
-        private const string RELIGION = "Religión 1";
-        private const string EDUFISICA = "Educación Física 2";
-        private const string DANZAS = "Danzas 1";
-        private const string LENGUACASTELLANA = "Lengua Castellana 3";
-        private const string INGLES = "inglés 2";
-        private const string MATEMATICAS = "Matemáticas 4";
-        private const string INFORMATICA = "Informática 2";
+        private const string DIALUNES = "Lunes";
+        private const string DIAMARTES = "Martes";
+        private const string DIAMIERCOLES = "Miercoles";
+        private const string DIAJUEVES = "Jueves";
+        private const string DIAVIERNES = "Viernes";
         private const int TOTALBLOQUESDIMATERIA = 2;
-        private const int CELDABLOQUE = 0;
         private const int TOTALHORASDIARIAS = 5;
-
+        private const string DESCANSO = "DESCANSO";
+        private const string DESCANSO2 = "DESCANSO 2";
+        private const int FILASBLOQUES = 7;
 
         public Horario()
         {
@@ -44,6 +37,7 @@ namespace Formularios
             bloquearBotonAgregar();
             bloquearCampos();
             bloquearBtnBuscarHorario();
+            insertarFilaHorario();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -67,9 +61,9 @@ namespace Formularios
 
                 if (desicion == DialogResult.OK)
                 {
-                    if (nombreBloque.Equals(TERCERBLOQUE))
+                    if (nombreBloque.Equals(TERCERBLOQUE) || nombreBloque.Equals(SEXTOBLOQUE))
                     {
-                        MessageBox.Show("El bloque \"" + TERCERBLOQUE + "\" esta designado para el tiempo de descanso. No se puede agregar el bloque de estudio.");
+                        MessageBox.Show("El bloque \"" + nombreBloque + "\" esta designado para el tiempo de descanso. No se puede agregar el bloque de estudio.");
                     }
                     else
                     {
@@ -78,7 +72,6 @@ namespace Formularios
                         {
                             horario = new HorarioEntidad(bloque, materia, grupo, dia);
                             registroAfectados = bLHorario.ingresarHorario(horario);
-                            this.tableHorario.Rows.Clear();
                             pintarHorario(grupo);
 
                             if (registroAfectados > 0)
@@ -91,17 +84,14 @@ namespace Formularios
                             string nombreMateria = this.cbMaterias.SelectedItem.ToString();
                             string nombreDia = this.cbDias.SelectedItem.ToString();
                             string mensaje = validarMensajeError(existeHorario, totalBloquesDiaRegistradosMateria, nombreMateria, nombreDia, totalBloquesSemanaRegistradosMateria,
-                                intensidadHorariaMateria, totalBloquesDias, existeDiaBloque, nombreBloque);
+                                        intensidadHorariaMateria, totalBloquesDias, existeDiaBloque, nombreBloque);
                             MessageBox.Show(mensaje);
-
                         }
                     }
-
                 }
                 else
                 {
                     MessageBox.Show("Se cancelado el registro del nuevo horario");
-
                 }
             }
             catch
@@ -149,10 +139,10 @@ namespace Formularios
             }
         }
 
-
         //muestra los datos del horarrio en la tabla
         private void pintarHorario(int grupo)
         {
+
             List<HorarioEntidad> listaHoraria = bLHorario.pintarHorario(grupo);
 
             for (int i = 0; i < listaHoraria.Count; i++)
@@ -161,137 +151,76 @@ namespace Formularios
                 string materia = listaHoraria[i].NombreMateria;
                 string grup = listaHoraria[i].NombreGrupo;
                 string dia = listaHoraria[i].NombreDia;
-                string infoHorario = "Grupo: " + grup + "\r\n" + "Día: " + dia;
 
-                definirBloque(infoHorario, materia, bloque);
-
+                definirBloque(materia, dia, bloque);
             }
-
         }
 
-        private void definirBloque(string infoHorario, string materia, string nombreBloque)
+        private void definirBloque(string materia, string dia, string nombreBloque)
         {
             switch (nombreBloque)
             {
-
                 case PRIMERBLOQUE:
-                    insertarInfoHoarario(0, infoHorario, materia, nombreBloque);
+                    insertarInfoHorario(0, materia, dia, nombreBloque);
                     break;
 
                 case SEGUNDOBLOQUE:
-                    insertarInfoHoarario(1, infoHorario, materia, nombreBloque);
+                    insertarInfoHorario(1, materia, dia, nombreBloque);
                     break;
 
                 case CUARTOBLOQUE:
-                    insertarInfoHoarario(3, infoHorario, materia, nombreBloque);
+                    insertarInfoHorario(3, materia, dia, nombreBloque);
                     break;
 
                 case QUINTOBLOQUE:
-                    insertarInfoHoarario(4, infoHorario, materia, nombreBloque);
-                    break;
-
-                case SEXTOBLOQUE:
-                    insertarInfoHoarario(5, infoHorario, materia, nombreBloque);
+                    insertarInfoHorario(4, materia, dia, nombreBloque);
                     break;
 
                 case SEPTIMOBLOQUE:
-                    insertarInfoHoarario(6, infoHorario, materia, nombreBloque);
+                    insertarInfoHorario(6, materia, dia, nombreBloque);
                     break;
-
             }
-
         }
 
-
-        private void insertarInfoHoarario(int fila, string info, string materia, string bloque)
+        private void insertarInfoHorario(int fila, string materia, string dia, string bloque)
         {
-
-            if (this.tableHorario.Rows.Count - 1 < fila)
+            switch (dia)
             {
-                this.tableHorario.Rows.Add();
+                case DIALUNES:
+                    insertarHorarioCelda(fila, 1, materia, bloque);
+                    break;
+
+                case DIAMARTES:
+                    insertarHorarioCelda(fila, 2, materia, bloque);
+                    break;
+
+                case DIAMIERCOLES:
+                    insertarHorarioCelda(fila, 3, materia, bloque);
+                    break;
+
+                case DIAJUEVES:
+                    insertarHorarioCelda(fila, 4, materia, bloque);
+                    break;
+
+                case DIAVIERNES:
+                    insertarHorarioCelda(fila, 5, materia, bloque);
+                    break;
             }
-
-
-            switch (materia)
-            {
-                case BIOLOGIA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 1, info, bloque);
-                    break;
-
-                case SOCIALES:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 2, info, bloque);
-                    break;
-
-                case ARTES:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 3, info, bloque);
-                    break;
-
-                case MUSICA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 4, info, bloque);
-                    break;
-
-                case ETICA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 5, info, bloque);
-                    break;
-
-                case RELIGION:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 6, info, bloque);
-                    break;
-
-                case EDUFISICA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 7, info, bloque);
-                    break;
-
-                case DANZAS:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 8, info, bloque);
-                    break;
-
-                case LENGUACASTELLANA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 9, info, bloque);
-                    break;
-
-                case INGLES:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 10, info, bloque);
-                    break;
-
-                case MATEMATICAS:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 11, info, bloque);
-                    break;
-
-                case INFORMATICA:
-                    insertarHorarioCelda(fila, CELDABLOQUE, 12, info, bloque);
-                    break;
-
-            }
-
         }
 
-        private void insertarHorarioCelda(int fila, int celdaBloque, int celdaHorarioInfo, string info, string bloque)
+        private void insertarHorarioCelda(int fila, int celdaMateria, string materia, string bloque)
         {
-            tableHorario.Rows[fila].Cells[celdaBloque].Value = bloque;
-
-            if (tableHorario.Rows[fila].Cells[celdaHorarioInfo].Value == null)
-            {
-                tableHorario.Rows[fila].Cells[celdaHorarioInfo].Value = info;
-            }
-            else
-            {
-                string horarioExistente = tableHorario.Rows[fila].Cells[celdaHorarioInfo].Value.ToString();
-                tableHorario.Rows[fila].Cells[celdaHorarioInfo].Value = horarioExistente + "\r\n" + info;
-            }
+            tableHorario.Rows[fila].Cells[celdaMateria].Value = materia;
 
             if (bloque.Equals(SEGUNDOBLOQUE))
             {
-
-                if (this.tableHorario.Rows.Count - 1 == fila)
-                {
-                    this.tableHorario.Rows.Add();
-                }
-
-                tableHorario.Rows[fila + 1].Cells[celdaBloque].Value = TERCERBLOQUE;
-                tableHorario.Rows[fila + 1].Cells[celdaHorarioInfo].Value = DESCANSO;
+                tableHorario.Rows[fila + 1].Cells[celdaMateria].Value = DESCANSO;
             }
 
+            if (bloque.Equals(QUINTOBLOQUE))
+            {
+                tableHorario.Rows[fila + 1].Cells[celdaMateria].Value = DESCANSO2;
+            }
         }
 
         private string validarMensajeError(bool horarioExistente, int totalBloquesDiarioMateria, string materia, string dia, int totalBloquesRegistradosSemana,
@@ -322,8 +251,6 @@ namespace Formularios
             else
             {
                 mensaje = "Para poder modificar un bloque este ya debe estar registrado.";
-
-
             }
 
             return mensaje;
@@ -435,6 +362,23 @@ namespace Formularios
             MenuAdministrador menuHorario = new MenuAdministrador();
             this.Dispose();
             menuHorario.Show();
+        }
+
+        //Insertar filas a tabla
+        private void insertarFilaHorario()
+        {
+            List<String> listaBloques = bloque.listarBloques();
+
+            for (int i = 0; i < FILASBLOQUES; i++)
+            {
+                this.tableHorario.Rows.Add();
+                tableHorario.Rows[i].Cells[0].Value = listaBloques[i];
+            }
+
+            for (int i = 0; i <= 5; i++)
+            {
+                this.tableHorario.Columns[i].ReadOnly = true;
+            }
         }
     }
 }
