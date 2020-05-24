@@ -283,6 +283,56 @@ namespace Jardin.Utilidades
             return listPeriodo;
         }
 
+        public string obtenerPeriodo(int periodoSeleccionado)
+        {
+            string periodo = "";
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerPeriodo", con);
+                cmd.Parameters.AddWithValue("@id_periodo", periodoSeleccionado);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    periodo = dr["numero_periodo"].ToString().Trim();
+                }
+
+                con.Close();
+            }
+
+            return periodo;
+
+        }
+
+        public string obtenerAnio(int periodoSeleccionado)
+        {
+            string anio = "";
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerAnio", con);
+                cmd.Parameters.AddWithValue("@id_periodo", periodoSeleccionado);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    anio = dr["anio"].ToString().Trim();
+                }
+
+                con.Close();
+            }
+
+            return anio;
+
+        }
+
     }
 
 }

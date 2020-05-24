@@ -51,3 +51,4 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formulario
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotasFormulario.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotalFinal.resources
