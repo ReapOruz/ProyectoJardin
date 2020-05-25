@@ -47,6 +47,17 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableEstudiantes = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OcupacionAcudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -61,17 +72,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OcupacionAcudiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -311,6 +311,78 @@
             this.tableEstudiantes.TabIndex = 0;
             this.tableEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableEstudiantes_CellContentClick);
             // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // doc
+            // 
+            this.doc.HeaderText = "Documento";
+            this.doc.Name = "doc";
+            this.doc.ReadOnly = true;
+            // 
+            // col_nombres
+            // 
+            this.col_nombres.HeaderText = "Nombres";
+            this.col_nombres.Name = "col_nombres";
+            this.col_nombres.ReadOnly = true;
+            this.col_nombres.Width = 150;
+            // 
+            // col_apellidos
+            // 
+            this.col_apellidos.HeaderText = "Apellidos";
+            this.col_apellidos.Name = "col_apellidos";
+            this.col_apellidos.ReadOnly = true;
+            this.col_apellidos.Width = 150;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            // 
+            // acudiente
+            // 
+            this.acudiente.HeaderText = "Acudiente";
+            this.acudiente.Name = "acudiente";
+            this.acudiente.ReadOnly = true;
+            // 
+            // col_direccion
+            // 
+            this.col_direccion.HeaderText = "Dirección";
+            this.col_direccion.Name = "col_direccion";
+            this.col_direccion.ReadOnly = true;
+            this.col_direccion.Width = 150;
+            // 
+            // col_telefono
+            // 
+            this.col_telefono.HeaderText = "Telefóno";
+            this.col_telefono.Name = "col_telefono";
+            this.col_telefono.ReadOnly = true;
+            // 
+            // col_mail
+            // 
+            this.col_mail.HeaderText = "Email";
+            this.col_mail.Name = "col_mail";
+            this.col_mail.ReadOnly = true;
+            this.col_mail.Width = 150;
+            // 
+            // col_observacion
+            // 
+            this.col_observacion.HeaderText = "Observaciones";
+            this.col_observacion.Name = "col_observacion";
+            this.col_observacion.ReadOnly = true;
+            this.col_observacion.Width = 150;
+            // 
+            // OcupacionAcudiente
+            // 
+            this.OcupacionAcudiente.HeaderText = "Ocupacion Acudiente";
+            this.OcupacionAcudiente.Name = "OcupacionAcudiente";
+            this.OcupacionAcudiente.ReadOnly = true;
+            // 
             // txtObservacion
             // 
             this.txtObservacion.Location = new System.Drawing.Point(610, 216);
@@ -430,85 +502,17 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Nombres";
             // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "Id";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Visible = false;
-            // 
-            // doc
-            // 
-            this.doc.HeaderText = "Documento";
-            this.doc.Name = "doc";
-            this.doc.ReadOnly = true;
-            // 
-            // col_nombres
-            // 
-            this.col_nombres.HeaderText = "Nombres";
-            this.col_nombres.Name = "col_nombres";
-            this.col_nombres.ReadOnly = true;
-            this.col_nombres.Width = 150;
-            // 
-            // col_apellidos
-            // 
-            this.col_apellidos.HeaderText = "Apellidos";
-            this.col_apellidos.Name = "col_apellidos";
-            this.col_apellidos.ReadOnly = true;
-            this.col_apellidos.Width = 150;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            // 
-            // acudiente
-            // 
-            this.acudiente.HeaderText = "Acudiente";
-            this.acudiente.Name = "acudiente";
-            this.acudiente.ReadOnly = true;
-            // 
-            // col_direccion
-            // 
-            this.col_direccion.HeaderText = "Dirección";
-            this.col_direccion.Name = "col_direccion";
-            this.col_direccion.ReadOnly = true;
-            this.col_direccion.Width = 150;
-            // 
-            // col_telefono
-            // 
-            this.col_telefono.HeaderText = "Telefóno";
-            this.col_telefono.Name = "col_telefono";
-            this.col_telefono.ReadOnly = true;
-            // 
-            // col_mail
-            // 
-            this.col_mail.HeaderText = "Email";
-            this.col_mail.Name = "col_mail";
-            this.col_mail.ReadOnly = true;
-            this.col_mail.Width = 150;
-            // 
-            // col_observacion
-            // 
-            this.col_observacion.HeaderText = "Observaciones";
-            this.col_observacion.Name = "col_observacion";
-            this.col_observacion.ReadOnly = true;
-            this.col_observacion.Width = 150;
-            // 
-            // OcupacionAcudiente
-            // 
-            this.OcupacionAcudiente.HeaderText = "Ocupacion Acudiente";
-            this.OcupacionAcudiente.Name = "OcupacionAcudiente";
-            this.OcupacionAcudiente.ReadOnly = true;
-            // 
             // CrudEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1253, 553);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrudEstudiantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrudEstudiantes";
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

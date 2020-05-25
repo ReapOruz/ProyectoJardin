@@ -19,24 +19,10 @@ namespace Formularios
         Notas nota;
         Notas notaFinal;
         Utilities objUtilidad = new Utilities();
-
+       
         public NotasFormulario()
         {
-            InitializeComponent();
-            listarGrupos();
-            insertarFilasTabla();
-        }
-
-        private void listarGrupos()
-        {
-            Utilities grupo = new Utilities();
-            List<String> listGrupos = grupo.listarGrupos();
-
-            for (int i = 1; i < listGrupos.Count; i++)
-            {
-                this.cbGrupos.Items.Add(listGrupos[i]);
-            }
-
+            InitializeComponent();     
         }
 
         private void listarEstudiantesGrupo(int idGrupo)
@@ -49,7 +35,6 @@ namespace Formularios
             {
                 this.cbAlumnos.Items.Add(listEstudiantes[i].Id + " - " + listEstudiantes[i].Nombres + " " + listEstudiantes[i].Apellidos);
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,7 +49,6 @@ namespace Formularios
                 double notaIngresada;
                 string anio = obtenerAnio(periodo);
                 string nombrePeriodo = obtenerPeriodo(periodo);
-
 
                 var desicion = MessageBox.Show("¿Quiere confirmar el registro de notas para el periodo?", "Confirmar", MessageBoxButtons.OKCancel);
 
@@ -84,16 +68,18 @@ namespace Formularios
                         }
 
                         if (blNota.validarExistenciaNota(idAlumno, idMateria, periodo) <= 0)
-                        {           
-
+                        {
                             //insertar nota del periodo si no existe
                             valoracion = validarNota(notaIngresada);
                             nota = new Notas(idAlumno, periodo, idMateria, notaIngresada, valoracion);
                             registrosInsertados = blNota.insertarNota(nota);
 
                             //insertar nota al formulario final
-                            notaFinal = new Notas(anio,idAlumno, idMateria, nombrePeriodo, notaIngresada);
+                            notaFinal = new Notas(anio, idAlumno, idMateria, nombrePeriodo, notaIngresada);
                             insertarNotaReporteFinal(notaFinal);
+                            double notaFinalMateria = obtenerNotaFinalAnio(idAlumno, anio, idMateria);
+                            string valoracionFinal = validarNota(notaFinalMateria);
+                            actualizarValoracionFinal(idAlumno, anio, idMateria, valoracionFinal);
 
                         }
                         else
@@ -101,7 +87,11 @@ namespace Formularios
                             valoracion = validarNota(notaIngresada);
                             nota = new Notas(idAlumno, periodo, idMateria, notaIngresada, valoracion);
                             registrosInsertados = blNota.modificarNotas(nota);
-
+                            notaFinal = new Notas(anio, idAlumno, idMateria, nombrePeriodo, notaIngresada);
+                            blNota.modificarNotasFinal(notaFinal);
+                            double notaFinalMateria = obtenerNotaFinalAnio(idAlumno, anio, idMateria);
+                            string valoracionFinal = validarNota(notaFinalMateria);
+                            actualizarValoracionFinal(idAlumno, anio, idMateria, valoracionFinal);
                         }
 
                     }
@@ -115,20 +105,12 @@ namespace Formularios
                 {
                     MessageBox.Show("Nota registrada correctamente");
                     mostrarNotasEstudiante(idAlumno, periodo);
+                }
             }
-        }
             catch
             {
                 MessageBox.Show("Por favor valide los datos ingresados.");
             }
-}
-
-        //listar alumnos segun grupo seleccionado
-        private void cbGrupos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int idGrupo = this.cbGrupos.SelectedIndex + 2;
-            this.cbAlumnos.Items.Clear();
-            listarEstudiantesGrupo(idGrupo);
         }
 
         //validar nota obtener valoración
@@ -156,12 +138,12 @@ namespace Formularios
             return valoracion;
         }
 
-        private void insertarFilasTabla()
+        private void insertarMaterias(int idGrupo)
         {
             Materias objMateria = new Materias();
-            List<Materias> lista = objMateria.listarMateriasConID();
+            List<Materias> lista = objMateria.listarMateriasConID(idGrupo);
 
-            for (int i = 0; i < objMateria.totalMaterias(); i++)
+            for (int i = 0; i < lista.Count; i++)
             {
                 this.tableNotas.Rows.Add();
                 this.tableNotas.Rows[i].Cells[0].Value = lista[i].IdMateria;
@@ -173,18 +155,16 @@ namespace Formularios
             this.tableNotas.Columns[3].ReadOnly = true;
         }
 
-        private void mostrarNotasEstudiante(int idEstudiante,int idPeriodo)
+        private void mostrarNotasEstudiante(int idEstudiante, int idPeriodo)
         {
             List<Notas> listaNotas;
-            listaNotas = blNota.listarNotasEstudiante(idEstudiante,idPeriodo);
+            listaNotas = blNota.listarNotasEstudiante(idEstudiante, idPeriodo);
             this.tableNotas.Rows.Clear();
 
             if (listaNotas.Count > 0)
             {
                 for (int i = 0; i < listaNotas.Count; i++)
                 {
-
-                    Console.WriteLine(listaNotas[i].Nota);
 
                     this.tableNotas.Rows.Add(
                         listaNotas[i].Materia,
@@ -197,7 +177,8 @@ namespace Formularios
             else
             {
                 this.tableNotas.Rows.Clear();
-                insertarFilasTabla();
+                int idGrupo = int.Parse(this.cbGrupos.SelectedValue.ToString());
+                insertarMaterias(idGrupo);
             }
         }
 
@@ -205,17 +186,15 @@ namespace Formularios
         {
             int idPeriodo = int.Parse(this.cbTodosPeriodos.SelectedValue.ToString());
             int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
-            mostrarNotasEstudiante(idAlumno,idPeriodo);
+            mostrarNotasEstudiante(idAlumno, idPeriodo);
 
         }
-
         private void NotasFormulario_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'dTSetTodosPeriodos.periodo' Puede moverla o quitarla según sea necesario.
+        { 
+            this.gruposTableAdapter.Fill(this.jardinDataSet1.grupos);
             this.periodoTableAdapter1.Fill(this.dTSetTodosPeriodos.periodo);
-            // TODO: esta línea de código carga datos en la tabla 'setListarPeriodoActivo.periodo' Puede moverla o quitarla según sea necesario.
             this.periodoTableAdapter.Fill(this.setListarPeriodoActivo.periodo);
-
+            cargarDatosInicio();
         }
 
         private string obtenerPeriodo(int periodoSeleccionado)
@@ -233,5 +212,42 @@ namespace Formularios
             blNota.insertarNotasFinal(notaFinal);
         }
 
+        private double obtenerNotaFinalAnio(int idAlumno, string anio, int idMateria)
+        {
+            double notaFinal = blNota.listarNotasFinalesAnio(idAlumno, anio, idMateria);
+            return notaFinal;
+        }
+
+        private void actualizarValoracionFinal(int idAlumno, string anio, int idMateria, string valoracionFinal)
+        {
+            blNota.actualizarValoracionFinal(idAlumno, anio, idMateria, valoracionFinal);
+
+        }
+
+        private void cbGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDatosInicio();
+        }
+
+        private void cargarDatosInicio()
+        {
+            if(this.cbGrupos.SelectedValue != null)
+            {
+                int idGrupo = int.Parse(this.cbGrupos.SelectedValue.ToString());
+                this.cbAlumnos.Items.Clear();
+                this.tableNotas.Rows.Clear();
+                listarEstudiantesGrupo(idGrupo);
+                insertarMaterias(idGrupo);
+
+            }
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            MenuDocente mainDocente = new MenuDocente();
+            this.Dispose();
+            mainDocente.Show();
+        }
     }
 }

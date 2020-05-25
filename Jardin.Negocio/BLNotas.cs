@@ -34,16 +34,42 @@ namespace Jardin.Negocio
             return daoNota.modificarNotas(nota);
         }
 
-        //public List<Notas> listarNotasEstudianteAnio(int idEstudiante, string anio)
-        //{
-        //    return daoNota.listarNotasEstudianteAnio(idEstudiante, anio);
-        //}
+        public List<Notas> listarNotasEstudianteAnio(int idEstudiante, string anio)
+        {
+            return daoNota.listarNotasEstudianteAnio(idEstudiante, anio);
+        }
 
         public int insertarNotasFinal(Notas NotaFinal)
         {
             return daoNota.insertarNotasFinal(NotaFinal);
 
         }
+
+        public double listarNotasFinalesAnio(int idAlumno,string anio, int idMateria)
+        {
+            return daoNota.listarNotasFinalesAnio(idAlumno, anio, idMateria);
+
+        }
+
+        public void actualizarValoracionFinal(int idAlumno, string anio, int idMateria, string valoracionFinal)
+        {
+            daoNota.actualizarValoracionFinal(idAlumno, anio, idMateria, valoracionFinal);
+
+
+        }
+
+        public void modificarNotasFinal(Notas notaFinal)
+        {
+            daoNota.modificarNotasFinal(notaFinal);
+
+        }
+
+        public List<Notas> listarValoracionPeriodo(int idEstudiante, int idPeriodo)
+        {
+            return daoNota.listarValoracionPeriodo(idEstudiante,idPeriodo);
+
+        }
+
 
     }
 }

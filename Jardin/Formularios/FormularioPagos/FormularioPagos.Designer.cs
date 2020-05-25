@@ -40,6 +40,11 @@
             this.txtNombresCompletos = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtAnioCancelar = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.PictureBox();
+            this.txtFiltroAnio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tablePagosAprobados = new System.Windows.Forms.DataGridView();
@@ -59,15 +64,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtFiltroAnio = new System.Windows.Forms.TextBox();
-            this.btnFiltrar = new System.Windows.Forms.PictureBox();
-            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtAnioCancelar = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFiltrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,6 +194,74 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1159, 611);
             this.panel2.TabIndex = 17;
+            // 
+            // txtAnioCancelar
+            // 
+            this.txtAnioCancelar.FormattingEnabled = true;
+            this.txtAnioCancelar.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
+            this.txtAnioCancelar.Location = new System.Drawing.Point(181, 526);
+            this.txtAnioCancelar.Name = "txtAnioCancelar";
+            this.txtAnioCancelar.Size = new System.Drawing.Size(212, 21);
+            this.txtAnioCancelar.TabIndex = 38;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(36, 166);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 15);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Pagos realizados";
+            // 
+            // btnLimpiarFiltros
+            // 
+            this.btnLimpiarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(970, 355);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(107, 32);
+            this.btnLimpiarFiltros.TabIndex = 36;
+            this.btnLimpiarFiltros.Text = "Quitar Filtros";
+            this.btnLimpiarFiltros.UseCompatibleTextRendering = true;
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.Location = new System.Drawing.Point(1071, 216);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(37, 35);
+            this.btnFiltrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnFiltrar.TabIndex = 35;
+            this.btnFiltrar.TabStop = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // txtFiltroAnio
+            // 
+            this.txtFiltroAnio.Location = new System.Drawing.Point(970, 231);
+            this.txtFiltroAnio.Name = "txtFiltroAnio";
+            this.txtFiltroAnio.Size = new System.Drawing.Size(95, 20);
+            this.txtFiltroAnio.TabIndex = 34;
             // 
             // label8
             // 
@@ -386,87 +454,22 @@
             this.label10.Text = "_________________________________________________________________________________" +
     "_______________________________________________________________________________";
             // 
-            // txtFiltroAnio
-            // 
-            this.txtFiltroAnio.Location = new System.Drawing.Point(970, 231);
-            this.txtFiltroAnio.Name = "txtFiltroAnio";
-            this.txtFiltroAnio.Size = new System.Drawing.Size(95, 20);
-            this.txtFiltroAnio.TabIndex = 34;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
-            this.btnFiltrar.Location = new System.Drawing.Point(1071, 216);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(37, 35);
-            this.btnFiltrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnFiltrar.TabIndex = 35;
-            this.btnFiltrar.TabStop = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // btnLimpiarFiltros
-            // 
-            this.btnLimpiarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(970, 355);
-            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(107, 32);
-            this.btnLimpiarFiltros.TabIndex = 36;
-            this.btnLimpiarFiltros.Text = "Quitar Filtros";
-            this.btnLimpiarFiltros.UseCompatibleTextRendering = true;
-            this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
-            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(36, 166);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 15);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Pagos realizados";
-            // 
-            // txtAnioCancelar
-            // 
-            this.txtAnioCancelar.FormattingEnabled = true;
-            this.txtAnioCancelar.Items.AddRange(new object[] {
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030"});
-            this.txtAnioCancelar.Location = new System.Drawing.Point(181, 526);
-            this.txtAnioCancelar.Name = "txtAnioCancelar";
-            this.txtAnioCancelar.Size = new System.Drawing.Size(212, 21);
-            this.txtAnioCancelar.TabIndex = 38;
-            // 
             // FormularioPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 615);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioPagos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioPagos";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFiltrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePagosAprobados)).EndInit();
             this.ResumeLayout(false);
 
         }

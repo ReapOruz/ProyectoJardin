@@ -58,6 +58,16 @@
     <Compile Include="CrudUsuario\CrudUsuario.Designer.cs">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="DtSetGrupos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtSetGrupos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtSetListarGrupos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtSetListarGrupos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DTSetTodosPeriodos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +102,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JardinDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="JardinDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JardinDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDocente\MenuDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDocente\MenuDocente.Designer.cs">
+      <DependentUpon>MenuDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuSecretaria\MainSecretaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +145,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportePeriodo\ReportePeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePeriodo\ReportePeriodo.Designer.cs">
+      <DependentUpon>ReportePeriodo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SetListarPeriodoActivo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GruposEstudiantes\GruposEstudiantes.resx">
       <DependentUpon>GruposEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDocente\MenuDocente.resx">
+      <DependentUpon>MenuDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuSecretaria\MainSecretaria.resx">
       <DependentUpon>MainSecretaria.cs</DependentUpon>
@@ -171,6 +201,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportePeriodo\ReportePeriodo.resx">
+      <DependentUpon>ReportePeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DtSetGrupos.xsc">
+      <DependentUpon>DtSetGrupos.xsd</DependentUpon>
+    </None>
+    <None Include="DtSetGrupos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtSetGrupos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DtSetGrupos.xss">
+      <DependentUpon>DtSetGrupos.xsd</DependentUpon>
+    </None>
+    <None Include="DtSetListarGrupos.xsc">
+      <DependentUpon>DtSetListarGrupos.xsd</DependentUpon>
+    </None>
+    <None Include="DtSetListarGrupos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtSetListarGrupos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DtSetListarGrupos.xss">
+      <DependentUpon>DtSetListarGrupos.xsd</DependentUpon>
+    </None>
     <None Include="DTSetTodosPeriodos.xsc">
       <DependentUpon>DTSetTodosPeriodos.xsd</DependentUpon>
     </None>
@@ -192,6 +247,17 @@
     </None>
     <None Include="JardinDataSet.xss">
       <DependentUpon>JardinDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JardinDataSet1.xsc">
+      <DependentUpon>JardinDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="JardinDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JardinDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JardinDataSet1.xss">
+      <DependentUpon>JardinDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

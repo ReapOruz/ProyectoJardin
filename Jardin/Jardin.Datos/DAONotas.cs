@@ -68,6 +68,23 @@ namespace Jardin.Datos
             return numRegistrosAfectados;
         }
 
+        public void modificarNotasFinal(Notas notaFinal)
+        {
+            int numRegistrosAfectados = -1;
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_modificarNotaFinal", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idAlumno", notaFinal.Alumno);
+                cmd.Parameters.AddWithValue("@anio", notaFinal.Anio);
+                cmd.Parameters.AddWithValue("@idMateria", notaFinal.Materia);
+                cmd.Parameters.AddWithValue("@numeroPeriodo", notaFinal.PeriodoNombre);
+                cmd.Parameters.AddWithValue("@nota", notaFinal.Nota);
+                numRegistrosAfectados = cmd.ExecuteNonQuery();
+                con.Close();
+            } 
+        }
 
 
         public List<Notas> listarNotasPorEstudiante(int idEstudiante,int idPeriodo)
@@ -103,54 +120,41 @@ namespace Jardin.Datos
             return listaNotas;
         }
 
-        //public List<Notas> listarNotasEstudianteAnio(int idEstudiante, string anio)
-        //{
-        //    List<Notas> listaNotas = new List<Notas>();
-        //    Notas objNota;
+        public List<Notas> listarNotasEstudianteAnio(int idEstudiante, string anio)
+        {
+            List<Notas> listaNotas = new List<Notas>();
+            Notas objNota;
 
-        //    using (SqlConnection con = new SqlConnection(CadenaConexion))
-        //    {
-        //        con.Open();
-        //        SqlCommand cmd = new SqlCommand("pa_listarNotasFinal", con);
-        //        cmd.Parameters.AddWithValue("@idestudiante", idEstudiante);
-        //        cmd.Parameters.AddWithValue("@anio", anio);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        SqlDataReader dr = cmd.ExecuteReader();
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarNotasFinal", con);
+                cmd.Parameters.AddWithValue("@idestudiante", idEstudiante);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
 
-        //        if (dr != null && dr.HasRows)
-        //        {
-        //            while (dr.Read())
-        //            {
-        //                int idMateria = Convert.ToInt32(dr["id_materia"]);
-        //                string nombreMateria = dr["nombre_materia"].ToString().Trim();
-        //                string periodoNombre = dr["numero_periodo"].ToString().Trim();
-        //                double nota = Convert.ToDouble(dr["nota"]);
-        //                double nota1 = 0;
-        //                double nota2 = 0;
-        //                double nota3 = 0;
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        int idMateria = Convert.ToInt32(dr["id_materia"]);
+                        string nombreMateria = dr["nombre_materia"].ToString().Trim();                      
+                        double nota_1 = Convert.ToDouble(dr["nota_1"]);
+                        double nota_2 = Convert.ToDouble(dr["nota_2"]);
+                        double nota_3 = Convert.ToDouble(dr["nota_3"]);
+                        double notaDefinitiva = Convert.ToDouble(dr["nota_definitiva"]);
+                        string valoracionFinal = dr["valoracion_final"].ToString().Trim();
 
-        //                if (periodoNombre.Equals("01"))
-        //                {
-        //                    nota1 = nota;
-        //                }
-        //                if (periodoNombre.Equals("02"))
-        //                {
-        //                    nota2 = nota;
-        //                }
-        //                if (periodoNombre.Equals("03"))
-        //                {
-        //                    nota3 = nota;
-        //                }
+                        objNota = new Notas(idMateria, nombreMateria, nota_1, nota_2, nota_3, notaDefinitiva, valoracionFinal);
 
-        //                objNota = new Notas(idMateria, nombreMateria, periodoNombre, nota1, nota2, nota3);
-
-        //                listaNotas.Add(objNota);
-        //            }
-        //        }
-        //        con.Close();
-        //    }
-        //    return listaNotas;
-        //}
+                        listaNotas.Add(objNota);
+                    }
+                }
+                con.Close();
+            }
+            return listaNotas;
+        }
 
         public int validarExistenciaNota(int idEstudiante, int idMateria, int periodo)
         {
@@ -196,5 +200,78 @@ namespace Jardin.Datos
             return numRegistrosAfectados;
         }
 
+        public double listarNotasFinalesAnio(int idAlumno, string anio, int idMateria)
+        {
+            double notaFinal = 0;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarNotasFinales", con);
+                cmd.Parameters.AddWithValue("@idestudiante", idAlumno);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.Parameters.AddWithValue("@idmateria", idMateria);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        notaFinal = Convert.ToDouble(dr["nota_definitiva"]);
+   
+                    }
+                }
+                con.Close();
+            }
+            return notaFinal;
+
+        }
+        public void actualizarValoracionFinal(int idAlumno, string anio, int idMateria, string valoracionFinal)
+        {
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_modificarValoracionFinal", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idAlumno", idAlumno);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.Parameters.AddWithValue("@idMateria", idMateria);
+                cmd.Parameters.AddWithValue("@valoracionFinal", valoracionFinal);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
+        }
+
+        public List<Notas> listarValoracionPeriodo(int idEstudiante, int idPeriodo)
+        {
+            List<Notas> listaNotasPeriodo = new List<Notas>();
+            Notas objNota;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarValoracionPeriodo", con);
+                cmd.Parameters.AddWithValue("@idestudiante", idEstudiante);
+                cmd.Parameters.AddWithValue("@idPeriodo", idPeriodo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        int idMateria = Convert.ToInt32(dr["id_materia"]);
+                        string materia = dr["nombre_materia"].ToString().Trim();
+                        string valoracion = dr["valoracion"].ToString().Trim();
+                        objNota = new Notas(idMateria,materia,valoracion);
+                        listaNotasPeriodo.Add(objNota);
+                    }
+                }
+                con.Close();
+            }
+            return listaNotasPeriodo;
+        }
     }
 }

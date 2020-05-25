@@ -23,19 +23,6 @@ C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.exe
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.pdb
 C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.FormularioPagos.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csprojAssemblyReference.cache
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.CrudEstudiantes.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.CrudUsuario.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.Horario.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.FormularioPagos.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.GestionGrupos.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.GruposEstudiantes.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MainSecretaria.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MenuAdministrador.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.FormularioLogin.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.Properties.Resources.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csproj.GenerateResource.cache
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Formularios.exe.config
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Formularios.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Formularios.pdb
@@ -47,8 +34,23 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formulario
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Jardin.Entidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Jardin.Utilidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\bin\Debug\Jardin.Datos.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.CrudEstudiantes.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.CrudUsuario.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.Horario.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.FormularioPagos.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.GestionGrupos.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.GruposEstudiantes.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MenuDocente.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MainSecretaria.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.MenuAdministrador.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.FormularioLogin.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotalFinal.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotasFormulario.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.Properties.Resources.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.ReportePeriodo.resources
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csproj.GenerateResource.cache
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.csproj.CopyComplete
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.exe
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.pdb
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotasFormulario.resources
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Formularios\obj\Debug\Formularios.NotalFinal.resources

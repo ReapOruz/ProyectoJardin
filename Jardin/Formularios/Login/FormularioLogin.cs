@@ -68,7 +68,10 @@ namespace Formularios
                             && perfil == PERFIL_DOCENTE && estate == ACTIVO)
                         {
 
-                            MessageBox.Show("Logueo exitoso para ingresar a perfil docente");
+                            MenuDocente mainDocente = new MenuDocente();
+                            this.Hide();
+                            mainDocente.lbUsuarioLogueado.Text = (mainDocente.lbUsuarioLogueado.Text + " " + usuarioName);
+                            mainDocente.Show();
 
                         }
                         else if (usuarioName.Equals(us) && contrasena.Equals(cont)
@@ -84,9 +87,7 @@ namespace Formularios
 
                         else if (estate == INACTIVO)
                         {
-
                             MessageBox.Show("El usuario no se encuentra activo, contacte con el administrador");
-
                         }
 
                     }

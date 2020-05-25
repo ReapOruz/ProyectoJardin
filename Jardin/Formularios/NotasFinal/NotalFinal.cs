@@ -21,8 +21,6 @@ namespace Formularios
         {
             InitializeComponent();
             listarGrupos();
-            insertarFilasTabla();
-
         }
 
         private void listarGrupos()
@@ -33,19 +31,6 @@ namespace Formularios
             for (int i = 1; i < listGrupos.Count; i++)
             {
                 this.cbGrupos.Items.Add(listGrupos[i]);
-            }
-
-        }
-        private void insertarFilasTabla()
-        {
-            Materias objMateria = new Materias();
-            List<Materias> lista = objMateria.listarMateriasConID();
-
-            for (int i = 0; i < objMateria.totalMaterias(); i++)
-            {
-                this.tableNotas.Rows.Add();
-                this.tableNotas.Rows[i].Cells[0].Value = lista[i].IdMateria;
-                this.tableNotas.Rows[i].Cells[1].Value = lista[i].NombreMateria;
             }
 
         }
@@ -68,35 +53,25 @@ namespace Formularios
             string anio = this.cbTodosPeriodo.SelectedValue.ToString().Trim();
             int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
 
-            //mostrarNotasEstudiante(idAlumno, anio);
+            mostrarNotasEstudiante(idAlumno, anio);
         }
 
-        //private void mostrarNotasEstudiante(int idEstudiante, string anio)
-        //{
-        //    List<Notas> listaNotas;
-        //    listaNotas = blNota.listarNotasEstudianteAnio(idEstudiante, anio);
-        //    this.tableNotas.Rows.Clear();
+        public void mostrarNotasEstudiante(int idAlumno, string anio)
+        {
+            List<Notas> listaNotasFinales = blNota.listarNotasEstudianteAnio(idAlumno, anio);
 
-        //    if (listaNotas.Count > 0)
-        //    {
-        //        for (int i = 0; i < listaNotas.Count; i++)
-        //        {
-        //            this.tableNotas.Rows.Add(listaNotas[i].Materia,
-        //                listaNotas[i].NombreMateria,
-        //                listaNotas[i].Nota1,
-        //                listaNotas[i].Nota2,
-        //                listaNotas[i].Nota3
-        //                );
-        //        }
-
-        //    }
-        //    else
-        //    {
-        //        this.tableNotas.Rows.Clear();
-        //        insertarFilasTabla();
-        //    }
-        //}
-
+            for(int i = 0; i < listaNotasFinales.Count; i++)
+            {
+                this.tableNotas.Rows.Add(listaNotasFinales[i].Materia,
+                    listaNotasFinales[i].NombreMateria,
+                    listaNotasFinales[i].Nota_1,
+                    listaNotasFinales[i].Nota_2,
+                    listaNotasFinales[i].Nota_3,
+                    listaNotasFinales[i].Nota_definitiva,
+                    listaNotasFinales[i].ValoracionFinal
+                    );
+            }
+        }
 
         private void cbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -110,6 +85,13 @@ namespace Formularios
             // TODO: esta línea de código carga datos en la tabla 'jardinDataSet.periodo' Puede moverla o quitarla según sea necesario.
             this.periodoTableAdapter.Fill(this.jardinDataSet.periodo);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuDocente mainDocente = new MenuDocente();
+            this.Dispose();
+            mainDocente.Show();
         }
     }
 }

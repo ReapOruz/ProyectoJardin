@@ -28,4 +28,3 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Ent
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.pdb
-C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Entidades\obj\Debug\Jardin.Entidades.csprojAssemblyReference.cache

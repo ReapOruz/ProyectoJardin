@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GruposEstudiantes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiarTabla = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBuscarDocumento = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAgregarAgrupo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,16 +48,11 @@
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo_Actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBuscarDocumento = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.PictureBox();
-            this.btnLimpiarTabla = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableGrupos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(889, 488);
+            this.panel1.Size = new System.Drawing.Size(747, 488);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -80,17 +80,68 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(0, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 485);
+            this.panel2.Size = new System.Drawing.Size(748, 485);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLimpiarTabla
+            // 
+            this.btnLimpiarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLimpiarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarTabla.Location = new System.Drawing.Point(619, 314);
+            this.btnLimpiarTabla.Name = "btnLimpiarTabla";
+            this.btnLimpiarTabla.Size = new System.Drawing.Size(74, 26);
+            this.btnLimpiarTabla.TabIndex = 10;
+            this.btnLimpiarTabla.Text = "Limpiar";
+            this.btnLimpiarTabla.UseVisualStyleBackColor = false;
+            this.btnLimpiarTabla.Click += new System.EventHandler(this.btnLimpiarTabla_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(413, 393);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(30, 29);
+            this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(46, 394);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Documento";
+            // 
+            // txtBuscarDocumento
+            // 
+            this.txtBuscarDocumento.Location = new System.Drawing.Point(129, 393);
+            this.txtBuscarDocumento.Name = "txtBuscarDocumento";
+            this.txtBuscarDocumento.Size = new System.Drawing.Size(266, 20);
+            this.txtBuscarDocumento.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(46, 355);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Buscar Estudiante";
             // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(741, 424);
+            this.btnVolver.Location = new System.Drawing.Point(593, 386);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(120, 36);
+            this.btnVolver.Size = new System.Drawing.Size(100, 36);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -200,71 +251,23 @@
             this.Grupo_Actual.ReadOnly = true;
             this.Grupo_Actual.Width = 150;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 355);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Buscar Estudiante";
-            // 
-            // txtBuscarDocumento
-            // 
-            this.txtBuscarDocumento.Location = new System.Drawing.Point(129, 393);
-            this.txtBuscarDocumento.Name = "txtBuscarDocumento";
-            this.txtBuscarDocumento.Size = new System.Drawing.Size(266, 20);
-            this.txtBuscarDocumento.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 394);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Documento";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(413, 393);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(30, 29);
-            this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnLimpiarTabla
-            // 
-            this.btnLimpiarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnLimpiarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarTabla.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarTabla.Location = new System.Drawing.Point(619, 314);
-            this.btnLimpiarTabla.Name = "btnLimpiarTabla";
-            this.btnLimpiarTabla.Size = new System.Drawing.Size(74, 26);
-            this.btnLimpiarTabla.TabIndex = 10;
-            this.btnLimpiarTabla.Text = "Limpiar";
-            this.btnLimpiarTabla.UseVisualStyleBackColor = false;
-            this.btnLimpiarTabla.Click += new System.EventHandler(this.btnLimpiarTabla_Click);
-            // 
             // GruposEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 489);
+            this.ClientSize = new System.Drawing.Size(750, 489);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GruposEstudiantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GruposEstudiantes";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableGrupos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             this.ResumeLayout(false);
 
         }

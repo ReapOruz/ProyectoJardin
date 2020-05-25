@@ -106,7 +106,7 @@ namespace Jardin.Utilidades
             return listaMaterias;
         }
 
-        public List<Materias> listarMateriasConID()
+        public List<Materias> listarMateriasConID(int idGrupo)
         {
             List<Materias> listaMaterias = new List<Materias>();
 
@@ -115,6 +115,7 @@ namespace Jardin.Utilidades
                 con.Open();
                 SqlCommand cmd = new SqlCommand("pa_ListarMateriasConID", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr != null && dr.HasRows)

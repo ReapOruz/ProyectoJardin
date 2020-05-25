@@ -63,6 +63,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -73,9 +74,9 @@
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Controls.Add(this.tbContrasena);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(0, 3);
+            this.panel2.Location = new System.Drawing.Point(-2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(658, 362);
+            this.panel2.Size = new System.Drawing.Size(658, 360);
             this.panel2.TabIndex = 5;
             // 
             // panel3
@@ -200,13 +201,16 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
-            // Form1
+            // FormularioLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 366);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormularioLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
