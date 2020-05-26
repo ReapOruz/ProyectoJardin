@@ -72,6 +72,13 @@ namespace Jardin.Negocio
 
         }
 
+        public List<Estudiantes> consultarGrupo(int grupo)
+        {
+            DAOestudiantes estudiante = new DAOestudiantes();
+            return estudiante.consultarGrupo(grupo);
+
+        }
+
 
     }
 }

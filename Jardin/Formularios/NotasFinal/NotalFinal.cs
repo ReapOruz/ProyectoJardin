@@ -93,5 +93,16 @@ namespace Formularios
             this.Dispose();
             mainDocente.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormularioReporteFinalPDF rf = new FormularioReporteFinalPDF();
+            int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
+            string anio = this.cbTodosPeriodo.SelectedValue.ToString().Trim();
+            List<DatosReporteFinal> listaFinal = rf.traerListanotas(idAlumno,anio);
+            rf.pintarReporte(listaFinal);
+            rf.Visible = true;
+
+        }
     }
 }

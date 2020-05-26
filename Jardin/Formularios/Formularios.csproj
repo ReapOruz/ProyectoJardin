@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +96,24 @@
     </Compile>
     <Compile Include="FormularioPagos\FormularioPagos.Designer.cs">
       <DependentUpon>FormularioPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesPDF\ReportePagosPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPDF\ReportePagosPDF.Designer.cs">
+      <DependentUpon>ReportePagosPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesPDF\FormularioReporteFinalPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPDF\FormularioReporteFinalPDF.Designer.cs">
+      <DependentUpon>FormularioReporteFinalPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesPDF\FormularioReportePeriodoPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPDF\FormularioReportePeriodoPDF.Designer.cs">
+      <DependentUpon>FormularioReportePeriodoPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionGrupos\GestionGrupos.cs">
       <SubType>Form</SubType>
@@ -156,6 +192,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SetListarPeriodoActivo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CrudEstudiantes\CrudEstudiantes.resx">
       <DependentUpon>CrudEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +204,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPagos\FormularioPagos.resx">
       <DependentUpon>FormularioPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="ReportesPDF\ReportePagosPDF.resx">
+      <DependentUpon>ReportePagosPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesPDF\FormularioReporteFinalPDF.resx">
+      <DependentUpon>FormularioReporteFinalPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportesPDF\FormularioReportePeriodoPDF.resx">
+      <DependentUpon>FormularioReportePeriodoPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionGrupos\GestionGrupos.resx">
       <DependentUpon>GestionGrupos.cs</DependentUpon>
@@ -259,6 +308,11 @@
     <None Include="JardinDataSet1.xss">
       <DependentUpon>JardinDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Jardin.Entidades.Notas.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.DatosReporteFinal.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.DatosReportePago.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.DatosReportePeriodo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -297,6 +351,49 @@
       <Name>Jardin.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

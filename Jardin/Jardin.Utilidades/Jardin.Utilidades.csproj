@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas.cs" />
+    <Compile Include="DatosReporteFinal.cs" />
+    <Compile Include="DatosReportePago.cs" />
+    <Compile Include="DatosReportePeriodo.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Materias.cs" />

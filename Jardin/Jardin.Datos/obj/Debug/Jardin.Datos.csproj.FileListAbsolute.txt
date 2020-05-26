@@ -42,7 +42,9 @@ C:\Users\danie\OneDrive\Desktop\ProyectoJardin-Mis primeros pasos\ProyectoJardin
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Datos.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Datos.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Utilidades.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\bin\Debug\Jardin.Utilidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csprojAssemblyReference.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin\Jardin.Datos\obj\Debug\Jardin.Datos.csproj.CopyComplete

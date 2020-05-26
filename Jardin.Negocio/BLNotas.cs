@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Jardin.Entidades;
 using Jardin.Datos;
+using Jardin.Utilidades;
 
 namespace Jardin.Negocio
 {
@@ -70,6 +71,17 @@ namespace Jardin.Negocio
 
         }
 
+        public List<DatosReportePeriodo> listarPeriodoReporte(int idEstudiante, int idPeriodo)
+        {
+            return daoNota.listarPeriodoReporte(idEstudiante, idPeriodo);
+
+        }
+
+        public List<DatosReporteFinal> listarReporteFinal(int idEstudiante, string anio)
+        {
+            return daoNota.listarReporteFinal(idEstudiante, anio);
+
+        }
 
     }
 }

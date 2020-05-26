@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Jardin.Entidades;
+using Jardin.Utilidades;
 
 namespace Jardin.Datos
 {
@@ -273,5 +274,79 @@ namespace Jardin.Datos
             }
             return listaNotasPeriodo;
         }
+
+        public List<DatosReportePeriodo> listarPeriodoReporte(int idEstudiante, int idPeriodo)
+        {
+            List<DatosReportePeriodo> listaNotasPeriodo = new List<DatosReportePeriodo>();
+            DatosReportePeriodo objReportePeriodo;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarPeriodoReporte", con);
+                cmd.Parameters.AddWithValue("@idestudiante", idEstudiante);
+                cmd.Parameters.AddWithValue("@idPeriodo", idPeriodo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string materia = dr["nombre_materia"].ToString().Trim();
+                        string valoracion = dr["valoracion"].ToString().Trim();
+                        string documento = dr["documento"].ToString().Trim();
+                        string nombreAlumno = dr["nombres"].ToString().Trim();
+                        string apellidoAlumno = dr["apellidos"].ToString().Trim();
+                        string periodo = dr["descripcion_periodo"].ToString().Trim();
+                        string nombreCompleto = nombreAlumno + " " + apellidoAlumno;
+                        objReportePeriodo = new DatosReportePeriodo(materia, valoracion, documento, nombreCompleto, periodo);
+                        listaNotasPeriodo.Add(objReportePeriodo);
+                    }
+                }
+                con.Close();
+            }
+            return listaNotasPeriodo;
+        }
+
+        public List<DatosReporteFinal> listarReporteFinal(int idEstudiante, string anio)
+        {
+            List<DatosReporteFinal> listaNotasFinal = new List<DatosReporteFinal>();
+            DatosReporteFinal objReporteFinal;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarReporteFinal", con);
+                cmd.Parameters.AddWithValue("@idestudiante", idEstudiante);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string documentoAlumno = dr["documento"].ToString().Trim();
+                        string nombreAlumno = dr["nombres"].ToString().Trim();
+                        string apellidoAlumno = dr["apellidos"].ToString().Trim();
+                        string anioReporte = dr["anio"].ToString().Trim();
+                        string materia = dr["nombre_materia"].ToString().Trim();
+                        double nota_1 = Convert.ToDouble(dr["nota_1"]);
+                        double nota_2 = Convert.ToDouble(dr["nota_2"]);
+                        double nota_3 = Convert.ToDouble(dr["nota_3"]);
+                        double notaDefinitiva = Convert.ToDouble(dr["nota_definitiva"]);
+                        string valoracionFinal = dr["valoracion_final"].ToString().Trim();
+                        string nombreCompletoAlumno = nombreAlumno + " " + apellidoAlumno;
+
+                        objReporteFinal = new DatosReporteFinal(documentoAlumno,nombreCompletoAlumno,anioReporte,materia,nota_1,nota_2,nota_3, notaDefinitiva, valoracionFinal);
+                        listaNotasFinal.Add(objReporteFinal);
+                    }
+                }
+                con.Close();
+            }
+            return listaNotasFinal;
+        }
+
     }
 }

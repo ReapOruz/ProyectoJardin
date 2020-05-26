@@ -39,12 +39,6 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tableHorario = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbDias = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -54,6 +48,13 @@
             this.cbGrupos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Miercóles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -81,7 +83,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(906, 610);
+            this.panel1.Size = new System.Drawing.Size(906, 665);
             this.panel1.TabIndex = 0;
             // 
             // btnBuscar
@@ -169,12 +171,12 @@
             this.tableHorario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tableHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableHorario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17});
+            this.Hora,
+            this.Lunes,
+            this.Martes,
+            this.Miercóles,
+            this.Jueves,
+            this.Viernes});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,7 +186,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tableHorario.DefaultCellStyle = dataGridViewCellStyle2;
             this.tableHorario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tableHorario.Location = new System.Drawing.Point(25, 280);
+            this.tableHorario.Location = new System.Drawing.Point(25, 322);
             this.tableHorario.Name = "tableHorario";
             this.tableHorario.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.tableHorario.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -197,42 +199,7 @@
             this.tableHorario.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.tableHorario.Size = new System.Drawing.Size(854, 306);
             this.tableHorario.TabIndex = 12;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Bloque";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 110;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Lunes";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 140;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Martes";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 140;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Miercoles";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 140;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Jueves";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 140;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Viernes";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 140;
+            this.tableHorario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableHorario_CellContentClick);
             // 
             // cbDias
             // 
@@ -320,11 +287,60 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Grupo";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(761, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 35);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Exportar Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Bloque";
+            this.Hora.Name = "Hora";
+            this.Hora.Width = 110;
+            // 
+            // Lunes
+            // 
+            this.Lunes.HeaderText = "Lunes";
+            this.Lunes.Name = "Lunes";
+            this.Lunes.Width = 140;
+            // 
+            // Martes
+            // 
+            this.Martes.HeaderText = "Martes";
+            this.Martes.Name = "Martes";
+            this.Martes.Width = 140;
+            // 
+            // Miercóles
+            // 
+            this.Miercóles.HeaderText = "Miercoles";
+            this.Miercóles.Name = "Miercóles";
+            this.Miercóles.Width = 140;
+            // 
+            // Jueves
+            // 
+            this.Jueves.HeaderText = "Jueves";
+            this.Jueves.Name = "Jueves";
+            this.Jueves.Width = 140;
+            // 
+            // Viernes
+            // 
+            this.Viernes.HeaderText = "Viernes";
+            this.Viernes.Name = "Viernes";
+            this.Viernes.Width = 140;
+            // 
             // Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 611);
+            this.ClientSize = new System.Drawing.Size(907, 665);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -359,11 +375,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Miercóles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
     }
 }

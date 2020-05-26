@@ -257,6 +257,47 @@ namespace Jardin.Utilidades
 
         }
 
+
+        public List<DatosReportePago> listarPagosPorEstudiante(string documento)
+        {
+            List<DatosReportePago> listaPagosAprobados = new List<DatosReportePago>();
+            DatosReportePago objDRP;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarPagosPorEstudiante", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idestudiante", documento);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        string documentoAlumno = ((string)dr["documento"]).Trim();
+                        string nombreAlumno = ((string)dr["nombres"]).Trim();
+                        string apellidoAlumno = ((string)dr["apellidos"]).Trim();
+                        string concepPago = ((string)dr["concepto"]).Trim();
+                        string anioPag = ((string)dr["anioPago"]).Trim();
+                        string mesPag = ((string)dr["mesPago"]).Trim();       
+                        double valCancelado = Convert.ToInt32(dr["abono"]);
+                        DateTime fechaPago = Convert.ToDateTime(dr["fecha_creacion"]);
+                        string fechaP = fechaPago.ToString("MM/dd/yyyy");
+                        string stado = ((string)dr["descripcion_pago"]).Trim();
+                        string nombreCompleto = nombreAlumno + " " + apellidoAlumno;
+                        objDRP = new DatosReportePago(documentoAlumno, nombreCompleto,concepPago,anioPag,mesPag,valCancelado,fechaP, stado);
+                        listaPagosAprobados.Add(objDRP);
+                    }
+
+                }
+
+                con.Close();
+            }
+
+            return listaPagosAprobados;
+        }
+
     }
 
 }

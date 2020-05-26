@@ -48,5 +48,14 @@
     <Compile Include="Usuarios.cs" />
     <Compile Include="Grupos.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Notas.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jardin.Utilidades\Jardin.Utilidades.csproj">
+      <Project>{a9e36e43-19fb-479c-ab40-fefc40a394f2}</Project>
+      <Name>Jardin.Utilidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

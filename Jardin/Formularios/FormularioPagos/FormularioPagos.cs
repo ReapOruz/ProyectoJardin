@@ -201,10 +201,7 @@ namespace Formularios
 
             for (int i = 0; i< listaConceptos.Count; i++)
             {
-
                 cbConceptoPago.Items.Add(listaConceptos[i]);
-
-
             }
 
 
@@ -273,7 +270,6 @@ namespace Formularios
 
             for (int i=0;i< pagosAprobados.Count; i++)
             {
-
                 this.tablePagosAprobados.Rows.Add(pagosAprobados[i].ConceptoPago,
                                                   pagosAprobados[i].AnioPago,
                                                   pagosAprobados[i].MesPago,
@@ -337,12 +333,21 @@ namespace Formularios
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e)
         {
-            this.tablePagosAprobados.Rows.Clear();
-            
+            this.tablePagosAprobados.Rows.Clear();   
             string doc = this.txtDocumento.Text;
             this.txtFiltroAnio.Text = "";
 
             listarPagosAprobadosEstudiante(doc);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ReportePagosPDF rp = new ReportePagosPDF();
+            string documentoAlumno = this.txtDocumento.Text.Trim();
+            List<DatosReportePago> listaPagos = rp.traerPagosEstudiante(documentoAlumno);
+            rp.pintarReporte(listaPagos);
+            rp.Visible = true;
+
         }
     }
 }

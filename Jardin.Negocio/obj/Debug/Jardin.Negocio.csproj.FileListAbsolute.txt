@@ -53,8 +53,10 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bi
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Negocio.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Datos.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Entidades.dll
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Utilidades.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Datos.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Entidades.pdb
+C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\bin\Debug\Jardin.Utilidades.pdb
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csprojAssemblyReference.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Desktop\Proyecto Jardin\ProyectoJardin\Jardin.Negocio\obj\Debug\Jardin.Negocio.csproj.CopyComplete

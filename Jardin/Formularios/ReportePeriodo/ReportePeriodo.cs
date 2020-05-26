@@ -1,5 +1,6 @@
 ﻿using Jardin.Entidades;
 using Jardin.Negocio;
+using Jardin.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,6 +87,17 @@ namespace Formularios
         private void cbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDatosInicio();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormularioReportePeriodoPDF rp = new FormularioReportePeriodoPDF();
+            int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
+            int periodo = int.Parse(this.cbPeriodo.SelectedValue.ToString());
+            List<DatosReportePeriodo> listaPeriodo = rp.traerListanotas(idAlumno, periodo);
+            rp.pintarReporte(listaPeriodo);
+            rp.Visible = true;
+
         }
     }
 }

@@ -68,17 +68,16 @@ namespace Formularios
 
             if (listaGrup == null)
             {
-
                 listaGrup = blGrupo.listarGrupos();
             }
             if (listaGrup.Count > 0)
-
 
             {
                 for(int i=0; i < listaGrup.Count; i++)
                 {
 
                     this.cbListaGrupos.Items.Add(listaGrup[i].Nombre);
+                    this.cbGrupoFiltro.Items.Add(listaGrup[i].Nombre);
 
                 }
               
@@ -210,5 +209,90 @@ namespace Formularios
         {
             cargarDatosGruposEstudiantes();
         }
+
+        private void consultarGrupo(int grupo)
+        {
+            
+            List<Estudiantes> listaGrupoEstudiantes = null;
+
+            if (listaGrupoEstudiantes == null)
+            {
+                listaGrupoEstudiantes = blestudiante.consultarGrupo(grupo);
+            }
+            if (listaGrupoEstudiantes.Count > 0)
+            {
+                this.tableGrupos.Rows.Clear();
+                for (int i = 0; i < listaGrupoEstudiantes.Count; i++)
+                {
+
+                    this.tableGrupos.Rows.Add(listaGrupoEstudiantes[i].Id,
+                                                listaGrupoEstudiantes[i].Documento,
+                                                listaGrupoEstudiantes[i].Nombres,
+                                                listaGrupoEstudiantes[i].Apellidos,
+                                                listaGrupoEstudiantes[i].Grupo
+                                                );
+
+                }
+            }
+
+        }
+
+        private void iconoBuscarGrupo_Click(object sender, EventArgs e)
+        {
+            int idgrupo = this.cbGrupoFiltro.SelectedIndex+1;
+            consultarGrupo(idgrupo);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            exportarExcel(tableGrupos);
+        }
+
+        private void exportarExcel(DataGridView tablaHorario)
+        {
+            Microsoft.Office.Interop.Excel.Application excelHorario = new Microsoft.Office.Interop.Excel.Application();
+            excelHorario.Application.Workbooks.Add(true);
+
+            excelHorario.Cells[3,2] = "REPORTE DE GRUPOS";
+            excelHorario.Cells[3,2].Font.Bold = true;
+            excelHorario.Cells[3,2].ColumnWidth = 20;
+            excelHorario.Cells[3,2].BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlMedium, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            int indiceColumna = 1;
+
+            //Lista la cabecera en el archivo excel
+
+            foreach (DataGridViewColumn col in tablaHorario.Columns)
+            {
+                indiceColumna++;
+                excelHorario.Cells[7, indiceColumna].Interior.ColorIndex = 45;
+                excelHorario.Cells[7, indiceColumna] = col.Name;
+                excelHorario.Cells[7, indiceColumna].Font.Bold = true;
+                excelHorario.Cells[7, indiceColumna].ColumnWidth = 20;
+                excelHorario.Cells[7, indiceColumna].BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic);
+            }
+
+            //Lista el cuerpo del excel
+            int indiceFila = 6;
+
+            foreach (DataGridViewRow fila in tablaHorario.Rows)
+            {
+                indiceFila++;
+                indiceColumna = 1;
+
+                foreach (DataGridViewColumn col in tablaHorario.Columns)
+                {
+                    indiceColumna++;
+                    excelHorario.Cells[indiceFila + 1, indiceColumna] = fila.Cells[col.Name].Value;
+                    excelHorario.Cells[indiceFila + 1, indiceColumna].ColumnWidth = 20;
+                    excelHorario.Cells[indiceFila + 1, indiceColumna].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignJustify;
+                    excelHorario.Cells[indiceFila + 1, indiceColumna].BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic, Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexAutomatic);
+                }
+
+            }
+
+            excelHorario.Visible = true;
+        }
+
     }
 }
