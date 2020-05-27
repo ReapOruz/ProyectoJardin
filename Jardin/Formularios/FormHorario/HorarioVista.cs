@@ -336,7 +336,11 @@ namespace Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
+            limpiarTabla();
+
             int grupoID = this.cbGrupos.SelectedIndex + 2;
+
             pintarHorario(grupoID);
             desbloquearCampos();
             desbloquearBotonAgregar();
@@ -350,7 +354,7 @@ namespace Formularios
             this.cbBloques.ResetText();
             this.cbMaterias.ResetText();
             this.cbDias.ResetText();
-
+            limpiarTabla();
             listarMaterias();
             listarDias();
             listarBloques();
@@ -443,6 +447,22 @@ namespace Formularios
 
             excelHorario.Visible = true;
         }
+
+        private void limpiarTabla()
+        {
+            for (int i = 0; i < this.tableHorario.Rows.Count; i++)
+            {
+                for (int j = 1; j < this.tableHorario.Columns.Count; j++)
+                {
+                    this.tableHorario.Rows[i].Cells[j].Value = "";
+
+                }
+
+            }
+        }
+
+
+
 
         private void tableHorario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

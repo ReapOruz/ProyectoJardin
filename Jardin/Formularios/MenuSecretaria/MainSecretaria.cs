@@ -48,5 +48,17 @@ namespace Formularios
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var desicion = MessageBox.Show("¿Desea cerrar la sesión?", "Confirmar cierre de sesión", MessageBoxButtons.OKCancel);
+
+            if (desicion == DialogResult.OK)
+            {
+                FormularioLogin login = new FormularioLogin();
+                this.Dispose();
+                login.Visible = true;
+            }
+        }
     }
 }

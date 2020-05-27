@@ -60,7 +60,6 @@ namespace Formularios
 
                             MenuAdministrador mainAdmin = new MenuAdministrador();
                             this.Hide();
-                            mainAdmin.lbUsuarioLogueado.Text = (mainAdmin.lbUsuarioLogueado.Text + " "+ usuarioName);
                             mainAdmin.Show();
 
                         }
@@ -70,7 +69,6 @@ namespace Formularios
 
                             MenuDocente mainDocente = new MenuDocente();
                             this.Hide();
-                            mainDocente.lbUsuarioLogueado.Text = (mainDocente.lbUsuarioLogueado.Text + " " + usuarioName);
                             mainDocente.Show();
 
                         }
@@ -80,7 +78,6 @@ namespace Formularios
 
                             MainSecretaria mainSecretaria = new MainSecretaria();
                             this.Hide();
-                            mainSecretaria.lbUsuarioLogueado.Text = (mainSecretaria.lbUsuarioLogueado.Text + " " + usuarioName);
                             mainSecretaria.Show();
 
                         }
@@ -105,5 +102,14 @@ namespace Formularios
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var desicion = MessageBox.Show("¿Desea salir?", "Confirmar salida", MessageBoxButtons.OKCancel);
+
+            if (desicion == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
