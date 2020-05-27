@@ -50,6 +50,7 @@ namespace Formularios
 
         private void btnConsultarPeriodo_Click(object sender, EventArgs e)
         {
+            this.tableNotas.Rows.Clear();
             string anio = this.cbTodosPeriodo.SelectedValue.ToString().Trim();
             int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
 
@@ -99,10 +100,37 @@ namespace Formularios
             FormularioReporteFinalPDF rf = new FormularioReporteFinalPDF();
             int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
             string anio = this.cbTodosPeriodo.SelectedValue.ToString().Trim();
+            int idgrupo = this.cbGrupos.SelectedIndex + 2;
+            Utilities objUtil = new Utilities();
             List<DatosReporteFinal> listaFinal = rf.traerListanotas(idAlumno,anio);
-            rf.pintarReporte(listaFinal);
-            rf.Visible = true;
+            List<DatosPromedioFinal> listapromedioFinal = objUtil.obtenerValoracionFinal(idAlumno, anio);
+            List<Posiciones> pos = devolverPosicionEstudianteGrupo(idAlumno, idgrupo, anio);
 
+            rf.pintarReporte(listaFinal, listapromedioFinal, pos);
+            rf.Visible = true;
         }
+
+        private List<Posiciones> devolverPosicionEstudianteGrupo(int idAlumno,int grupo, string anio)
+        {
+            List<Posiciones> posicion = new List<Posiciones>();
+            Posiciones objPos;
+            Utilities objUtil = new Utilities();
+
+            List<Posiciones> idAlumnos = objUtil.listaIdEstudiantesGrupoFinalAnio(grupo, anio);
+
+            for (int i=0; i < idAlumnos.Count; i++)
+            {
+                if(idAlumnos[i].Posicion == idAlumno)
+                {
+                    objPos = new Posiciones(i + 1);
+                    posicion.Add(objPos);
+                    break;
+                }
+
+            }
+
+            return posicion;
+        }
+
     }
 }

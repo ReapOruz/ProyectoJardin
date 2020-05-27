@@ -27,12 +27,14 @@ namespace Formularios
             listaNotasPeriodo = objBLNota.listarPeriodoReporte(idAlumno, idPeriodo);
             return listaNotasPeriodo;
         }
-        public void  pintarReporte(List<DatosReportePeriodo> listaNotasPeriodo)
+        public void  pintarReporte(List<DatosReportePeriodo> listaNotasPeriodo, List<DatosPromedioPeriodo> listaPromedioPeriodo)
         {
             ReportDataSource rds = new ReportDataSource("DsReportePeriodo", listaNotasPeriodo);
+            ReportDataSource rds2 = new ReportDataSource("DsValoracionPeriodo", listaPromedioPeriodo);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Formularios.Report1.rdlc";
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds);
+            this.reportViewer1.LocalReport.DataSources.Add(rds2);
             this.reportViewer1.RefreshReport();
         }
 

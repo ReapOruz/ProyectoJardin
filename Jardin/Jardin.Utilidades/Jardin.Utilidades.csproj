@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas.cs" />
+    <Compile Include="DatosPromedioFinal.cs" />
+    <Compile Include="DatosPromedioPeriodo.cs" />
     <Compile Include="DatosReporteFinal.cs" />
     <Compile Include="DatosReportePago.cs" />
     <Compile Include="DatosReportePeriodo.cs" />
     <Compile Include="Pagos.cs" />
+    <Compile Include="Posiciones.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Materias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

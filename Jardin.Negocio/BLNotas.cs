@@ -83,5 +83,27 @@ namespace Jardin.Negocio
 
         }
 
+        public List<double> listarNotasPeriodo(int estudiante, int periodo)
+        {
+            return daoNota.listarNotasPeriodo(estudiante, periodo);
+        }
+
+        public void insertarPromedioPeriodo(int estudiante, int periodo, double notaPeriodo, string valoracion)
+        {
+            daoNota.insertarPromedioPeriodo(estudiante, periodo, notaPeriodo, valoracion);
+
+        }
+
+        public List<double> listarNotasFinalesAnio(int estudiante, string anio)
+        {
+            return daoNota.listarNotasFinalesAnio(estudiante, anio);
+
+        }
+
+        public void insertarPromedioAnio(int estudiante, string anio, double nota, string valoracion)
+        {
+            daoNota.insertarPromedioAnio(estudiante, anio, nota, valoracion);
+        }
+
     }
 }

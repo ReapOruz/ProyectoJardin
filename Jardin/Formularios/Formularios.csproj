@@ -310,9 +310,12 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Jardin.Entidades.Notas.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.DatosPromedioFinal.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.DatosPromedioPeriodo.datasource" />
     <None Include="Properties\DataSources\Jardin.Utilidades.DatosReporteFinal.datasource" />
     <None Include="Properties\DataSources\Jardin.Utilidades.DatosReportePago.datasource" />
     <None Include="Properties\DataSources\Jardin.Utilidades.DatosReportePeriodo.datasource" />
+    <None Include="Properties\DataSources\Jardin.Utilidades.Posiciones.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

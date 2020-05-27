@@ -333,6 +333,94 @@ namespace Jardin.Utilidades
 
         }
 
+        public List<DatosPromedioPeriodo> obtenerValoracionPeriodo(int estudiante,int periodo)
+        {
+            List<DatosPromedioPeriodo> listDatosPromedio = new List<DatosPromedioPeriodo>();
+            DatosPromedioPeriodo objDatoProm;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerValoracionPeriodo", con);
+                cmd.Parameters.AddWithValue("@idAlumno", estudiante);
+                cmd.Parameters.AddWithValue("@idPeriodo", periodo);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string valoracion = dr["valoracion"].ToString().Trim();
+
+                    objDatoProm = new DatosPromedioPeriodo(valoracion);
+
+                    listDatosPromedio.Add(objDatoProm);
+
+                }
+
+                con.Close();
+            }
+
+            return listDatosPromedio;
+
+        }
+        public List<DatosPromedioFinal> obtenerValoracionFinal(int estudiante, string anio)
+        {
+            List<DatosPromedioFinal> listDatosPromedio = new List<DatosPromedioFinal>();
+            DatosPromedioFinal objDatoProm;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_obtenerValoracionAnio", con);
+                cmd.Parameters.AddWithValue("@idAlumno", estudiante);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    double notaFinal = Convert.ToDouble(dr["nota_final_promedio"]);
+                    string valoracion = dr["Valoracion_final"].ToString().Trim();
+                    objDatoProm = new DatosPromedioFinal(notaFinal,valoracion);
+                    listDatosPromedio.Add(objDatoProm);
+                }
+
+                con.Close();
+            }
+
+            return listDatosPromedio;
+
+        }
+
+        public List<Posiciones> listaIdEstudiantesGrupoFinalAnio(int idgrupo, string anio)
+        {
+            List<Posiciones> listaIdestudiantes = new List<Posiciones>();
+
+            Posiciones pos;
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[listarPosiciones]", con);
+                cmd.Parameters.AddWithValue("@grupo", idgrupo);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int idAlumno = Convert.ToInt32(dr["id_estudiante"]);
+                    pos = new Posiciones(idAlumno);
+                    listaIdestudiantes.Add(pos);
+                }
+
+                con.Close();
+            }
+
+            return listaIdestudiantes;
+        }
+
     }
 
 }

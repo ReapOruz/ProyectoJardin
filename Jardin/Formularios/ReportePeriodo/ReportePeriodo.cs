@@ -94,8 +94,12 @@ namespace Formularios
             FormularioReportePeriodoPDF rp = new FormularioReportePeriodoPDF();
             int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
             int periodo = int.Parse(this.cbPeriodo.SelectedValue.ToString());
+
+            Utilities objUtil = new Utilities();
+
             List<DatosReportePeriodo> listaPeriodo = rp.traerListanotas(idAlumno, periodo);
-            rp.pintarReporte(listaPeriodo);
+            List<DatosPromedioPeriodo> listaPromedioPeriodo = objUtil.obtenerValoracionPeriodo(idAlumno, periodo);
+            rp.pintarReporte(listaPeriodo, listaPromedioPeriodo);
             rp.Visible = true;
 
         }

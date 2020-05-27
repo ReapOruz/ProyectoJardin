@@ -39,8 +39,8 @@ namespace Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 int idAlumno = int.Parse(this.cbAlumnos.SelectedItem.ToString().Substring(0, 2));
                 int periodo = int.Parse(this.cbPeriodo.SelectedValue.ToString());
                 string valoracion;
@@ -95,6 +95,14 @@ namespace Formularios
                         }
 
                     }
+
+                    double notaPromedioPeriodo = calcularPromedioPeriodo(idAlumno, periodo);
+                    string validacionPromedioPeriodo = validarNota(notaPromedioPeriodo);
+                    insertarPromedioPerido(idAlumno, periodo, notaPromedioPeriodo, validacionPromedioPeriodo);
+                    double notaPromedioFinalAnio = calcularPromedioAnio(idAlumno, anio);
+                    string valoracionAnio = validarNota(notaPromedioFinalAnio);
+                    insertarPromedioAnio(idAlumno,anio, notaPromedioFinalAnio, valoracionAnio);
+
                 }
                 else
                 {
@@ -106,15 +114,15 @@ namespace Formularios
                     MessageBox.Show("Nota registrada correctamente");
                     mostrarNotasEstudiante(idAlumno, periodo);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Por favor valide los datos ingresados.");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Por favor valide los datos ingresados.");
+            //}
         }
 
         //validar nota obtener valoración
-        private String validarNota(double nota)
+            private String validarNota(double nota)
         {
             string valoracion = "";
 
@@ -249,5 +257,51 @@ namespace Formularios
             this.Dispose();
             mainDocente.Show();
         }
+
+        private double calcularPromedioPeriodo(int idEstudiante,int periodo)
+        {
+            double sumaNotas = 0;
+            double promedio = 0;
+
+            List<double> listaNotas = blNota.listarNotasPeriodo(idEstudiante, periodo);
+
+            for(int i=0; i < listaNotas.Count; i++)
+            {
+                sumaNotas += listaNotas[i];
+            }
+
+            promedio = sumaNotas / listaNotas.Count;
+
+            return promedio;
+        }
+
+        private void insertarPromedioPerido(int estudiante,int periodo,double nota, string valoracion)
+        {
+            blNota.insertarPromedioPeriodo(estudiante, periodo, nota, valoracion);
+        }
+
+        private double calcularPromedioAnio(int idEstudiante, string anio)
+        {
+            double sumaNotas = 0;
+            double promedio = 0;
+
+            List<double> listaNotas = blNota.listarNotasFinalesAnio(idEstudiante, anio);
+
+            for (int i = 0; i < listaNotas.Count; i++)
+            {
+                sumaNotas += listaNotas[i];
+            }
+
+            promedio = sumaNotas / listaNotas.Count;
+
+            return promedio;
+        }
+
+        private void insertarPromedioAnio(int estudiante, string anio, double nota, string valoracion)
+        {
+            blNota.insertarPromedioAnio(estudiante, anio, nota, valoracion);
+        }
+
+
     }
 }

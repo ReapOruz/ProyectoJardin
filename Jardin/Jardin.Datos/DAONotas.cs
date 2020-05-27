@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -348,5 +349,97 @@ namespace Jardin.Datos
             return listaNotasFinal;
         }
 
+        public List<double> listarNotasPeriodo(int estudiante,int periodo)
+        {
+            List<double> listaNotasPeriodo = new List<double>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarNotasPeriodo", con);
+                cmd.Parameters.AddWithValue("@idestudiante", estudiante);
+                cmd.Parameters.AddWithValue("@periodo", periodo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+     
+                        double nota = Convert.ToDouble(dr["nota"]);
+                        listaNotasPeriodo.Add(nota);
+                    }
+                }
+                con.Close();
+            }
+
+            return listaNotasPeriodo;
+
+        }
+
+        public void insertarPromedioPeriodo(int estudiante, int periodo, double notaPeriodo, string valoracion)
+        {
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_insertarPromedioPeriodo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idAlumno", estudiante);
+                cmd.Parameters.AddWithValue("@idPeriodo", periodo);
+                cmd.Parameters.AddWithValue("@notaPeriodo", notaPeriodo);
+                cmd.Parameters.AddWithValue("@valoracion", valoracion);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+
+        }
+        public List<double> listarNotasFinalesAnio(int estudiante, string anio)
+        {
+            List<double> listaNotasAnio= new List<double>();
+
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_listarNotasFinalesAnio", con);
+                cmd.Parameters.AddWithValue("@idestudiante", estudiante);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+
+                        double nota = Convert.ToDouble(dr["nota_definitiva"]);
+                        listaNotasAnio.Add(nota);
+                    }
+                }
+                con.Close();
+            }
+
+            return listaNotasAnio; 
+        }
+
+        public void insertarPromedioAnio(int estudiante, string anio, double notaFinal, string valoracion)
+        {
+            using (SqlConnection con = new SqlConnection(CadenaConexion))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("pa_insertarPromedioAnio", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idAlumno", estudiante);
+                cmd.Parameters.AddWithValue("@anio", anio);
+                cmd.Parameters.AddWithValue("@notaAnio", notaFinal);
+                cmd.Parameters.AddWithValue("@valoracion", valoracion);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
+        }
     }
 }

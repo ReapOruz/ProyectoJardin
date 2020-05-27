@@ -74,7 +74,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!Periodo.Value</Value>
+                    <Value>=First(Fields!Periodo.Value, "DsReportePeriodo")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -103,7 +103,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!NombreAlumno.Value</Value>
+                    <Value>=First(Fields!NombreAlumno.Value, "DsReportePeriodo")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -291,7 +291,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DsReportePeriodo</DataSetName>
-            <Top>4.07458cm</Top>
+            <Top>4.84187cm</Top>
             <Left>1.905cm</Left>
             <Height>1.43812cm</Height>
             <Width>9.485cm</Width>
@@ -341,7 +341,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!Documento.Value</Value>
+                    <Value>=First(Fields!Documento.Value, "DsReportePeriodo")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -353,6 +353,70 @@
             <Height>0.6cm</Height>
             <Width>5.70146cm</Width>
             <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Valoracion Periodo</Value>
+                    <Style>
+                      <FontFamily>Arial Black</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>3.75708cm</Top>
+            <Left>1.905cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.00812cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="txtValoracionPeriodo">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!ValoracionPeriodo.Value, "DsValoracionPeriodo")</Value>
+                    <Style>
+                      <FontFamily>Arial Black</FontFamily>
+                      <Color>Orange</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.75708cm</Top>
+            <Left>6.24181cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.84938cm</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -450,6 +514,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>e1de5e45-b61e-4b60-80ca-4455e1c69f3a</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="JardinUtilidades1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>cd37b3fc-12ce-42a1-bf3e-518138fa93c7</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DsReportePeriodo">
@@ -483,6 +554,23 @@
         <rd:DataSetName>Jardin.Utilidades</rd:DataSetName>
         <rd:TableName>DatosReportePeriodo</rd:TableName>
         <rd:ObjectDataSourceType>Jardin.Utilidades.DatosReportePeriodo, Jardin.Utilidades, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DsValoracionPeriodo">
+      <Query>
+        <DataSourceName>JardinUtilidades1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ValoracionPeriodo">
+          <DataField>ValoracionPeriodo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Jardin.Utilidades</rd:DataSetName>
+        <rd:TableName>DatosPromedioPeriodo</rd:TableName>
+        <rd:ObjectDataSourceType>Jardin.Utilidades.DatosPromedioPeriodo, Jardin.Utilidades, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
